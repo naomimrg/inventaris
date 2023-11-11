@@ -13,13 +13,12 @@ return new class extends Migration
     {
         Schema::create('peminjamen', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->foreignId('asets_id')->constrained('asets'); 
             $table->string('kode_aset')->unique();
             $table->date('tanggal_peminjaman');
             $table->date('tanggal_pengembalian');
             $table->text('keterangan');
             $table->foreignId('users_id')->constrained('users'); 
-            $table->foreignId('asets_id')->constrained('asets'); 
             $table->timestamps();
         });
     }

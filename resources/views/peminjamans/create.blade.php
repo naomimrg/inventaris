@@ -5,27 +5,41 @@
     @csrf
     <div class="mb-3">
         <div class="col">
-            <input type="string" name="nama" class="form-control" placeholder="Nama">
+        <label for="asets_id" class="form-label">Nama Aset</label>
+        <div class="input-group">
+            <select name="asets_id" class="form-select" id="asets_id" style="width: 100%;">
+                <option value=""></option>
+                @foreach ($asets as $rs)
+                    <option value="{{ $rs->id }}">{{ $rs->nama }}</option>
+                @endforeach
+            </select>
+            <div class="input-group-append">
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="mb-3">
+        <div class="col">
+            <label for="kode_aset" class="form-label">Kode Aset</label>
+            <input type="string" name="kode_aset" class="form-control" placeholder="">
         </div>
     </div>
     <div class="mb-3">
         <div class="col">
-            <input type="string" name="kode_aset" class="form-control" placeholder="Kode Aset">
+            <label for="tanggal_peminjaman" class="form-label">Tanggal Peminjaman</label>
+            <input type="date" name="tanggal_peminjaman" class="form-control" placeholder="">
         </div>
     </div>
     <div class="mb-3">
         <div class="col">
-            <input type="date" name="tanggal_peminjaman" class="form-control" placeholder="Tanggal Peminjaman">
+            <label for="tanggal_pengembalian" class="form-label">Tanggal Pengembalian</label>
+            <input type="date" name="tanggal_pengembalian" class="form-control" placeholder="">
         </div>
     </div>
     <div class="mb-3">
         <div class="col">
-            <input type="date" name="tanggal_pengembalian" class="form-control" placeholder="Tanggal Pengembalian">
-        </div>
-    </div>
-    <div class="mb-3">
-        <div class="col">
-            <textarea class="form-control" name="keterangan" placeholder="Keterangan"></textarea>
+            <label for="keterangan" class="form-label"></label>Keterangan</label>
+            <textarea class="form-control" name="keterangan" placeholder=""></textarea>
         </div>
     </div>
     <div class="row">

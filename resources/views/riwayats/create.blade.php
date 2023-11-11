@@ -6,32 +6,57 @@
         @csrf
         <div class="mb-3">
             <div class="col">
-                <input type="string" name="nama" class="form-control" placeholder="Nama">
+                <label for="nama" class="form-label">Nama</label>
+                <input type="string" name="nama" class="form-control" placeholder="">
             </div>
         </div>
         <div class="mb-3">
             <div class="col">
-                <input type="string" name="kode_aset" class="form-control" placeholder="Kode Aset">
+                <label for="kode_aset" class="form-label">Kode Aset</label>
+                <input type="string" name="kode_aset" class="form-control" placeholder="">
             </div>
         </div>
         <div class="mb-3">
             <div class="col">
-                <input type="string" name="kategori_id" class="form-control" placeholder="Kategori">
+                <label for="kategoris_id" class="form-label">Kategori</label>
+                <div class="input-group">
+                    <select name="kategoris_id" class="form-select" id="kategoris_id" style="width: 100%;">
+                        <option value=""></option>
+                        @foreach ($kategoris as $rs)
+                            <option value="{{ $rs->id }}">{{ $rs->nama }}</option>
+                        @endforeach
+                    </select>
+                    <div class="input-group-append">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="mb-3">
             <div class="col">
-                <input type="string" name="lokasi_id" class="form-control" placeholder="Lokasi">
+                <label for="lokasis_id" class="form-label">Lokasi</label>
+                <div class="input-group">
+                    <select name="lokasis_id" class="form-select" id="lokasis_id" style="width: 100%;">
+                        <option value=""></option>
+                        @foreach ($lokasis as $rs)
+                            <option value="{{ $rs->id }}">{{ $rs->nama_lokasi }}</option>
+                        @endforeach
+                    </select>
+                    <div class="input-group-append">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="mb-3">
             <div class="col">
-                <input type="date" name="tanggal" class="form-control" placeholder="Tanggal">
+                <label for="tanggal" class="form-label">Tanggal</label>
+                <input type="date" name="tanggal" class="form-control" placeholder="">
             </div>
         </div>
         <div class="mb-3">
             <div class="col">
+                <label for="jenis_perubahan" class="form-label">Jenis Perubahan</label>
                 <select name="jenis_perubahan" class="form-control">
+                    <option value=""></option>
                     <option value="Pembelian">Pembelian</option>
                     <option value="Pemindahtanganan">Pemindahtanganan</option>
                     <option value="Perbaikan">Perbaikan</option>
@@ -40,17 +65,21 @@
         </div>
         <div class="mb-3">
             <div class="col">
-                <input type="string" name="deskripsi" class="form-control" placeholder="Deskripsi">
+                <label for="deskripsi" class="form-label">Deskripsi</label>
+                <input type="string" name="deskripsi" class="form-control" placeholder="">
             </div>
         </div>
         <div class="mb-3">
             <div class="col">
-                <input type="string" name="user_id" class="form-control" placeholder="Pengguna">
+                <label for="users_id" class="form-label">Nama Pengguna</label>
+                <input type="string" name="users_id" class="form-control" placeholder="">
             </div>
         </div>
         <div class="mb-3">
-            <div class="col" placeholder="Status">
+            <div class="col" placeholder="">
+                <label for="status" class="form-label">Status</label>
                 <select name="status" class="form-control">
+                    <option value=""></option>
                     <option value="Baik">Baik</option>
                     <option value="Rusak">Rusak</option>
                     <option value="Hilang">Hilang</option>
@@ -59,7 +88,8 @@
         </div>
         <div class="mb-3">
             <div class="col">
-                <textarea class="form-control" name="catatan_tambahan" placeholder="Catatan Tambahan"></textarea>
+                <label for="catatan_tambahan" class="form-label">Catatan Tambahan</label>
+                <textarea class="form-control" name="catatan_tambahan" placeholder=""></textarea>
             </div>
         </div>
         <div class="row">

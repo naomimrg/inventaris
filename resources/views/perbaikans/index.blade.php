@@ -3,7 +3,7 @@
 @section('contents')
 <div class="d-flex justify-content-between align-items-center mb-3">
         <h1></h1>
-        <a href="{{ route('perbaikans.create') }}" class="btn btn-primary">Add Perbaikan</a>
+        <a href="{{ route('perbaikans.create') }}" class="btn btn-primary">Tambah Data Perbaikan</a>
     </div>
     <hr />
     @if(Session::has('success'))

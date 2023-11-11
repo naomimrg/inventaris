@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aset;
+use App\Models\Kategori;
+use App\Models\Lokasi;
 use Illuminate\Http\Request;
 
 class AsetController extends Controller
@@ -21,7 +23,9 @@ class AsetController extends Controller
      */
     public function create()
     {
-        return view('asets.create');
+        $kategoris = Kategori::all();
+        $lokasis = Lokasi::all();
+        return view('asets.create', compact('kategoris', 'lokasis'));
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aset;
 use App\Models\Peminjaman;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,8 @@ class PeminjamanController extends Controller
      */
     public function create()
     {
-        return view('peminjamans.create');
+        $asets = Aset::all();
+        return view('peminjamans.create', compact('asets'));
     }
 
     /**

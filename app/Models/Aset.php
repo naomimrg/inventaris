@@ -28,15 +28,15 @@ class Aset extends Model
 
     public function kategori()
     {
-        return $this->belongsTo(Kategori::class, 'kategori_id')->withDefault([
+        return $this->belongsTo(Kategori::class, 'kategoris_id')->withDefault([
             'nama' => 'Tanpa Kategori',
         ]);
     }
 
     public function lokasi()
     {
-        return $this->belongsTo(Lokasi::class, 'lokasi_id')->withDefault([
-            'nama_lokasi' => 'Tanpa Lokasi',
+        return $this->belongsTo(Lokasi::class, 'lokasis_id')->withDefault([
+            'nama' => 'Tanpa Lokasi',
         ]);
     }
 }

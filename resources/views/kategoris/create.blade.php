@@ -6,12 +6,14 @@
         @csrf
         <div class="mb-3">
             <div class="col">
-                <input type="string" name="nama" class="form-control" placeholder="Nama">
+                <label for="nama" class="form-label">Nama</label>
+                <input type="string" name="nama" class="form-control" placeholder="">
             </div>
         </div>
         <div class="mb-3">
             <div class="col">
-                <textarea class="form-control" name="deskripsi" placeholder="Deskripsi"></textarea>
+                <label for="deskripsi" class="form-label">Deskripsi</label>
+                <textarea class="form-control" name="deskripsi" placeholder=""></textarea>
             </div>
         </div>
         <div class="row">

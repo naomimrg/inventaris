@@ -16,7 +16,7 @@
         <thead class="table-primary">
             <tr>
                 <th>Nama</th>
-                <th>Nama</th>
+                <th>Nama Lokasi</th>
                 <th>Deskripsi</th>
                 <th>Action</th>
             </tr>
@@ -26,7 +26,7 @@
             @foreach($lokasis as $rs)
             <tr>
                 <td class="align-middle">{{ $loop->iteration }}</td>
-                <td class="align-middle">{{ $rs->nama }}</td>
+                <td class="align-middle">{{ $rs->nama_lokasi }}</td>
                 <td class="align-middle">{{ $rs->deskripsi }}</td>
                 <td class="align-middle">
                     <div class="btn-group" role="group" aria-label="Basic example">

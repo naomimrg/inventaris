@@ -12,17 +12,6 @@ use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\SesiController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 Route::middleware(['guest'])->group(function () {
     Route::get('/', [SesiController::class, 'index'])->name('login');
     Route::post('/', [SesiController::class, 'login']);
@@ -85,8 +74,6 @@ Route::middleware(['auth'])->group(function () {
             Route::put('edit/{id}', 'update')->name('lokasis.update');
             Route::delete('destroy/{id}', 'destroy')->name('lokasis.destroy');
         });
-
-        // Route::get('/kerusakans', [KerusakanController::class, 'index'])->name('kerusakans.index');
 
         Route::controller(PerbaikanController::class)->prefix('perbaikans')->group(function () {
             Route::get('', 'index')->name('perbaikans');

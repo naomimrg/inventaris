@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aset;
 use App\Models\Kerusakan;
+use App\Models\Lokasi;
 use Illuminate\Http\Request;
 
 class KerusakanController extends Controller
@@ -21,7 +23,9 @@ class KerusakanController extends Controller
      */
     public function create()
     {
-        return view('kerusakans.create');
+        $asets = Aset::all();
+        $lokasis = Lokasi::all();
+        return view('kerusakans.create', compact('asets', 'lokasis'));
     }
 
     /**

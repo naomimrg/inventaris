@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Kategori;
+use App\Models\Lokasi;
 use App\Models\Riwayat;
 use Illuminate\Http\Request;
 
@@ -20,7 +22,9 @@ class RiwayatController extends Controller
      */
     public function create()
     {
-        return view('riwayats.create');
+        $kategoris = Kategori::all();
+        $lokasis = Lokasi::all();
+        return view('riwayats.create', compact('kategoris', 'lokasis'));
     }
 
     /**

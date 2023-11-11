@@ -31,10 +31,10 @@
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a href="{{ route('kategoris.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
                                 <a href="{{ route('kategoris.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
-                                <form action="{{ route('kategoris.destroy', $rs->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
+                                <form action="{{ route('kategoris.destroy', $rs->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this category?')">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger m-0">Delete</button>
+                                    <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
                             </div>
                         </td>

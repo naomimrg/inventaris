@@ -6,23 +6,41 @@
         @csrf
         <div class="mb-3">
             <label for="user_id" class="form-label">Nama Pengguna</label>
-            <input type="string" name="user_id" class="form-control" id="user_id" placeholder="Nama Pengguna">
+            <input type="string" name="user_id" class="form-control" id="user_id" placeholder="">
         </div>
         <div class="mb-3">
             <label for="asets_id" class="form-label">Nama Aset</label>
-            <input type="text" name="asets_id" class="form-control" id="asets_id" placeholder="Nama Aset">
+            <div class="input-group">
+                <select name="asets_id" class="form-select" id="asets_id" style="width: 100%;">
+                    <option value=""></option>
+                    @foreach ($asets as $rs)
+                        <option value="{{ $rs->id }}">{{ $rs->nama }}</option>
+                    @endforeach
+                </select>
+                <div class="input-group-append">
+                </div>
+            </div>
         </div>
         <div class="mb-3">
             <label for="tanggal_laporan" class="form-label">Tanggal Laporan</label>
-            <input type="date" name="tanggal_laporan" class="form-control" id="tanggal_laporan" placeholder="Tanggal Laporan">
+            <input type="date" name="tanggal_laporan" class="form-control" id="tanggal_laporan" placeholder="">
         </div>
         <div class="mb-3">
             <label for="lokasis_id" class="form-label">Lokasi</label>
-            <input type="text" name="lokasis_id" class="form-control" id="lokasis_id" placeholder="Lokasi">
+            <div class="input-group">
+                <select name="lokasis_id" class="form-select" id="lokasis_id" style="width: 100%;">
+                    <option value=""></option>
+                    @foreach ($lokasis as $rs)
+                        <option value="{{ $rs->id }}">{{ $rs->nama_lokasi }}</option>
+                    @endforeach
+                </select>
+                <div class="input-group-append">
+                </div>
+            </div>
         </div>
         <div class="mb-3">
             <label for="deskripsi_kerusakan" class="form-label">Deskripsi</label>
-            <textarea class="form-control" name="deskripsi_kerusakan" id="deskripsi_kerusakan" placeholder="Deskripsi"></textarea>
+            <textarea class="form-control" name="deskripsi_kerusakan" id="deskripsi_kerusakan" placeholder=""></textarea>
         </div>
         <div class="d-grid">
             <button type="submit" class="btn btn-primary">Submit</button>

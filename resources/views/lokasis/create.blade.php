@@ -6,11 +6,11 @@
         @csrf
         <div class="mb-3">
             <label for="nama_lokasi" class="form-label">Nama Lokasi</label>
-            <input type="string" name="nama_lokasi" class="form-control" id="nama_lokasi" placeholder="Nama Lokasi">
+            <input type="string" name="nama_lokasi" class="form-control" id="nama_lokasi" placeholder="">
         </div>
         <div class="mb-3">
             <label for="deskripsi" class="form-label">Deskripsi</label>
-            <textarea class="form-control" name="deskripsi" id="deskripsi" placeholder="Deskripsi"></textarea>
+            <textarea class="form-control" name="deskripsi" id="deskripsi" placeholder=""></textarea>
         </div>
         <div class="d-grid">
             <button type="submit" class="btn btn-primary">Submit</button>

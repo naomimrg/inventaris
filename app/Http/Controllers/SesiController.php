@@ -34,8 +34,8 @@ class SesiController extends Controller
                 return redirect('auth/staf_aset');
             }
         } else {
-            return redirect('')->withErrors('Username atau password yang dimasukkan tidak sesuai')->withInput();
-        }
+            return redirect()->route('login')->withErrors(['error' => 'Username atau password yang dimasukkan salah'])->withInput();
+        }        
     }
 
     function logout()

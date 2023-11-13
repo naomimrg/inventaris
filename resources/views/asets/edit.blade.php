@@ -1,37 +1,41 @@
 @extends('layouts.app')
-@section('title', 'Edit Aset')
+@section('title', 'Edit Data Aset')
 @section('contents')
-    <h1 class="mb-0">Edit Aset</h1>
     <hr />
     <form action="{{ route('asets.update', $aset->id) }}" method="POST">
         @csrf
         @method('PUT')
-        <div class="row mb-3">
-            <div class="col">
-                <input type="string" name="nama" class="form-control" placeholder="Nama">
-            </div>
-            <div class="col">
-                <input type="text" name="kode_aset" class="form-control" placeholder="Kode Aset">
-            </div>
-            <div class="col">
-                <input type="date" name="tanggal_pembelian" class="form-control" placeholder="Tanggal Pembelian">
-            </div>
-            <div class="col">
-                <input type="text" name="kategori_id" class="form-control" placeholder="Kategori">
-            </div>
-            <div class="col">
-                <input type="text" name="lokasi_id" class="form-control" placeholder="Lokasi">
-            </div>
-            <div class="col">
-                <input type="number" name="harga" class="form-control" placeholder="Harga">
-            </div>
-            <div class="col">
-                <textarea class="form-control" name="description" placeholder="Deskripsi"></textarea>
-            </div>
+        <div class="col mb-3">
+            <label class="form-label">Nama</label>
+            <input type="text" name="nama" class="form-control" placeholder="" value="{{ $aset->nama }}" >
         </div>
-        <div class="row">
-            <div class="d-grid">
-                <button class="btn btn-warning">Update</button>
+        <div class="col mb-3">
+            <label class="form-label">Kode Aset</label>
+            <input type="text" name="kode_aset" class="form-control" placeholder="" value="{{ $aset->kode_aset }}" >
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Tanggal Pembelian</label>
+            <input type="text" name="tanggal_pembelian" class="form-control" placeholder="" value="{{ $aset->tanggal_pembelian }}" >
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Kategori</label>
+            <input type="text" name="kategoris_id" class="form-control" placeholder="" value="{{ $aset->kategoris_id }}" >
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Lokasi</label>
+            <input type="text" name="lokasis_id" class="form-control" placeholder="" value="{{ $aset->lokasis_id }}" >
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Harga</label>
+            <input type="text" name="harga" class="form-control" placeholder="" value="{{ $aset->harga }}" >
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Deskripsi</label>
+            <textarea class="form-control" name="deskripsi" placeholder="" >{{ $aset->deskripsi }}</textarea>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <button type="update" class="btn btn-warning">Update</button>
             </div>
         </div>
     </form>

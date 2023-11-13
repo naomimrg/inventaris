@@ -17,7 +17,7 @@
                 <th>No</th>
                 <th>Nama</th>
                 <th>Deskripsi</th>
-                <th>Action</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -29,12 +29,13 @@
                         <td class="align-middle">{{ $rs->deskripsi }}</td>
                         <td class="align-middle">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="{{ route('kategoris.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
-                                <a href="{{ route('kategoris.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
-                                <form action="{{ route('kategoris.destroy', $rs->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this category?')">
+                                <a href="{{ route('kategoris.show', $rs->id) }}" type="button" class="btn btn-secondary"> <i class="fas fa-eye"></i> </a>
+                                <a href="{{ route('kategoris.edit', $rs->id) }}" type="button" class="btn btn-warning ml-1"> <i class="fas fa-edit"></i> </a>
+                                <form action="{{ route('kategoris.destroy', $rs->id) }}" method="POST" type="button" class="btn btn-danger p-0 ml-1"
+                                    onsubmit="return confirm('Delete?')">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button class="btn btn-danger m-0"> <i class="fas fa-trash-alt"></i> </button>
                                 </form>
                             </div>
                         </td>

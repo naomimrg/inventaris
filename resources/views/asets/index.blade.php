@@ -17,7 +17,6 @@
                 <th>No</th>
                 <th>Nama</th>
                 <th>Kode Aset</th>
-                <th>Tanggal Pembelian</th>
                 <th>Kategori</th>
                 <th>Lokasi</th>
                 <th>Harga</th>
@@ -32,22 +31,19 @@
                         <td class="align-middle">{{ $loop->iteration }}</td>
                         <td class="align-middle">{{ $rs->nama }}</td>
                         <td class="align-middle">{{ $rs->kode_aset }}</td>
-                        <td class="align-middle">{{ $rs->tanggal_pembelian }}</td>
                         <td class="align-middle">{{ $rs->kategoris }}</td>
                         <td class="align-middle">{{ $rs->lokasis }}</td>
                         <td class="align-middle">{{ $rs->harga }}</td>
                         <td class="align-middle">{{ $rs->deskripsi }}</td>
                         <td class="align-middle">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="{{ route('asets.show', $rs->id) }}" type="button"
-                                    class="btn btn-secondary">Detail</a>
-                                <a href="{{ route('asets.edit', $rs->id) }}" type="button"
-                                    class="btn btn-warning">Edit</a>
-                                <form action="{{ route('asets.destroy', $rs->id) }}" method="POST" type="button"
-                                    class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
+                                <a href="{{ route('asets.show', $rs->id) }}" type="button" class="btn btn-secondary"> <i class="fas fa-eye"></i> </a>
+                                <a href="{{ route('asets.edit', $rs->id) }}" type="button" class="btn btn-warning ml-1"> <i class="fas fa-edit"></i> </a>
+                                <form action="{{ route('asets.destroy', $rs->id) }}" method="POST" type="button" class="btn btn-danger p-0 ml-1"
+                                    onsubmit="return confirm('Delete?')">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger m-0">Delete</button>
+                                    <button class="btn btn-danger m-0"> <i class="fas fa-trash-alt"></i> </button>
                                 </form>
                             </div>
                         </td>

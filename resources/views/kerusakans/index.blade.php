@@ -17,7 +17,7 @@
                 <th>Lokasi</th>
                 <th>Deskripsi Kerusakan</th>
                 <th>Nama Pelapor</th>
-                <th>Action</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -31,12 +31,13 @@
                         <td class="align-middle">{{ $rs->user_id }}</td>
                         <td class="align-middle">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="{{ route('kerusakans.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
-                                <a href="{{ route('kerusakans.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
-                                <form action="{{ route('kerusakans.destroy', $rs->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
+                                <a href="{{ route('kerusakans.show', $rs->id) }}" type="button" class="btn btn-secondary"> <i class="fas fa-eye"></i> </a>
+                                <a href="{{ route('kerusakans.edit', $rs->id) }}" type="button" class="btn btn-warning ml-1"> <i class="fas fa-edit"></i> </a>
+                                <form action="{{ route('kerusakans.destroy', $rs->id) }}" method="POST" type="button" class="btn btn-danger p-0 ml-1"
+                                    onsubmit="return confirm('Delete?')">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger m-0">Delete</button>
+                                    <button class="btn btn-danger m-0"> <i class="fas fa-trash-alt"></i> </button>
                                 </form>
                             </div>
                         </td>

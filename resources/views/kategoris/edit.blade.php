@@ -5,19 +5,17 @@
     <form action="{{ route('kategoris.update', $kategori->id) }}" method="POST">
         @csrf
         @method('PUT')
-        <div class="row">
             <div class="col mb-3">
                 <label class="form-label">Nama Kategori</label>
-                <input type="text" name="nama" class="form-control" placeholder="Nama Lokasi" value="{{ $kategori->nama }}" >
+                <input type="text" name="nama_kategori" class="form-control" placeholder="" value="{{ $kategori->nama_kategori }}" >
             </div>
             <div class="col mb-3">
                 <label class="form-label">Deskripsi</label>
-                <textarea class="form-control" name="deskripsi" placeholder="Deskripsi" >{{ $kategori->deskripsi }}</textarea>
+                <textarea class="form-control" name="deskripsi" placeholder="" >{{ $kategori->deskripsi }}</textarea>
             </div>
-        </div>
-        <div class="row">
-            <div class="d-grid">
-                <button class="btn btn-warning">Update</button>
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <button type="update" class="btn btn-warning">Update</button>
             </div>
         </div>
     </form>

@@ -8,27 +8,27 @@
         <div class="row">
             <div class="col mb-3">
                 <label class="form-label">Nama</label>
-                <input type="text" name="title" class="form-control" placeholder="Title" value="{{ $perbaikans->nama }}" >
+                <input type="text" name="title" class="form-control" placeholder="" value="{{ $perbaikans->nama }}" >
             </div>
             <div class="col mb-3">
                 <label class="form-label">Kode Aset</label>
-                <input type="text" name="title" class="form-control" placeholder="Title" value="{{ $perbaikans->kode_aset }}" >
+                <input type="text" name="title" class="form-control" placeholder="" value="{{ $perbaikans->kode_aset }}" >
             </div>
             <div class="col mb-3">
                 <label class="form-label">Tanggal Permintaan Perbaikan</label>
-                <input type="date" name="title" class="form-control" placeholder="Title" value="{{ $perbaikans->tanggal_permintaan_perbaikan }}" >
+                <input type="date" name="title" class="form-control" placeholder="" value="{{ $perbaikans->tanggal_permintaan_perbaikan }}" >
             </div>
             <div class="col mb-3">
                 <label class="form-label">Deskripsi</label>
-                <input type="date" name="title" class="form-control" placeholder="Title" value="{{ $perbaikans->tanggal_pengembalian }}" >
+                <input type="date" name="title" class="form-control" placeholder="" value="{{ $perbaikans->tanggal_pengembalian }}" >
             </div>
             <div class="col mb-3">
                 <label class="form-label">Status</label>
-                <textarea class="form-control" name="keterangan" placeholder="Deskripsi" >{{ $perbaikans->keterangan }}</textarea>
+                <textarea class="form-control" name="keterangan" placeholder="" >{{ $perbaikans->keterangan }}</textarea>
             </div>
             <div class="col mb-3">
                 <label class="form-label">User</label>
-                <textarea class="form-control" name="keterangan" placeholder="Deskripsi" >{{ $perbaikans->keterangan }}</textarea>
+                <textarea class="form-control" name="user_id" placeholder="" >{{ $perbaikans->user_id }}</textarea>
             </div>
         </div>
         <div class="row">

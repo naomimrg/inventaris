@@ -42,8 +42,8 @@
             <textarea class="form-control" name="keterangan" placeholder=""></textarea>
         </div>
     </div>
-    <div class="row">
-        <div class="d-grid">
+    <div class="row justify-content-end">
+        <div class="col-auto">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>

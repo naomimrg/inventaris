@@ -6,8 +6,8 @@
         @csrf
         <div class="mb-3">
             <div class="col">
-                <label for="nama" class="form-label">Nama</label>
-                <input type="string" name="nama" class="form-control" placeholder="">
+                <label for="nama_kategori" class="form-label">Nama</label>
+                <input type="string" name="nama_kategori" class="form-control" placeholder="">
             </div>
         </div>
         <div class="mb-3">
@@ -16,8 +16,8 @@
                 <textarea class="form-control" name="deskripsi" placeholder=""></textarea>
             </div>
         </div>
-        <div class="row">
-            <div class="d-grid">
+        <div class="row justify-content-end">
+            <div class="col-auto">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>

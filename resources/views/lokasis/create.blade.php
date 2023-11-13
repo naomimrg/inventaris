@@ -12,8 +12,10 @@
             <label for="deskripsi" class="form-label">Deskripsi</label>
             <textarea class="form-control" name="deskripsi" id="deskripsi" placeholder=""></textarea>
         </div>
-        <div class="d-grid">
-            <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
         </div>
     </form>
 @endsection

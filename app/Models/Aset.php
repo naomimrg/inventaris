@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Kategori;
+use App\Models\Lokasi;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -26,17 +28,13 @@ class Aset extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function kategori()
+    public function kategoris()
     {
-        return $this->belongsTo(Kategori::class, 'kategoris_id')->withDefault([
-            'nama' => 'Tanpa Kategori',
-        ]);
+        return $this->belongsTo(Kategori::class, 'kategoris_id');
     }
 
-    public function lokasi()
+    public function lokasis()
     {
-        return $this->belongsTo(Lokasi::class, 'lokasis_id')->withDefault([
-            'nama' => 'Tanpa Lokasi',
-        ]);
+        return $this->belongsTo(Lokasi::class, 'lokasis_id');
     }
 }

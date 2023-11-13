@@ -19,10 +19,10 @@
         <div class="mb-3">
             <label for="kategoris_id" class="form-label">Kategori</label>
             <div class="input-group">
-                <select name="kategoris_id" class="form-select" id="kategoris_id" style="width: 100%;">
+                <select name="kategoris_id" class="form-control">
                     <option value=""></option>
                     @foreach ($kategoris as $rs)
-                        <option value="{{ $rs->id }}">{{ $rs->nama }}</option>
+                        <option value="{{ $rs->id }}">{{ $rs->nama_kategori }}</option>
                     @endforeach
                 </select>
                 <div class="input-group-append">
@@ -32,7 +32,7 @@
         <div class="mb-3">
             <label for="lokasis_id" class="form-label">Lokasi</label>
             <div class="input-group">
-                <select name="lokasis_id" class="form-select" id="lokasis_id" style="width: 100%;">
+                <select name="lokasis_id" class="form-control">
                     <option value=""></option>
                     @foreach ($lokasis as $rs)
                         <option value="{{ $rs->id }}">{{ $rs->nama_lokasi }}</option>
@@ -50,8 +50,10 @@
             <label for="deskripsi" class="form-label">Deskripsi</label>
             <textarea class="form-control" name="deskripsi" id="deskripsi" placeholder=""></textarea>
         </div>
-        <div class="d-grid">
-            <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
         </div>
     </form>
 @endsection

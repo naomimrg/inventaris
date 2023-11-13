@@ -15,7 +15,9 @@ class AsetController extends Controller
     public function index()
     {
         $aset = Aset::orderBy('created_at', 'DESC')->get();
-        return view('asets.index', compact('aset'));
+        $kategoris = Kategori::all();
+        $lokasis = Lokasi::all();
+        return view('asets.index', compact('aset', 'kategoris', 'lokasis'));
     }
 
     /**
@@ -34,7 +36,7 @@ class AsetController extends Controller
     public function store(Request $request)
     {
         Aset::create($request->all());
-        return redirect()->route('asets.index')->with('success', 'Aset added successfully');
+        return redirect()->route('asets')->with('success', 'Aset added successfully');
     }
 
     /**

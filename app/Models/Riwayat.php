@@ -2,6 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Aset;
+use App\Models\Kategori;
+use App\Models\Lokasi;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,8 +18,8 @@ class riwayat extends Model
     protected $fillable = [
         'aset_id',
         'kode_aset',
-        'kategori_id',
-        'lokasi_id',
+        'kategoris_id',
+        'lokasis_id',
         'tanggal',
         'jenis_perubahan',
         'deskripsi',
@@ -54,25 +58,25 @@ class riwayat extends Model
     // Definisikan relasi dengan model Aset
     public function aset()
     {
-        return $this->belongsTo(Aset::class, 'aset_id', 'id');
+        return $this->belongsTo(Aset::class, 'asets_id', 'id');
     }
 
     // Definisikan relasi dengan model Kategori
-    public function kategori()
+    public function kategoris()
     {
-        return $this->belongsTo(Kategori::class, 'kategori_id', 'id');
+        return $this->belongsTo(Kategori::class, 'kategoris_id', 'id');
     }
 
     // Definisikan relasi dengan model Lokasi
-    public function lokasi()
+    public function lokasis()
     {
-        return $this->belongsTo(Lokasi::class, 'lokasi_id', 'id');
+        return $this->belongsTo(Lokasi::class, 'lokasis_id', 'id');
     }
 
     // Definisikan relasi dengan model User
-    public function user()
+    public function users()
     {
-        return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->belongsTo(User::class, 'users_id', 'id');
     }
 }
 

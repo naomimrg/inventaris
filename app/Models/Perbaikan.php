@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Aset;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,12 +21,12 @@ class Perbaikan extends Model
         'asset_id',
     ];
 
-    public function user()
+    public function users()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function asset()
+    public function aset()
     {
         return $this->belongsTo(Aset::class, 'asset_id');
     }

@@ -13,8 +13,10 @@ class RiwayatController extends Controller
      */
     public function index()
     {
+        $kategoris = Kategori::all();
+        $lokasis = Lokasi::all();
         $riwayat = Riwayat::orderBy('created_at', 'DESC')->get();
-        return view('riwayats.index', compact('riwayat'));
+        return view('riwayats.index', compact('riwayat', 'kategoris', 'lokasis'));
     }
 
     /**
@@ -50,8 +52,10 @@ class RiwayatController extends Controller
      */
     public function edit(string $id)
     {
+        $kategoris = Kategori::all();
+        $lokasis = Lokasi::all();
         $riwayat = riwayat::findOrFail($id);
-        return view('riwayats.edit', compact('riwayat'));
+        return view('riwayats.edit', compact('riwayat','kategoris', 'lokasis'));
     }
 
     /**

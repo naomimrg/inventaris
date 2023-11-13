@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Aset;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,7 +19,7 @@ class Kerusakan extends Model
         'status',
     ];
 
-    public function asset()
+    public function aset()
     {
         return $this->belongsTo(Aset::class);
     }

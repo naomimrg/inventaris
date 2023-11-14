@@ -15,7 +15,7 @@
     <table class="table table-hover">
         <thead class="table-primary">
             <tr>
-                <th>Nama</th>
+                <th>No</th>
                 <th>Nama Lokasi</th>
                 <th>Deskripsi</th>
                 <th>Aksi</th>

@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('nama');
             $table->string('kode_aset')->unique();
             $table->date('tanggal_pembelian');
-            $table->foreignId('kategori_id')->nullable();
-            $table->foreignId('lokasi_id')->nullable();
+            $table->foreignId('kategoris_id')->nullable();
+            $table->foreignId('lokasis_id')->nullable();
             $table->integer('harga');
             $table->text('deskripsi');
             $table->timestamps();

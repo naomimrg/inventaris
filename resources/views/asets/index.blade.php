@@ -31,8 +31,8 @@
                         <td class="align-middle">{{ $loop->iteration }}</td>
                         <td class="align-middle">{{ $rs->nama }}</td>
                         <td class="align-middle">{{ $rs->kode_aset }}</td>
-                        <td class="align-middle">{{ $rs->kategoris }}</td>
-                        <td class="align-middle">{{ $rs->lokasis }}</td>
+                        <td class="align-middle">{{ $rs->kategoris->nama_kategori }}</td>
+<td class="align-middle">{{ $rs->lokasis->nama_lokasi }}</td>
                         <td class="align-middle">{{ $rs->harga }}</td>
                         <td class="align-middle">{{ $rs->deskripsi }}</td>
                         <td class="align-middle">

@@ -44,7 +44,7 @@ class AsetController extends Controller
      */
     public function show(string $id)
     {
-        $aset= Aset::findOrFail($id);
+        $aset = Aset::findOrFail($id);
         return view('asets.show', compact('aset'));
     }
 

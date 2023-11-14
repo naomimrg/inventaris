@@ -12,16 +12,17 @@ class Aset extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama', 
-        'kode_aset', 
+        'nama',
+        'kode_aset',
         'tanggal_pembelian',
-        'kategori', 
-        'lokasi', 
-        'harga', 
-        'deskripsi',  
-        'user_id', 
-        'kategori_id', 
-        'lokasi_id'];
+        'kategori',
+        'lokasi',
+        'harga',
+        'deskripsi',
+        'user_id',
+        'kategoris_id',
+        'lokasis_id'
+    ];
 
     public function users()
     {

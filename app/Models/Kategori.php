@@ -20,8 +20,8 @@ class Kategori extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function aset()
+    public function asets()
     {
-        return $this->hasMany(Aset::class);
+        return $this->hasMany(Aset::class, 'kategoris_id');
     }
 }

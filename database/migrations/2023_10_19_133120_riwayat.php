@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('riwayat', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('aset_id');
+            $table->unsignedBigInteger('asets_id');
             $table->string('kode_aset')->unique();
-            $table->unsignedBigInteger('kategori_id'); 
-            $table->unsignedBigInteger('lokasi_id');
+            $table->unsignedBigInteger('kategoris_id'); 
+            $table->unsignedBigInteger('lokasis_id');
             $table->date('tanggal');
             $table->enum('jenis_perubahan', ['Pembelian, Pemindahtanganan, Perbaikan']);
-            $table->text('deskripsi'); // Deskripsi perubahan
-            $table->unsignedBigInteger('user_id'); // ID pengguna yang bertanggung jawab
+            $table->text('deskripsi');
             $table->enum('status', ['Baik, Rusak, Hilang']);
             $table->text('catatan_tambahan')->nullable();
             $table->timestamps();

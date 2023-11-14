@@ -18,8 +18,8 @@ return new class extends Migration
             $table->date('tanggal_permintaan_perbaikan');
             $table->text('deskripsi');
             $table->enum('status', ['Belum Diperbaiki', 'Sedang Diperbaiki', 'Sudah Diperbaiki']);
-            $table->foreignId('users_id')->constrained('users'); // Tambahkan constrained() untuk kunci asing ke tabel 'users'
-            $table->foreignId('asets_id')->constrained('asets'); // Tambahkan constrained() untuk kunci asing ke tabel 'assets'
+            $table->foreignId('users_id')->constrained('users'); 
+            $table->foreignId('asets_id')->constrained('asets');
             $table->timestamps();
         });
     }

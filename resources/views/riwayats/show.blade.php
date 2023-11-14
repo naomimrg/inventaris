@@ -32,10 +32,6 @@
             <textarea class="form-control" name="deskripsi" placeholder="" readonly>{{ $kategori->deskripsi }}</textarea>
         </div>
         <div class="col mb-3">
-            <label class="form-label">Nama Pengguna</label>
-            <input type="text" name="users_id" class="form-control" placeholder="" value="{{ $kategori->users_id }}" readonly>
-        </div>
-        <div class="col mb-3">
             <label class="form-label">Status</label>
             <input type="text" name="status" class="form-control" placeholder="" value="{{ $kategori->status }}" readonly>
         </div>

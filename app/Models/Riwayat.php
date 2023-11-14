@@ -16,14 +16,13 @@ class riwayat extends Model
     protected $table = 'riwayat';
 
     protected $fillable = [
-        'aset_id',
+        'asets_id',
         'kode_aset',
         'kategoris_id',
         'lokasis_id',
         'tanggal',
         'jenis_perubahan',
         'deskripsi',
-        'user_id',
         'status',
         'catatan_tambahan',
     ];
@@ -72,11 +71,4 @@ class riwayat extends Model
     {
         return $this->belongsTo(Lokasi::class, 'lokasis_id', 'id');
     }
-
-    // Definisikan relasi dengan model User
-    public function users()
-    {
-        return $this->belongsTo(User::class, 'users_id', 'id');
-    }
 }
-

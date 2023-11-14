@@ -22,7 +22,6 @@
                 <th>Tanggal</th>
                 <th>Jenis Perubahan</th>
                 <th>Deskripsi</th>
-                <th>Pengguna</th>
                 <th>Status</th>
                 <th>Catatan Tambahan</th>
                 <th>Aksi</th>
@@ -40,7 +39,6 @@
                         <td class="align-middle">{{ $rs->tanggal }}</td>
                         <td class="align-middle">{{ $rs->jenis_perubahan }}</td>
                         <td class="align-middle">{{ $rs->deskripsi }}</td>
-                        <td class="align-middle">{{ $rs->user_id }}</td>
                         <td class="align-middle">{{ $rs->status }}</td>
                         <td class="align-middle">{{ $rs->catatan_tambahan }}</td>
                         <td class="align-middle">

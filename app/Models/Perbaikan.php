@@ -18,7 +18,7 @@ class Perbaikan extends Model
         'deskripsi',
         'status',
         'user_id',
-        'asset_id',
+        'asets_id',
     ];
 
     public function users()

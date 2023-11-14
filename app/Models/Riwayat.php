@@ -54,21 +54,18 @@ class riwayat extends Model
         $this->attributes['status'] = strtolower($value);
     }
     
-    // Definisikan relasi dengan model Aset
-    public function aset()
+    public function asets()
     {
-        return $this->belongsTo(Aset::class, 'asets_id', 'id');
+        return $this->belongsTo(Aset::class, 'asets_id');
     }
 
-    // Definisikan relasi dengan model Kategori
     public function kategoris()
     {
-        return $this->belongsTo(Kategori::class, 'kategoris_id', 'id');
+        return $this->belongsTo(Kategori::class, 'kategoris_id');
     }
 
-    // Definisikan relasi dengan model Lokasi
     public function lokasis()
     {
-        return $this->belongsTo(Lokasi::class, 'lokasis_id', 'id');
+        return $this->belongsTo(Lokasi::class, 'lokasis_id');
     }
 }

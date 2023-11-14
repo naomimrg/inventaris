@@ -16,11 +16,11 @@
         </div>
         <div class="col mb-3">
             <label class="form-label">Kategori</label>
-            <input type="text" name="kategoris_id" class="form-control" placeholder="" value="{{ $aset->kategoris }}" readonly>
+            <input type="text" name="kategoris_id" class="form-control" placeholder="" value="{{ $aset->kategoris->nama_kategori }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Lokasi</label>
-            <input type="text" name="lokasis_id" class="form-control" placeholder="" value="{{ $aset->lokasis_id }}" readonly>
+            <input type="text" name="lokasis_id" class="form-control" placeholder="" value="{{ $aset->lokasis->nama_lokasi }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Harga</label>

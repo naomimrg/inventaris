@@ -15,8 +15,8 @@ class RiwayatController extends Controller
     {
         $kategoris = Kategori::all();
         $lokasis = Lokasi::all();
-        $riwayat = Riwayat::orderBy('created_at', 'DESC')->get();
-        return view('riwayats.index', compact('riwayat', 'kategoris', 'lokasis'));
+        $riwayats = Riwayat::orderBy('created_at', 'DESC')->get();
+        return view('riwayats.index', compact('riwayats', 'kategoris', 'lokasis'));
     }
 
     /**
@@ -35,7 +35,7 @@ class RiwayatController extends Controller
     public function store(Request $request)
     {
         Riwayat::create($request->all());
-        return redirect()->route('riwayats.index')->with('success', 'Riwayat added successfully');
+        return redirect()->route('riwayats')->with('success', 'Riwayat added successfully');
     }
 
     /**
@@ -43,8 +43,8 @@ class RiwayatController extends Controller
      */
     public function show(string $id)
     {
-        $riwayat= Riwayat::findOrFail($id);
-        return view('riwayats.show', compact('riwayat'));
+        $riwayats= Riwayat::findOrFail($id);
+        return view('riwayats.show', compact('riwayats'));
     }
 
     /**
@@ -54,8 +54,8 @@ class RiwayatController extends Controller
     {
         $kategoris = Kategori::all();
         $lokasis = Lokasi::all();
-        $riwayat = riwayat::findOrFail($id);
-        return view('riwayats.edit', compact('riwayat','kategoris', 'lokasis'));
+        $riwayats = riwayat::findOrFail($id);
+        return view('riwayats.edit', compact('riwayats','kategoris', 'lokasis'));
     }
 
     /**
@@ -63,8 +63,8 @@ class RiwayatController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $riwayat = Riwayat::findOrFail($id);
-        $riwayat->update($request->all());
+        $riwayats = Riwayat::findOrFail($id);
+        $riwayats->update($request->all());
         return redirect()->route('riwayats')->with('success', 'Riwayat Updated Successfully');
     }
 
@@ -73,8 +73,8 @@ class RiwayatController extends Controller
      */
     public function destroy(string $id)
     {
-        $riwayat = Riwayat::findOrFail($id);
-        $riwayat->delete();
+        $riwayats = Riwayat::findOrFail($id);
+        $riwayats->delete();
         return redirect()->route('riwayats')->with('success', 'Riwayat Deleted Successfully');
     }
 }

@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('riwayat', function (Blueprint $table) {
+        Schema::create('riwayats', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('asets_id');
+            $table->string('nama');
             $table->string('kode_aset')->unique();
             $table->unsignedBigInteger('kategoris_id'); 
             $table->unsignedBigInteger('lokasis_id');
             $table->date('tanggal');
-            $table->enum('jenis_perubahan', ['Pembelian, Pemindahtanganan, Perbaikan']);
+            $table->enum('jenis_perubahan', ['Pembelian', 'Pemindahtanganan', 'Perbaikan']);
             $table->text('deskripsi');
-            $table->enum('status', ['Baik, Rusak, Hilang']);
+            $table->enum('status', ['Baik', 'Rusak', 'Hilang']);
             $table->text('catatan_tambahan')->nullable();
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('riwayat');
+        Schema::dropIfExists('riwayats');
     }
 };

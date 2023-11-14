@@ -85,7 +85,7 @@ Route::middleware(['auth'])->group(function () {
             Route::delete('destroy/{id}', 'destroy')->name('perbaikans.destroy');
         });
 
-        Route::controller(RiwayatController::class)->prefix('riwayat')->group(function () {
+        Route::controller(RiwayatController::class)->prefix('riwayats')->group(function () {
             Route::get('', 'index')->name('riwayats');
             Route::get('create', 'create')->name('riwayats.create');
             Route::post('store', 'store')->name('riwayats.store');

@@ -28,14 +28,14 @@
             </tr>
         </thead>
         <tbody>
-            @if($riwayat->count() > 0)
-                @foreach($riwayat as $rs)
+            @if($riwayats->count() > 0)
+                @foreach($riwayats as $rs)
                     <tr>
                         <td class="align-middle">{{ $loop->iteration }}</td>
                         <td class="align-middle">{{ $rs->nama }}</td>
                         <td class="align-middle">{{ $rs->kode_aset }}</td>
-                        <td class="align-middle">{{ $rs->kategori_id }}</td>
-                        <td class="align-middle">{{ $rs->lokasi_id }}</td>
+                        <td class="align-middle">{{ $rs->kategoris->nama_kategori }}</td>
+                        <td class="align-middle">{{ $rs->lokasis->nama_lokasi }}</td>
                         <td class="align-middle">{{ $rs->tanggal }}</td>
                         <td class="align-middle">{{ $rs->jenis_perubahan }}</td>
                         <td class="align-middle">{{ $rs->deskripsi }}</td>

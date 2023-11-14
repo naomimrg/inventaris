@@ -13,10 +13,10 @@ class riwayat extends Model
 {
     use HasFactory;
 
-    protected $table = 'riwayat';
+    protected $table = 'riwayats';
 
     protected $fillable = [
-        'asets_id',
+        'nama',
         'kode_aset',
         'kategoris_id',
         'lokasis_id',
@@ -27,28 +27,23 @@ class riwayat extends Model
         'catatan_tambahan',
     ];
 
-    // Daftar nilai yang diperbolehkan untuk kolom 'jenis_perubahan' dan 'status'.
     protected $enumColumns = ['jenis_perubahan', 'status'];
 
-    // Getter untuk mengambil nilai 'jenis_perubahan' dalam huruf kapital.
     public function getJenisPerubahanAttribute($value)
     {
         return ucfirst($value);
     }
 
-    // Getter untuk mengambil nilai 'status' dalam huruf kapital.
     public function getStatusAttribute($value)
     {
         return ucfirst($value);
     }
 
-    // Setter untuk menyimpan nilai 'jenis_perubahan' dalam huruf kecil.
     public function setJenisPerubahanAttribute($value)
     {
         $this->attributes['jenis_perubahan'] = strtolower($value);
     }
 
-    // Setter untuk menyimpan nilai 'status' dalam huruf kecil.
     public function setStatusAttribute($value)
     {
         $this->attributes['status'] = strtolower($value);

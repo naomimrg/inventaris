@@ -43,27 +43,27 @@ class KerusakanController extends Controller
     public function show(string $id)
     {
         $kerusakans = Kerusakan::findOrFail($id);
-        return view('kerusakans.show', compact('kerusakan'));
+        return view('kerusakans.show', compact('kerusakans'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        $kerusakans = Kerusakan::findOrFail($id);
-        return view('kerusakans.edit', compact('kerusakan'));
-    }
+    // public function edit(string $id)
+    // {
+    //     $kerusakans = Kerusakan::findOrFail($id);
+    //     return view('kerusakans.edit', compact('kerusakans'));
+    // }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        $kerusakans = Kerusakan::findOrFail($id);
-        $kerusakans->update($request->all());
-        return redirect()->route('kerusakans')->with('success', 'Kerusakan Aset Berhasil Diperbaharui');
-    }
+    // public function update(Request $request, string $id)
+    // {
+    //     $kerusakans = Kerusakan::findOrFail($id);
+    //     $kerusakans->update($request->all());
+    //     return redirect()->route('kerusakans')->with('success', 'Kerusakan Aset Berhasil Diperbaharui');
+    // }
 
     /**
      * Remove the specified resource from storage.

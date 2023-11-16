@@ -41,7 +41,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('create', 'create')->name('peminjamans.create');
         Route::post('store', 'store')->name('peminjamans.store');
         Route::get('show/{id}', 'show')->name('peminjamans.show');
+        Route::get('edit/{id}', 'edit')->name('peminjamans.edit');
+        Route::put('edit/{id}', 'update')->name('peminjamans.update');
         Route::delete('destroy/{id}', 'destroy')->name('peminjamans.destroy');
+        Route::patch('approve/{id}', 'approve')->name('peminjamans.approve');
+        Route::patch('reject/{id}', 'reject')->name('peminjamans.reject');
     });
 
     Route::controller(KerusakanController::class)->prefix('kerusakans')->group(function () {

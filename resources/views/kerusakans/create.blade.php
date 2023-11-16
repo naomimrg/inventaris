@@ -5,13 +5,13 @@
     <form action="{{ route('kerusakans.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
-            <label for="user_id" class="form-label">Nama Pengguna</label>
-            <input type="string" name="user_id" class="form-control" id="user_id" placeholder="">
+            <label for="nama_pelapor" class="form-label">Nama Pelapor</label>
+            <input type="string" name="nama_pelapor" class="form-control" id="nama_pelapor" placeholder="">
         </div>
         <div class="mb-3">
             <label for="asets_id" class="form-label">Nama Aset</label>
             <div class="input-group">
-                <select name="asets_id" class="form-select" id="asets_id" style="width: 100%;">
+                <select name="asets_id" class="form-control">
                     <option value=""></option>
                     @foreach ($asets as $rs)
                         <option value="{{ $rs->id }}">{{ $rs->nama }}</option>
@@ -28,7 +28,7 @@
         <div class="mb-3">
             <label for="lokasis_id" class="form-label">Lokasi</label>
             <div class="input-group">
-                <select name="lokasis_id" class="form-select" id="lokasis_id" style="width: 100%;">
+                <select name="lokasis_id" class="form-control">
                     <option value=""></option>
                     @foreach ($lokasis as $rs)
                         <option value="{{ $rs->id }}">{{ $rs->nama_lokasi }}</option>

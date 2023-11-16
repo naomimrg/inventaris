@@ -14,6 +14,7 @@
         <thead class="table-primary">
             <tr>
                 <th>No</th>
+                <th>Nama Peminjam</th>
                 <th>Nama</th>
                 <th>Kode Aset</th>
                 <th>Tanggal Peminjaman</th>
@@ -27,39 +28,36 @@
                 @foreach ($peminjamen as $rs)
                     <tr>
                         <td class="align-middle">{{ $loop->iteration }}</td>
-                        <td class="align-middle">{{ $rs->nama }}</td>
+                        <td class="align-middle">{{ $rs->nama_peminjam }}</td>
+                        <td class="align-middle">{{ $rs->asets->nama }}</td>
                         <td class="align-middle">{{ $rs->kode_aset }}</td>
                         <td class="align-middle">{{ $rs->tanggal_peminjaman }}</td>
                         <td class="align-middle">{{ $rs->tanggal_pengembalian }}</td>
                         <td class="align-middle">{{ $rs->keterangan }}</td>
+                        <!-- Tambahkan ini di dalam loop foreach untuk setiap entri peminjaman -->
                         <td class="align-middle">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a href="{{ route('peminjamans.show', $rs->id) }}" type="button"
                                     class="btn btn-secondary">Detail</a>
                                 <a href="{{ route('peminjamans.edit', $rs->id) }}" type="button"
                                     class="btn btn-warning">Edit</a>
-                                <!-- Formulir untuk menyetujui peminjaman -->
+
+                                <!-- Tombol untuk menyetujui peminjaman -->
                                 <form action="{{ route('peminjamans.approve', $rs->id) }}" method="POST" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-success">Approve</button>
+                                    @method('PATCH')
+                                    <button type="submit" class="btn btn-success">Setujui</button>
                                 </form>
 
-                                <!-- Formulir untuk menolak peminjaman -->
+                                <!-- Tombol untuk menolak peminjaman -->
                                 <form action="{{ route('peminjamans.reject', $rs->id) }}" method="POST" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="btn btn-danger"
-                                        onclick="return confirm('Are you sure you want to reject this loan?')">Reject</button>
-                                </form>
-
-                                <!-- Formulir untuk menghapus peminjaman -->
-                                <form action="{{ route('peminjamans.destroy', $rs->id) }}" method="POST" class="d-inline"
-                                    onsubmit="return confirm('Delete?')">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    @method('PATCH')
+                                    <button type="submit" class="btn btn-danger">Tolak</button>
                                 </form>
                             </div>
                         </td>
+
                     </tr>
                 @endforeach
             @else

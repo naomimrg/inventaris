@@ -12,19 +12,14 @@ class Peminjaman extends Model
     use HasFactory;
 
     protected $fillable = [
+        'nama_peminjam',
         'nama',
         'kode_aset',
         'tanggal_peminjaman',
         'tanggal_pengembalian',
         'keterangan',
-        'users_id',
         'asets_id',
     ];
-
-    public function users()
-    {
-        return $this->belongsTo(User::class);
-    }
 
     public function asets()
     {

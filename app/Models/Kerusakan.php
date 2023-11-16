@@ -11,10 +11,10 @@ class Kerusakan extends Model
     use HasFactory;
 
     protected $fillable = [
-        'users_id',
+        'nama_pelapor',
         'asets_id',
         'tanggal_laporan',
-        'lokasi_kerusakan',
+        'lokasis_id',
         'deskripsi_kerusakan',
         'status',
     ];
@@ -22,6 +22,11 @@ class Kerusakan extends Model
     public function asets()
     {
         return $this->belongsTo(Aset::class, 'asets_id');
+    }
+
+    public function lokasis()
+    {
+        return $this->belongsTo(Lokasi::class, 'lokasis_id');
     }
 }
  

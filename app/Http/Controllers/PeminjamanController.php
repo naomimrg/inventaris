@@ -72,4 +72,20 @@ class PeminjamanController extends Controller
         $peminjaman->delete();
         return redirect()->route('peminjamans')->with('success', 'Peminjaman Aset Berhasil Dihapus');
     }
+
+    public function approve($id)
+    {
+        $peminjaman = Peminjaman::findOrFail($id);
+        $peminjaman->update(['status' => 'approved']);
+
+        return redirect()->route('peminjamans')->with('success', 'Peminjaman disetujui');
+    }
+
+    public function reject($id)
+    {
+        $peminjaman = Peminjaman::findOrFail($id);
+        $peminjaman->update(['status' => 'rejected']);
+
+        return redirect()->route('peminjamans')->with('success', 'Peminjaman ditolak');
+    }
 }

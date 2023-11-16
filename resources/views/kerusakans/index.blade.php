@@ -13,10 +13,10 @@
         <thead class="table-primary">
             <tr>
                 <th>No</th>
+                <th>Nama Pelapor</th>
                 <th>Nama Aset</th>
                 <th>Lokasi</th>
                 <th>Deskripsi Kerusakan</th>
-                <th>Nama Pelapor</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -25,14 +25,14 @@
                 @foreach($kerusakans as $rs)
                     <tr>
                         <td class="align-middle">{{ $loop->iteration }}</td>
-                        <td class="align-middle">{{ $rs->asets_id }}</td>
-                        <td class="align-middle">{{ $rs->lokasis_id }}</td>
+                        <td class="align-middle">{{ $rs->nama_pelapor }}</td>
+                        <td class="align-middle">{{ $rs->asets->nama }}</td>
+                        <td class="align-middle">{{ $rs->lokasis->nama_lokasi }}</td>
                         <td class="align-middle">{{ $rs->deskripsi_kerusakan }}</td>
-                        <td class="align-middle">{{ $rs->user_id }}</td>
                         <td class="align-middle">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a href="{{ route('kerusakans.show', $rs->id) }}" type="button" class="btn btn-secondary"> <i class="fas fa-eye"></i> </a>
-                                <a href="{{ route('kerusakans.edit', $rs->id) }}" type="button" class="btn btn-warning ml-1"> <i class="fas fa-edit"></i> </a>
+                                {{-- <a href="{{ route('kerusakans.edit', $rs->id) }}" type="button" class="btn btn-warning ml-1"> <i class="fas fa-edit"></i> </a> --}}
                                 <form action="{{ route('kerusakans.destroy', $rs->id) }}" method="POST" type="button" class="btn btn-danger p-0 ml-1"
                                     onsubmit="return confirm('Delete?')">
                                     @csrf

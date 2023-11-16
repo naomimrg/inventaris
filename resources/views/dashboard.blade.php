@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <i class="fas fa-dollar-sign fa-2x"></i>
                     <h5 class="card-title">Total Aset</h5>
-                    <p class="card-text">{{ $totalAset }}</p>
+                    <div class="card-text">{{$aset_count}}</div>
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
                 <div class="card-body">
                     <i class="fas fa-exclamation-circle fa-2x"></i>
                     <h5 class="card-title">Total Laporan Kerusakan</h5>
-                    <p class="card-text">{{ $totalKerusakan }}</p>
+                    <p class="card-text">{{$kerusakan_count}}</p>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                 <div class="card-body">
                     <i class="fas fa-shopping-cart fa-2x"></i>
                     <h5 class="card-title">Total Peminjaman Aset</h5>
-                    <p class="card-text">{{ $totalPeminjaman }}</p>
+                    <p class="card-text">{{$peminjaman_count}}</p>
                 </div>
             </div>
         </div>

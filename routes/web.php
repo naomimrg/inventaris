@@ -17,13 +17,15 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/', [SesiController::class, 'login']);
 });
 
-Route::get('/home', function () {
-    return redirect('/dashboard');
-});
+// Route::get('/home', function () {
+//     return redirect('/dashboard');
+// });
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/auth', [AuthController::class, 'index']);
     Route::get('/logout', [SesiController::class, 'logout'])->name('logout');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/profile', [SesiController::class, 'profile'])->name('profile');
 });
 
     Route::controller(AsetController::class)->prefix('asets')->group(function () {
@@ -104,5 +106,5 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/auth/staf_aset', [AuthController::class, 'staf_aset']);
     });
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/profile', [SesiController::class, 'profile'])->name('profile');
+    // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    // Route::get('/profile', [SesiController::class, 'profile'])->name('profile');

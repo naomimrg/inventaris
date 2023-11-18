@@ -9,6 +9,9 @@ class SesiController extends Controller
 {
     function index()
     {
+        if (Auth::check()) {
+            return redirect()->route('dashboard');
+        }
         return view('login');
     }
 

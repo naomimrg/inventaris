@@ -12,11 +12,11 @@ class PeminjamanStafController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $peminjamans = Peminjaman::where('nama_peminjam', $user->name)
+        $peminjaman = Peminjaman::where('nama_peminjam', $user->name)
             ->orderBy('created_at', 'DESC')
             ->get();
 
-        return view('peminjamans_staf.index', compact('peminjamans'));
+        return view('peminjaman_staf.index', compact('peminjaman'));
     }
 
     public function create()
@@ -51,5 +51,12 @@ class PeminjamanStafController extends Controller
         $peminjaman = Peminjaman::findOrFail($id);
         $peminjaman->update($request->all());
         return redirect()->route('peminjamans_staf.index')->with('success', 'Data Peminjaman berhasil diperbarui');
+    }
+
+    public function destroy(string $id)
+    {
+        $peminjaman = Peminjaman::findOrFail($id);
+        $peminjaman->delete();
+        return redirect()->route('peminjaman')->with('success', 'Kerusakan Aset Berhasil Dihapus');
     }
 }

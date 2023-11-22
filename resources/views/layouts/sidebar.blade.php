@@ -39,13 +39,13 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('kerusakans') }}">
+      <a class="nav-link" href="{{ route('kerusakans.index') }}">
         <i class="fas fa-fire"></i>
         <span>Laporan Kerusakan Aset</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('peminjamans') }}">
+      <a class="nav-link" href="{{ route('peminjamans.index') }}">
         <i class="fas fa-arrow-up"></i>
         <span>Peminjaman Aset</span>
       </a>
@@ -72,13 +72,13 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('kerusakans_staf.index') }}">
+      <a class="nav-link" href="{{ route('kerusakan_staf.index') }}">
         <i class="fas fa-fire"></i>
         <span>Laporan Kerusakan Aset</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('peminjamans_staf.index') }}">
+      <a class="nav-link" href="{{ route('peminjaman_staf.index') }}">
         <i class="fas fa-arrow-up"></i>
         <span>Peminjaman Aset</span>
       </a>

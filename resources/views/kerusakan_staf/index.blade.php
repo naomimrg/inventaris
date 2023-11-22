@@ -3,7 +3,7 @@
 @section('contents')
     <div class="d-flex align-items-center justify-content-between mb-3">
         <h1></h1>
-        <a href="{{ route('kerusakans.create') }}" class="btn btn-primary">Tambah Laporan Kerusakan</a>
+        <a href="{{ route('kerusakan_staf.create') }}" class="btn btn-primary">Tambah Laporan Kerusakan</a>
     </div>
     <hr />
     @if (Session::has('success'))
@@ -23,8 +23,8 @@
             </tr>
         </thead>
         <tbody>
-            @if ($kerusakans->count() > 0)
-                @foreach ($kerusakans as $rs)
+            @if ($kerusakan->count() > 0)
+                @foreach ($kerusakan as $rs)
                     <tr>
                         <td class="align-middle">{{ $loop->iteration }}</td>
                         <td class="align-middle">{{ $rs->nama_pelapor }}</td>
@@ -33,11 +33,11 @@
                         <td class="align-middle">{{ $rs->deskripsi_kerusakan }}</td>
                         <td class="align-middle">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="{{ route('kerusakans_staf.show', $rs->id) }}" type="button"
+                                <a href="{{ route('kerusakan_staf.show', $rs->id) }}" type="button"
                                     class="btn btn-secondary"> <i class="fas fa-eye"></i> </a>
-                                <a href="{{ route('kerusakans_staf.edit', $rs->id) }}" type="button"
+                                <a href="{{ route('kerusakan_staf.edit', $rs->id) }}" type="button"
                                     class="btn btn-warning ml-1"> <i class="fas fa-edit"></i> </a>
-                                <form action="{{ route('kerusakans_staf.destroy', $rs->id) }}" method="POST" type="button"
+                                <form action="{{ route('kerusakan_staf.destroy', $rs->id) }}" method="POST" type="button"
                                     class="btn btn-danger p-0 ml-1" onsubmit="return confirm('Delete?')">
                                     @csrf
                                     @method('DELETE')

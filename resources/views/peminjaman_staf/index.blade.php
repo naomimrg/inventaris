@@ -3,7 +3,7 @@
 @section('contents')
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h1></h1>
-        <a href="{{ route('peminjamans.create') }}" class="btn btn-primary">Tambah Peminjaman</a>
+        <a href="{{ route('peminjaman_staf.create') }}" class="btn btn-primary">Tambah Peminjaman</a>
     </div>
     <hr />
     @if (Session::has('success'))
@@ -26,8 +26,8 @@
             </tr>
         </thead>
         <tbody>
-            @if ($peminjamans->count() > 0)
-                @foreach ($peminjamans as $rs)
+            @if ($peminjaman->count() > 0)
+                @foreach ($peminjaman as $rs)
                     <tr>
                         <td class="align-middle">{{ $loop->iteration }}</td>
                         <td class="align-middle">{{ $rs->nama_peminjam }}</td>
@@ -40,23 +40,15 @@
 
                         <td class="align-middle">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="{{ route('peminjamans.show', $rs->id) }}" type="button"
+                                <a href="{{ route('peminjaman_staf.show', $rs->id) }}" type="button"
                                     class="btn btn-secondary">Detail</a>
-                                <a href="{{ route('peminjamans.edit', $rs->id) }}" type="button"
+                                <a href="{{ route('peminjaman_staf.edit', $rs->id) }}" type="button"
                                     class="btn btn-warning">Edit</a>
-
-                                <!-- Tombol untuk menyetujui peminjaman -->
-                                <form action="{{ route('peminjamans.approve', $rs->id) }}" method="POST" class="d-inline">
+                                <form action="{{ route('peminjaman_staf.destroy', $rs->id) }}" method="POST" type="button"
+                                    class="btn btn-danger p-0 ml-1" onsubmit="return confirm('Delete?')">
                                     @csrf
-                                    @method('PATCH')
-                                    <button type="submit" class="btn btn-success">Setujui</button>
-                                </form>
-
-                                <!-- Tombol untuk menolak peminjaman -->
-                                <form action="{{ route('peminjamans.reject', $rs->id) }}" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('PATCH')
-                                    <button type="submit" class="btn btn-danger">Tolak</button>
+                                    @method('DELETE')
+                                    <button class="btn btn-danger m-0"> <i class="fas fa-trash-alt"></i> </button>
                                 </form>
                             </div>
                         </td>

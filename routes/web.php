@@ -41,18 +41,6 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('asets.destroy');
     });
 
-    Route::controller(PeminjamanController::class)->prefix('peminjamans')->group(function () {
-        Route::get('', 'index')->name('peminjamans');
-        Route::get('create', 'create')->name('peminjamans.create');
-        Route::post('store', 'store')->name('peminjamans.store');
-        Route::get('show/{id}', 'show')->name('peminjamans.show');
-        Route::get('edit/{id}', 'edit')->name('peminjamans.edit');
-        Route::put('edit/{id}', 'update')->name('peminjamans.update');
-        Route::delete('destroy/{id}', 'destroy')->name('peminjamans.destroy');
-        Route::patch('approve/{id}', 'approve')->name('peminjamans.approve');
-        Route::patch('reject/{id}', 'reject')->name('peminjamans.reject');
-    });
-
     Route::middleware(['userAkses:admin'])->group(function () {
         Route::get('/auth/admin', [AuthController::class, 'admin']);
     
@@ -77,7 +65,7 @@ Route::middleware(['auth'])->group(function () {
         });
 
         Route::controller(KerusakanController::class)->prefix('kerusakans')->group(function () {
-            Route::get('', 'index')->name('kerusakans');
+            Route::get('', 'index')->name('kerusakans.index');
             Route::get('create', 'create')->name('kerusakans.create');
             Route::post('store', 'store')->name('kerusakans.store');
             Route::get('show/{id}', 'show')->name('kerusakans.show');
@@ -103,28 +91,40 @@ Route::middleware(['auth'])->group(function () {
             Route::put('edit/{id}', 'update')->name('riwayats.update');
             Route::delete('destroy/{id}', 'destroy')->name('riwayats.destroy');
         });
-    });
 
-    Route::middleware(['userAkses:staf_aset'])->group(function () {
-        Route::get('/auth/staf_aset', [AuthController::class, 'staf_aset']);
-
-        Route::controller(PeminjamanStafController::class)->prefix('peminjamans')->group(function () {
-            Route::get('', 'index')->name('peminjamans_staf.index');
+        Route::controller(PeminjamanController::class)->prefix('peminjamans')->group(function () {
+            Route::get('', 'index')->name('peminjamans.index');
             Route::get('create', 'create')->name('peminjamans.create');
             Route::post('store', 'store')->name('peminjamans.store');
             Route::get('show/{id}', 'show')->name('peminjamans.show');
             Route::get('edit/{id}', 'edit')->name('peminjamans.edit');
             Route::put('edit/{id}', 'update')->name('peminjamans.update');
             Route::delete('destroy/{id}', 'destroy')->name('peminjamans.destroy');
+            Route::patch('approve/{id}', 'approve')->name('peminjamans.approve');
+            Route::patch('reject/{id}', 'reject')->name('peminjamans.reject');
         });
-        Route::controller(KerusakanStafController::class)->prefix('kerusakans')->group(function () {
-            Route::get('', 'index')->name('kerusakans_staf.index');
-            Route::get('create', 'create')->name('kerusakans.create');
-            Route::post('store', 'store')->name('kerusakans.store');
-            Route::get('show/{id}', 'show')->name('kerusakans.show');
-            Route::get('edit/{id}', 'edit')->name('kerusakans.edit');
-            Route::put('edit/{id}', 'update')->name('kerusakans.update');
-            Route::delete('destroy/{id}', 'destroy')->name('kerusakans.destroy');
+    });
+
+    Route::middleware(['userAkses:staf_aset'])->group(function () {
+        Route::get('/auth/staf_aset', [AuthController::class, 'staf_aset']);
+
+        Route::controller(PeminjamanStafController::class)->prefix('peminjaman')->group(function () {
+            Route::get('', 'index')->name('peminjaman_staf.index');
+            Route::get('create', 'create')->name('peminjaman_staf.create');
+            Route::post('store', 'store')->name('peminjaman_staf.store');
+            Route::get('show/{id}', 'show')->name('peminjaman_staf.show');
+            Route::get('edit/{id}', 'edit')->name('peminjaman_staf.edit');
+            Route::put('edit/{id}', 'update')->name('peminjaman_staf.update');
+            Route::delete('destroy/{id}', 'destroy')->name('peminjaman_staf.destroy');
+        });
+        Route::controller(KerusakanStafController::class)->prefix('kerusakan')->group(function () {
+            Route::get('', 'index')->name('kerusakan_staf.index');
+            Route::get('create', 'create')->name('kerusakan_staf.create');
+            Route::post('store', 'store')->name('kerusakan_staf.store');
+            Route::get('show/{id}', 'show')->name('kerusakan_staf.show');
+            Route::get('edit/{id}', 'edit')->name('kerusakan_staf.edit');
+            Route::put('edit/{id}', 'update')->name('kerusakan_staf.update');
+            Route::delete('destroy/{id}', 'destroy')->name('kerusakan_staf.destroy');
         });
 });
 

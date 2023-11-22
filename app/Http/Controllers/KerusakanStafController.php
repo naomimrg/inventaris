@@ -15,11 +15,11 @@ class KerusakanStafController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $kerusakans = Kerusakan::where('nama_pelapor', $user->name)
+        $kerusakan = Kerusakan::where('nama_pelapor', $user->name)
             ->orderBy('created_at', 'DESC')
             ->get();
 
-        return view('kerusakans_staf.index', compact('kerusakans'));
+        return view('kerusakan_staf.index', compact('kerusakan'));
     }
 
     /**
@@ -30,6 +30,12 @@ class KerusakanStafController extends Controller
         $asets = Aset::all();
         $lokasis = Lokasi::all();
         return view('kerusakans.create', compact('asets', 'lokasis'));
+    }
+
+    public function store(Request $request)
+    {
+        Kerusakan::create($request->all());
+        return redirect()->route('kerusakan')->with('success', 'Kerusakan Aset Berhasil Ditambahkan');
     }
 
     /**
@@ -58,5 +64,12 @@ class KerusakanStafController extends Controller
         $kerusakan = Kerusakan::findOrFail($id);
         $kerusakan->update($request->all());
         return redirect()->route('kerusakans_staf.index')->with('success', 'Data Kerusakan berhasil diperbarui');
+    }
+
+    public function destroy(string $id)
+    {
+        $kerusakan = Kerusakan::findOrFail($id);
+        $kerusakan->delete();
+        return redirect()->route('kerusakan')->with('success', 'Kerusakan Aset Berhasil Dihapus');
     }
 }

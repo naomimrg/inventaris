@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Riwayat Aset')
 @section('contents')
-    <div class="d-flex justify-content-between align-items-center mb-3">
+<div class="d-flex align-items-center justify-content-between mb-3">
         <h1></h1>
         <a href="{{ route('riwayats.create') }}" class="btn btn-primary">Tambah Riwayat</a>
     </div>
@@ -56,9 +56,9 @@
                     </tr>
                 @endforeach
             @else
-                <tr>
-                    <td class="text-center" colspan="7">Riwayat Aset Tidak Ditemukan</td>
-                </tr>
+            <tr>
+                <td class="text-center" colspan="7">Data Riwayat Aset Tidak Ditemukan</td>
+            </tr>
             @endif
         </tbody>
     </table>

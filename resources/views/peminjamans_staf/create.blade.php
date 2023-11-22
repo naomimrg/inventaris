@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Tambah Peminjaman Aset')
 @section('contents')
-<hr />
+    <hr />
     <form action="{{ route('peminjamans.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">

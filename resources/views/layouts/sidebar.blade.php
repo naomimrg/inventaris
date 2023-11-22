@@ -72,13 +72,13 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('kerusakans.create') }}">
+      <a class="nav-link" href="{{ route('kerusakans_staf.index') }}">
         <i class="fas fa-fire"></i>
         <span>Laporan Kerusakan Aset</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('peminjamans.create') }}">
+      <a class="nav-link" href="{{ route('peminjamans_staf.index') }}">
         <i class="fas fa-arrow-up"></i>
         <span>Peminjaman Aset</span>
       </a>

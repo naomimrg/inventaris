@@ -5,7 +5,7 @@
     <div>
         <div class="col mb-3">
             <label class="form-label">Nama</label>
-            <input type="text" name="nama" class="form-control" placeholder="Nama Aset" value="{{ $peminjamen->nama }}" readonly>
+            <input type="text" name="nama" class="form-control" placeholder="Nama Aset" value="{{ $peminjamen->asets->nama }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Kode Aset</label>

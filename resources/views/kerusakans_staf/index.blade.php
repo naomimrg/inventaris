@@ -1,9 +1,9 @@
 @extends('layouts.app')
-@section('title', 'Daftar Aset')
+@section('title', 'Kerusakan Aset')
 @section('contents')
     <div class="d-flex align-items-center justify-content-between mb-3">
         <h1></h1>
-        <a href="{{ route('asets.create') }}" class="btn btn-primary">Tambah Aset</a>
+        <a href="{{ route('kerusakans.create') }}" class="btn btn-primary">Tambah Laporan Kerusakan</a>
     </div>
     <hr />
     @if (Session::has('success'))
@@ -15,32 +15,30 @@
         <thead class="table-primary">
             <tr>
                 <th>No</th>
-                <th>Nama</th>
-                <th>Kode Aset</th>
-                <th>Kategori</th>
+                <th>Nama Pelapor</th>
+                <th>Nama Aset</th>
                 <th>Lokasi</th>
-                <th>Harga</th>
-                <th>Deskripsi</th>
+                <th>Deskripsi Kerusakan</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            @if ($aset->count() > 0)
-                @foreach ($aset as $rs)
+            @if ($kerusakans->count() > 0)
+                @foreach ($kerusakans as $rs)
                     <tr>
                         <td class="align-middle">{{ $loop->iteration }}</td>
-                        <td class="align-middle">{{ $rs->nama }}</td>
-                        <td class="align-middle">{{ $rs->kode_aset }}</td>
-                        <td class="align-middle">{{ $rs->kategoris->nama_kategori }}</td>
+                        <td class="align-middle">{{ $rs->nama_pelapor }}</td>
+                        <td class="align-middle">{{ $rs->asets->nama }}</td>
                         <td class="align-middle">{{ $rs->lokasis->nama_lokasi }}</td>
-                        <td class="align-middle">{{ $rs->harga }}</td>
-                        <td class="align-middle">{{ $rs->deskripsi }}</td>
+                        <td class="align-middle">{{ $rs->deskripsi_kerusakan }}</td>
                         <td class="align-middle">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="{{ route('asets.show', $rs->id) }}" type="button" class="btn btn-secondary"> <i class="fas fa-eye"></i> </a>
-                                <a href="{{ route('asets.edit', $rs->id) }}" type="button" class="btn btn-warning ml-1"> <i class="fas fa-edit"></i> </a>
-                                <form action="{{ route('asets.destroy', $rs->id) }}" method="POST" type="button" class="btn btn-danger p-0 ml-1"
-                                    onsubmit="return confirm('Delete?')">
+                                <a href="{{ route('kerusakans_staf.show', $rs->id) }}" type="button"
+                                    class="btn btn-secondary"> <i class="fas fa-eye"></i> </a>
+                                <a href="{{ route('kerusakans_staf.edit', $rs->id) }}" type="button"
+                                    class="btn btn-warning ml-1"> <i class="fas fa-edit"></i> </a>
+                                <form action="{{ route('kerusakans_staf.destroy', $rs->id) }}" method="POST" type="button"
+                                    class="btn btn-danger p-0 ml-1" onsubmit="return confirm('Delete?')">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger m-0"> <i class="fas fa-trash-alt"></i> </button>
@@ -51,7 +49,7 @@
                 @endforeach
             @else
                 <tr>
-                    <td class="text-center" colspan="7">Data Aset Tidak Ditemukan</td>
+                    <td class="text-center" colspan="7">Laporan Kerusakan Aset Tidak Ditemukan</td>
                 </tr>
             @endif
         </tbody>

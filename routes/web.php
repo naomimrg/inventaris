@@ -5,8 +5,10 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KerusakanController;
+use App\Http\Controllers\KerusakanStafController;
 use App\Http\Controllers\LokasiController;
 use App\Http\Controllers\PeminjamanController;
+use App\Http\Controllers\PeminjamanStafController;
 use App\Http\Controllers\PerbaikanController;
 use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\SesiController;
@@ -51,14 +53,6 @@ Route::middleware(['auth'])->group(function () {
         Route::patch('reject/{id}', 'reject')->name('peminjamans.reject');
     });
 
-    Route::controller(KerusakanController::class)->prefix('kerusakans')->group(function () {
-        Route::get('', 'index')->name('kerusakans');
-        Route::get('create', 'create')->name('kerusakans.create');
-        Route::post('store', 'store')->name('kerusakans.store');
-        Route::get('show/{id}', 'show')->name('kerusakans.show');
-        Route::delete('destroy/{id}', 'destroy')->name('kerusakans.destroy');
-    });
-
     Route::middleware(['userAkses:admin'])->group(function () {
         Route::get('/auth/admin', [AuthController::class, 'admin']);
     
@@ -80,6 +74,14 @@ Route::middleware(['auth'])->group(function () {
             Route::get('edit/{id}', 'edit')->name('lokasis.edit');
             Route::put('edit/{id}', 'update')->name('lokasis.update');
             Route::delete('destroy/{id}', 'destroy')->name('lokasis.destroy');
+        });
+
+        Route::controller(KerusakanController::class)->prefix('kerusakans')->group(function () {
+            Route::get('', 'index')->name('kerusakans');
+            Route::get('create', 'create')->name('kerusakans.create');
+            Route::post('store', 'store')->name('kerusakans.store');
+            Route::get('show/{id}', 'show')->name('kerusakans.show');
+            Route::delete('destroy/{id}', 'destroy')->name('kerusakans.destroy');
         });
 
         Route::controller(PerbaikanController::class)->prefix('perbaikans')->group(function () {
@@ -105,7 +107,26 @@ Route::middleware(['auth'])->group(function () {
 
     Route::middleware(['userAkses:staf_aset'])->group(function () {
         Route::get('/auth/staf_aset', [AuthController::class, 'staf_aset']);
-    });
+
+        Route::controller(PeminjamanStafController::class)->prefix('peminjamans')->group(function () {
+            Route::get('', 'index')->name('peminjamans_staf.index');
+            Route::get('create', 'create')->name('peminjamans.create');
+            Route::post('store', 'store')->name('peminjamans.store');
+            Route::get('show/{id}', 'show')->name('peminjamans.show');
+            Route::get('edit/{id}', 'edit')->name('peminjamans.edit');
+            Route::put('edit/{id}', 'update')->name('peminjamans.update');
+            Route::delete('destroy/{id}', 'destroy')->name('peminjamans.destroy');
+        });
+        Route::controller(KerusakanStafController::class)->prefix('kerusakans')->group(function () {
+            Route::get('', 'index')->name('kerusakans_staf.index');
+            Route::get('create', 'create')->name('kerusakans.create');
+            Route::post('store', 'store')->name('kerusakans.store');
+            Route::get('show/{id}', 'show')->name('kerusakans.show');
+            Route::get('edit/{id}', 'edit')->name('kerusakans.edit');
+            Route::put('edit/{id}', 'update')->name('kerusakans.update');
+            Route::delete('destroy/{id}', 'destroy')->name('kerusakans.destroy');
+        });
+});
 
     // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     // Route::get('/profile', [SesiController::class, 'profile'])->name('profile');

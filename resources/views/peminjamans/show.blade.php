@@ -8,7 +8,7 @@
             <input type="text" name="nama" class="form-control" placeholder="Nama Aset" value="{{ $peminjamen->nama }}" readonly>
         </div>
         <div class="col mb-3">
-            <<label class="form-label">Kode Aset</label>
+            <label class="form-label">Kode Aset</label>
             <input type="text" name="kode_aset" class="form-control" placeholder="Kode Aset" value="{{ $peminjamen->kode_aset }}" readonly>
         </div>
         <div class="col mb-3">
@@ -21,15 +21,15 @@
         </div>
         <div class="col mb-3">
             <label class="form-label">Keterangan</label>
-            <textarea class="form-control" name="keterangan" placeholder="Keterangan" readonly>{{ $kategori->keterangan }}</textarea>
+            <textarea class="form-control" name="keterangan" placeholder="Keterangan" readonly>{{ $peminjamen->keterangan }}</textarea>
         </div>
         <div class="col mb-3">
             <label class="form-label">Created At</label>
-            <input type="text" name="created_at" class="form-control" placeholder="Created At" value="{{ $kategori->created_at }}" readonly>
+            <input type="text" name="created_at" class="form-control" placeholder="Created At" value="{{ $peminjamen->created_at }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Updated At</label>
-            <input type="text" name="updated_at" class="form-control" placeholder="Updated At" value="{{ $kategori->updated_at }}" readonly>
+            <input type="text" name="updated_at" class="form-control" placeholder="Updated At" value="{{ $peminjamen->updated_at }}" readonly>
         </div>
     </div>
 @endsection

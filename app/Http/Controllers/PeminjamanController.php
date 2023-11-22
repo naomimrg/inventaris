@@ -49,8 +49,8 @@ class PeminjamanController extends Controller
      */
     public function edit(string $id)
     {
-        $peminjaman = Peminjaman::findOrFail($id);
-        return view('peminjamans.edit', compact('peminjaman'));
+        $peminjamen = Peminjaman::findOrFail($id);
+        return view('peminjamans.edit', compact('peminjamen'));
     }
 
     /**

@@ -15,11 +15,11 @@ class KerusakanStafController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $kerusakan = Kerusakan::where('nama_pelapor', $user->name)
+        $kerusakans = Kerusakan::where('nama_pelapor', $user->name)
             ->orderBy('created_at', 'DESC')
             ->get();
 
-        return view('kerusakan_staf.index', compact('kerusakan'));
+        return view('kerusakan_staf.index', compact('kerusakans'));
     }
 
     /**
@@ -29,13 +29,13 @@ class KerusakanStafController extends Controller
     {
         $asets = Aset::all();
         $lokasis = Lokasi::all();
-        return view('kerusakans.create', compact('asets', 'lokasis'));
+        return view('kerusakan_staf.create', compact('asets', 'lokasis'));
     }
 
     public function store(Request $request)
     {
         Kerusakan::create($request->all());
-        return redirect()->route('kerusakan')->with('success', 'Kerusakan Aset Berhasil Ditambahkan');
+        return redirect()->route('kerusakan_staf.index')->with('success', 'Kerusakan Aset Berhasil Ditambahkan');
     }
 
     /**
@@ -44,7 +44,7 @@ class KerusakanStafController extends Controller
     public function show($id)
     {
         $kerusakan = Kerusakan::findOrFail($id);
-        return view('kerusakans_staf.show', compact('kerusakan'));
+        return view('kerusakan_staf.show', compact('kerusakan'));
     }
 
     /**
@@ -53,7 +53,7 @@ class KerusakanStafController extends Controller
     public function edit($id)
     {
         $kerusakan = Kerusakan::findOrFail($id);
-        return view('kerusakans_staf.edit', compact('kerusakan'));
+        return view('kerusakan_staf.edit', compact('kerusakan'));
     }
 
     /**
@@ -63,7 +63,7 @@ class KerusakanStafController extends Controller
     {
         $kerusakan = Kerusakan::findOrFail($id);
         $kerusakan->update($request->all());
-        return redirect()->route('kerusakans_staf.index')->with('success', 'Data Kerusakan berhasil diperbarui');
+        return redirect()->route('kerusakan_staf.index')->with('success', 'Data Kerusakan berhasil diperbarui');
     }
 
     public function destroy(string $id)

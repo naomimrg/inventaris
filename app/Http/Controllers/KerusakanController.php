@@ -15,19 +15,6 @@ class KerusakanController extends Controller
         return view('kerusakans.index', compact('kerusakans'));
     }
 
-    public function create()
-    {
-        $asets = Aset::all();
-        $lokasis = Lokasi::all();
-        return view('kerusakans.create', compact('asets', 'lokasis'));
-    }
-
-    public function store(Request $request)
-    {
-        Kerusakan::create($request->all());
-        return redirect()->route('kerusakans')->with('success', 'Kerusakan Aset Berhasil Ditambahkan');
-    }
-
     public function show(string $id)
     {
         $kerusakans = Kerusakan::findOrFail($id);
@@ -39,6 +26,6 @@ class KerusakanController extends Controller
     {
         $kerusakans = Kerusakan::findOrFail($id);
         $kerusakans->delete();
-        return redirect()->route('kerusakans')->with('success', 'Kerusakan Aset Berhasil Dihapus');
+        return redirect()->route('kerusakans.index')->with('success', 'Kerusakan Aset Berhasil Dihapus');
     }
 }

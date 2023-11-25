@@ -2,7 +2,7 @@
 @section('title', 'Tambah Peminjaman Aset')
 @section('contents')
     <hr />
-    <form action="{{ route('peminjamans.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('peminjaman_staf.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <div class="col">

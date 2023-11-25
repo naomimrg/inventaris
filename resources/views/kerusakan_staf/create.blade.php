@@ -2,7 +2,7 @@
 @section('title', 'Kerusakan Aset')
 @section('contents')
     <hr />
-    <form action="{{ route('kerusakan.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('kerusakan_staf.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="nama_pelapor" class="form-label">Nama Pelapor</label>

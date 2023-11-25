@@ -22,7 +22,13 @@ class PeminjamanStafController extends Controller
     public function create()
     {
         $asets = Aset::all();
-        return view('peminjamans.create', compact('asets'));
+        return view('peminjaman_staf.create', compact('asets'));
+    }
+
+    public function store(Request $request)
+    {
+        Peminjaman::create($request->all());
+        return redirect()->route('peminjaman_staf.index')->with('success', 'Peminjaman berhasil ditambahkan');
     }
 
     /**
@@ -40,7 +46,7 @@ class PeminjamanStafController extends Controller
     public function edit($id)
     {
         $peminjaman = Peminjaman::findOrFail($id);
-        return view('peminjamans.edit', compact('peminjaman'));
+        return view('peminjaman_staf.edit', compact('peminjaman'));
     }
 
     /**
@@ -50,13 +56,13 @@ class PeminjamanStafController extends Controller
     {
         $peminjaman = Peminjaman::findOrFail($id);
         $peminjaman->update($request->all());
-        return redirect()->route('peminjamans_staf.index')->with('success', 'Data Peminjaman berhasil diperbarui');
+        return redirect()->route('peminjaman_staf.index')->with('success', 'Data Peminjaman berhasil diperbarui');
     }
 
     public function destroy(string $id)
     {
         $peminjaman = Peminjaman::findOrFail($id);
         $peminjaman->delete();
-        return redirect()->route('peminjaman')->with('success', 'Kerusakan Aset Berhasil Dihapus');
+        return redirect()->route('peminjaman_staf.destroy')->with('success', 'Kerusakan Aset Berhasil Dihapus');
     }
 }

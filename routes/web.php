@@ -41,6 +41,14 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('asets.destroy');
     });
 
+    Route::controller(KerusakanController::class)->prefix('kerusakans')->group(function () {
+        Route::get('', 'index')->name('kerusakans.index');
+        Route::get('create', 'create')->name('kerusakans.create');
+        Route::post('store', 'store')->name('kerusakans.store');
+        Route::get('show/{id}', 'show')->name('kerusakans.show');
+        Route::delete('destroy/{id}', 'destroy')->name('kerusakans.destroy');
+    });
+
     Route::middleware(['userAkses:admin'])->group(function () {
         Route::get('/auth/admin', [AuthController::class, 'admin']);
     
@@ -64,13 +72,13 @@ Route::middleware(['auth'])->group(function () {
             Route::delete('destroy/{id}', 'destroy')->name('lokasis.destroy');
         });
 
-        Route::controller(KerusakanController::class)->prefix('kerusakans')->group(function () {
-            Route::get('', 'index')->name('kerusakans.index');
-            Route::get('create', 'create')->name('kerusakans.create');
-            Route::post('store', 'store')->name('kerusakans.store');
-            Route::get('show/{id}', 'show')->name('kerusakans.show');
-            Route::delete('destroy/{id}', 'destroy')->name('kerusakans.destroy');
-        });
+        // Route::controller(KerusakanController::class)->prefix('kerusakans')->group(function () {
+        //     Route::get('', 'index')->name('kerusakans.index');
+        //     Route::get('create', 'create')->name('kerusakans.create');
+        //     Route::post('store', 'store')->name('kerusakans.store');
+        //     Route::get('show/{id}', 'show')->name('kerusakans.show');
+        //     Route::delete('destroy/{id}', 'destroy')->name('kerusakans.destroy');
+        // });
 
         Route::controller(PerbaikanController::class)->prefix('perbaikans')->group(function () {
             Route::get('', 'index')->name('perbaikans');

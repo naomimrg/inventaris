@@ -14,28 +14,28 @@
     <table class="table table-hover">
         <thead class="table-primary">
             <tr>
-                <th>No</th>
-                <th>Nama Aset</th>
-                <th>Kode Aset</th>
-                <th>Tanggal Permintaan Perbaikan</th>
-                <th>Deskripsi</th>
-                <th>Status</th>
-                <th>User</th>
-                <th>Aksi</th>
+                <th class="text-center border">No</th>
+                <th class="text-center border">Nama Aset</th>
+                <th class="text-center border">Kode Aset</th>
+                <th class="text-center border">Tanggal Permintaan Perbaikan</th>
+                <th class="text-center border">Deskripsi</th>
+                <th class="text-center border">Status</th>
+                <th class="text-center border">User</th>
+                <th class="text-center border">Aksi</th>
             </tr>
         </thead>
         <tbody>
             @if($perbaikans->count() > 0)
                 @foreach($perbaikans as $rs)
                     <tr>
-                        <td class="align-middle">{{ $loop->iteration }}</td>
-                        <td class="align-middle">{{ $rs->nama }}</td>
-                        <td class="align-middle">{{ $rs->kode_aset }}</td>
-                        <td class="align-middle">{{ $rs->tanggal_permintaan_perbaikan }}</td>
-                        <td class="align-middle">{{ $rs->deskripsi }}</td>
-                        <td class="align-middle">{{ $rs->status }}</td>
-                        <td class="align-middle">{{ $rs->users_id }}</td>
-                        <td class="align-middle">
+                        <td class="align-middle border">{{ $loop->iteration }}</td>
+                        <td class="align-middle border">{{ $rs->nama }}</td>
+                        <td class="align-middle border">{{ $rs->kode_aset }}</td>
+                        <td class="align-middle border">{{ $rs->tanggal_permintaan_perbaikan }}</td>
+                        <td class="align-middle border">{{ $rs->deskripsi }}</td>
+                        <td class="align-middle border">{{ $rs->status }}</td>
+                        <td class="align-middle border">{{ $rs->users_id }}</td>
+                        <td class="align-middle border text-center">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a href="{{ route('perbaikans.show', $rs->id) }}" type="button" class="btn btn-secondary"> <i class="fas fa-eye"></i> </a>
                                 <a href="{{ route('perbaikans.edit', $rs->id) }}" type="button" class="btn btn-warning ml-1"> <i class="fas fa-edit"></i> </a>

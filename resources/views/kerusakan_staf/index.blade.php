@@ -14,24 +14,24 @@
     <table class="table table-hover">
         <thead class="table-primary">
             <tr>
-                <th>No</th>
-                <th>Nama Pelapor</th>
-                <th>Nama Aset</th>
-                <th>Lokasi</th>
-                <th>Deskripsi Kerusakan</th>
-                <th>Aksi</th>
+                <th class="text-center border">No</th>
+                <th class="text-center border">Nama Pelapor</th>
+                <th class="text-center border">Nama Aset</th>
+                <th class="text-center border">Lokasi</th>
+                <th class="text-center border">Deskripsi Kerusakan</th>
+                <th class="text-center border">Aksi</th>
             </tr>
         </thead>
         <tbody>
             @if ($kerusakans->count() > 0)
                 @foreach ($kerusakans as $rs)
                     <tr>
-                        <td class="align-middle">{{ $loop->iteration }}</td>
-                        <td class="align-middle">{{ $rs->nama_pelapor }}</td>
-                        <td class="align-middle">{{ $rs->asets->nama }}</td>
-                        <td class="align-middle">{{ $rs->lokasis->nama_lokasi }}</td>
-                        <td class="align-middle">{{ $rs->deskripsi_kerusakan }}</td>
-                        <td class="align-middle">
+                        <td class="align-middle border">{{ $loop->iteration }}</td>
+                        <td class="align-middle border">{{ $rs->nama_pelapor }}</td>
+                        <td class="align-middle border">{{ $rs->asets->nama }}</td>
+                        <td class="align-middle border">{{ $rs->lokasis->nama_lokasi }}</td>
+                        <td class="align-middle border">{{ $rs->deskripsi_kerusakan }}</td>
+                        <td class="align-middle border text-center">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a href="{{ route('kerusakan_staf.show', $rs->id) }}" type="button"
                                     class="btn btn-secondary"> <i class="fas fa-eye"></i> </a>

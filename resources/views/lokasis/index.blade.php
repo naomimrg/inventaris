@@ -15,20 +15,20 @@
     <table class="table table-hover">
         <thead class="table-primary">
             <tr>
-                <th>No</th>
-                <th>Nama Lokasi</th>
-                <th>Deskripsi</th>
-                <th>Aksi</th>
+                <th class="text-center border" >No</th>
+                <th class="text-center border">Nama Lokasi</th>
+                <th class="text-center border">Deskripsi</th>
+                <th class="text-center border">Aksi</th>
             </tr>
         </thead>
         <tbody>
             @if($lokasis->count() > 0)
             @foreach($lokasis as $rs)
             <tr>
-                <td class="align-middle">{{ $loop->iteration }}</td>
-                <td class="align-middle">{{ $rs->nama_lokasi }}</td>
-                <td class="align-middle">{{ $rs->deskripsi }}</td>
-                <td class="align-middle">
+                <td class="align-middle border">{{ $loop->iteration }}</td>
+                <td class="align-middle border">{{ $rs->nama_lokasi }}</td>
+                <td class="align-middle border">{{ $rs->deskripsi }}</td>
+                <td class="align-middle text-center border">
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <a href="{{ route('lokasis.show', $rs->id) }}" type="button" class="btn btn-secondary"> <i class="fas fa-eye"></i> </a>
                         <a href="{{ route('lokasis.edit', $rs->id) }}" type="button" class="btn btn-warning ml-1"> <i class="fas fa-edit"></i> </a>

@@ -13,28 +13,28 @@
     <table class="table table-hover">
         <thead class="table-primary">
             <tr>
-                <th>No</th>
-                <th>Nama Peminjam</th>
-                <th>Nama</th>
-                <th>Kode Aset</th>
-                <th>Tanggal Peminjaman</th>
-                <th>Tanggal Pengembalian</th>
-                <th>Keterangan</th>
-                <th>Aksi</th>
+                <th class="text-center border">No</th>
+                <th class="text-center border">Nama Peminjam</th>
+                <th class="text-center border">Nama</th>
+                <th class="text-center border">Kode Aset</th>
+                <th class="text-center border">Tanggal Peminjaman</th>
+                <th class="text-center border">Tanggal Pengembalian</th>
+                <th class="text-center border">Keterangan</th>
+                <th class="text-center border">Aksi</th>
             </tr>
         </thead>
         <tbody>
             @if ($peminjamen->count() > 0)
                 @foreach ($peminjamen as $rs)
                     <tr>
-                        <td class="align-middle">{{ $loop->iteration }}</td>
-                        <td class="align-middle">{{ $rs->nama_peminjam }}</td>
-                        <td class="align-middle">{{ $rs->asets->nama }}</td>
-                        <td class="align-middle">{{ $rs->kode_aset }}</td>
-                        <td class="align-middle">{{ $rs->tanggal_peminjaman }}</td>
-                        <td class="align-middle">{{ $rs->tanggal_pengembalian }}</td>
-                        <td class="align-middle">{{ $rs->keterangan }}</td>
-                        <td class="align-middle">
+                        <td class="align-middle border">{{ $loop->iteration }}</td>
+                        <td class="align-middle border">{{ $rs->nama_peminjam }}</td>
+                        <td class="align-middle border">{{ $rs->asets->nama }}</td>
+                        <td class="align-middle border">{{ $rs->kode_aset }}</td>
+                        <td class="align-middle border">{{ $rs->tanggal_peminjaman }}</td>
+                        <td class="align-middle border">{{ $rs->tanggal_pengembalian }}</td>
+                        <td class="align-middle border">{{ $rs->keterangan }}</td>
+                        <td class="align-middle border text-center">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a href="{{ route('peminjamans.show', $rs->id) }}" type="button"
                                     class="btn btn-secondary">Detail</a>

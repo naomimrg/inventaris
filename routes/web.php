@@ -27,9 +27,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/auth', [AuthController::class, 'index']);
     Route::get('/logout', [SesiController::class, 'logout'])->name('logout');
     Route::get('/profile', [SesiController::class, 'profile'])->name('profile');
-});
-
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
 
     Route::controller(AsetController::class)->prefix('asets')->group(function () {
         Route::get('', 'index')->name('asets');
@@ -136,5 +135,3 @@ Route::middleware(['auth'])->group(function () {
         });
 });
 
-    // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    // Route::get('/profile', [SesiController::class, 'profile'])->name('profile');

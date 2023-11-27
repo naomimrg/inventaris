@@ -34,7 +34,6 @@
                         <td class="align-middle">{{ $rs->tanggal_peminjaman }}</td>
                         <td class="align-middle">{{ $rs->tanggal_pengembalian }}</td>
                         <td class="align-middle">{{ $rs->keterangan }}</td>
-                        <!-- Tambahkan ini di dalam loop foreach untuk setiap entri peminjaman -->
                         <td class="align-middle">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a href="{{ route('peminjamans.show', $rs->id) }}" type="button"

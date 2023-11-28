@@ -18,6 +18,8 @@ class Aset extends Model
         'kategori',
         'lokasi',
         'harga',
+        'merk',
+        'status_kepemilikan',
         'deskripsi',
         'user_id',
         'kategoris_id',

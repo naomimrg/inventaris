@@ -23,8 +23,8 @@
             </tr>
         </thead>
         <tbody>
-            @if ($kerusakans->count() > 0)
-                @foreach ($kerusakans as $rs)
+            @if ($kerusakan->count() > 0)
+                @foreach ($kerusakan as $rs)
                     <tr>
                         <td class="align-middle border">{{ $loop->iteration }}</td>
                         <td class="align-middle border">{{ $rs->nama_pelapor }}</td>

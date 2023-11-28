@@ -40,10 +40,10 @@
                         <td class="align-middle border text-center">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a href="{{ route('peminjaman_staf.show', $rs->id) }}" type="button"
-                                    class="btn btn-secondary">Detail</a>
+                                    class="btn btn-secondary"> <i class="fas fa-eye"></i> </a>
                                 <a href="{{ route('peminjaman_staf.edit', $rs->id) }}" type="button"
-                                    class="btn btn-warning">Edit</a>
-                                <form action="{{ route('peminjaman_staf.destroy', $rs->id) }}" method="POST" type="button"
+                                    class="btn btn-warning ml-1"> <i class="fas fa-edit"></i> </a>
+                                <form action="{{ route('peminjaman_staf.destroy', $rs->id) }}" method="POST"
                                     class="btn btn-danger p-0 ml-1" onsubmit="return confirm('Delete?')">
                                     @csrf
                                     @method('DELETE')

@@ -11,11 +11,7 @@ class PeminjamanStafController extends Controller
 
     public function index()
     {
-        $user = auth()->user();
-        $peminjaman = Peminjaman::where('nama_peminjam', $user->name)
-            ->orderBy('created_at', 'DESC')
-            ->get();
-
+        $peminjaman = Peminjaman::orderBy('created_at', 'DESC')->get();
         return view('peminjaman_staf.index', compact('peminjaman'));
     }
 

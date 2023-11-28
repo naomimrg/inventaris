@@ -14,12 +14,8 @@ class KerusakanStafController extends Controller
      */
     public function index()
     {
-        $user = auth()->user();
-        $kerusakans = Kerusakan::where('nama_pelapor', $user->name)
-            ->orderBy('created_at', 'DESC')
-            ->get();
-
-        return view('kerusakan_staf.index', compact('kerusakans'));
+        $kerusakan = Kerusakan::orderBy('created_at', 'DESC')->get();
+        return view('kerusakan_staf.index', compact('kerusakan'));
     }
 
     /**
@@ -53,7 +49,8 @@ class KerusakanStafController extends Controller
     public function edit($id)
     {
         $kerusakan = Kerusakan::findOrFail($id);
-        return view('kerusakan_staf.edit', compact('kerusakan'));
+        $lokasis = Lokasi::all();
+        return view('kerusakan_staf.edit', compact('kerusakan', 'lokasis'));
     }
 
     /**

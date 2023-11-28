@@ -54,7 +54,7 @@
                 <option value="Milik" {{ $aset->status_kepemilikan == 'Milik'  }}>Milik</option>
                 <option value="Disewa" {{ $aset->status_kepemilikan == 'Disewa'  }}>Disewa</option>
                 <option value="Dipinjam" {{ $aset->status_kepemilikan == 'Dipinjam'  }}>Dipinjam</option>
-                <option value="Dalam Pemrosesan" {{ $aset->status_kepemilikan == 'Dalam Pemrosesan'  }}>Dalam Pemrosesan</option>
+                <option value="Dalam Pemrosesan" {{ $aset->status_kepemilikan == 'Dalam Pemrosesan'  }}>Dalam Pemrosesan/Leasing</option>
                 <option value="Dijual" {{ $aset->status_kepemilikan == 'Dijual'  }}>Dijual</option>
                 <option value="Dalam Perbaikan" {{ $aset->status_kepemilikan == 'Dalam Perbaikan'  }}>Dalam Perbaikan</option>
                 <option value="Daur ulang" {{ $aset->status_kepemilikan == 'Daur Ulang atau Pembuangan'  }}>Daur Ulang atau Pembuangan</option>

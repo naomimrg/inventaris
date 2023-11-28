@@ -24,7 +24,7 @@
             @if($kategoris->count() > 0)
                 @foreach($kategoris as $rs)
                     <tr>
-                        <td class="align-middle border">{{ $loop->iteration }}</td>
+                        <td class="align-middle border text-center">{{ $loop->iteration }}</td>
                         <td class="align-middle border">{{ $rs->nama_kategori }}</td>
                         <td class="align-middle border">{{ $rs->deskripsi }}</td>
                         <td class="align-middle border text-center">

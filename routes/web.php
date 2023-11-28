@@ -40,14 +40,6 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('destroy/{id}', 'destroy')->name('asets.destroy');
     });
 
-    Route::controller(KerusakanController::class)->prefix('kerusakans')->group(function () {
-        Route::get('', 'index')->name('kerusakans.index');
-        Route::get('create', 'create')->name('kerusakans.create');
-        Route::post('store', 'store')->name('kerusakans.store');
-        Route::get('show/{id}', 'show')->name('kerusakans.show');
-        Route::delete('destroy/{id}', 'destroy')->name('kerusakans.destroy');
-    });
-
     Route::middleware(['userAkses:admin'])->group(function () {
         Route::get('/auth/admin', [AuthController::class, 'admin']);
     
@@ -71,13 +63,11 @@ Route::middleware(['auth'])->group(function () {
             Route::delete('destroy/{id}', 'destroy')->name('lokasis.destroy');
         });
 
-        // Route::controller(KerusakanController::class)->prefix('kerusakans')->group(function () {
-        //     Route::get('', 'index')->name('kerusakans.index');
-        //     Route::get('create', 'create')->name('kerusakans.create');
-        //     Route::post('store', 'store')->name('kerusakans.store');
-        //     Route::get('show/{id}', 'show')->name('kerusakans.show');
-        //     Route::delete('destroy/{id}', 'destroy')->name('kerusakans.destroy');
-        // });
+        Route::controller(KerusakanController::class)->prefix('kerusakans')->group(function () {
+            Route::get('', 'index')->name('kerusakans.index');
+            Route::get('show/{id}', 'show')->name('kerusakans.show');
+            Route::delete('destroy/{id}', 'destroy')->name('kerusakans.destroy');
+        });
 
         Route::controller(PerbaikanController::class)->prefix('perbaikans')->group(function () {
             Route::get('', 'index')->name('perbaikans');
@@ -101,11 +91,7 @@ Route::middleware(['auth'])->group(function () {
 
         Route::controller(PeminjamanController::class)->prefix('peminjamans')->group(function () {
             Route::get('', 'index')->name('peminjamans.index');
-            Route::get('create', 'create')->name('peminjamans.create');
-            Route::post('store', 'store')->name('peminjamans.store');
             Route::get('show/{id}', 'show')->name('peminjamans.show');
-            Route::get('edit/{id}', 'edit')->name('peminjamans.edit');
-            Route::put('edit/{id}', 'update')->name('peminjamans.update');
             Route::delete('destroy/{id}', 'destroy')->name('peminjamans.destroy');
             Route::patch('approve/{id}', 'approve')->name('peminjamans.approve');
             Route::patch('reject/{id}', 'reject')->name('peminjamans.reject');
@@ -134,4 +120,3 @@ Route::middleware(['auth'])->group(function () {
             Route::delete('destroy/{id}', 'destroy')->name('kerusakan_staf.destroy');
         });
 });
-

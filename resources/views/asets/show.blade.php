@@ -39,11 +39,11 @@
             <textarea class="form-control" name="deskripsi" placeholder="" readonly>{{ $aset->deskripsi }}</textarea>
         </div>
         <div class="col mb-3">
-            <label class="form-label">Created At</label>
+            <label class="form-label">Dibuat Pada</label>
             <input type="text" name="created_at" class="form-control" placeholder="Created At" value="{{ $aset->created_at }}" readonly>
         </div>
         <div class="col mb-3">
-            <label class="form-label">Updated At</label>
+            <label class="form-label">Diperbarui Pada</label>
             <input type="text" name="updated_at" class="form-control" placeholder="Updated At" value="{{ $aset->updated_at }}" readonly>
         </div>
 @endsection

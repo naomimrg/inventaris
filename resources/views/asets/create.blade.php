@@ -57,7 +57,7 @@
                 <option value="Milik">Milik</option>
                 <option value="Disewa">Disewa</option>
                 <option value="Dipinjam">Dipinjam</option>
-                <option value="Dalam Pemrosesan">Dalam Pemrosesan</option>
+                <option value="Dalam Pemrosesan">Dalam Pemrosesan/Leasing</option>
                 <option value="Dijual">Dijual</option>
                 <option value="Dalam Perbaikan">Dalam Perbaikan</option>
                 <option value="Daur Ulang atau Pembuangan">Daur Ulang atau Pembuangan</option>

@@ -28,7 +28,7 @@
             @if ($aset->count() > 0)
                 @foreach ($aset as $rs)
                     <tr>
-                        <td class="align-middle border">{{ $loop->iteration }}</td>
+                        <td class="align-middle border text-center">{{ $loop->iteration }}</td>
                         <td class="align-middle border">{{ $rs->nama }}</td>
                         <td class="align-middle border">{{ $rs->kode_aset }}</td>
                         <td class="align-middle border">{{ $rs->kategoris->nama_kategori }}</td>

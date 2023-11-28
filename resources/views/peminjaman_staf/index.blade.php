@@ -36,7 +36,15 @@
                         <td class="align-middle border">{{ $rs->tanggal_peminjaman }}</td>
                         <td class="align-middle border">{{ $rs->tanggal_pengembalian }}</td>
                         <td class="align-middle border">{{ $rs->keterangan }}</td>
-                        <td class="align-middle border">{{ $rs->status }}</td>
+                        <td class="align-middle border">
+                            @if ($rs->status == 'Disetujui')
+                                <span class="badge badge-success">{{ $rs->status }}</span>
+                            @elseif ($rs->status == 'Ditolak')
+                                <span class="badge badge-danger">{{ $rs->status }}</span>
+                            @else
+                                <span class="badge badge-secondary">{{ $rs->status }}</span>
+                            @endif
+                        </td>
                         <td class="align-middle border text-center">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a href="{{ route('peminjaman_staf.show', $rs->id) }}" type="button"

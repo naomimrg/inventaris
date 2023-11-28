@@ -78,7 +78,7 @@ class PeminjamanController extends Controller
         $peminjaman = Peminjaman::findOrFail($id);
         $peminjaman->update(['status' => 'approved']);
 
-        return redirect()->route('peminjamans')->with('success', 'Peminjaman disetujui');
+        return redirect()->route('peminjamans.index')->with('success', 'Peminjaman disetujui');
     }
 
     public function reject($id)
@@ -86,6 +86,6 @@ class PeminjamanController extends Controller
         $peminjaman = Peminjaman::findOrFail($id);
         $peminjaman->update(['status' => 'rejected']);
 
-        return redirect()->route('peminjamans')->with('success', 'Peminjaman ditolak');
+        return redirect()->route('peminjamans.index')->with('success', 'Peminjaman ditolak');
     }
 }

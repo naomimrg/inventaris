@@ -5,31 +5,31 @@
     <div>
         <div class="col mb-3">
             <label class="form-label">Nama</label>
-            <input type="text" name="nama" class="form-control" placeholder="Nama Aset" value="{{ $peminjamen->asets->nama }}" readonly>
+            <input type="text" name="nama" class="form-control" placeholder="" value="{{ $peminjamen->asets->nama }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Kode Aset</label>
-            <input type="text" name="kode_aset" class="form-control" placeholder="Kode Aset" value="{{ $peminjamen->kode_aset }}" readonly>
+            <input type="text" name="kode_aset" class="form-control" placeholder="" value="{{ $peminjamen->kode_aset }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Tanggal Peminjaman</label>
-            <input type="date" name="tanggal_peminjaman" class="form-control" placeholder="Tanggal Peminjaman" value="{{ $peminjamen->tanggal_peminjaman }}" readonly>
+            <input type="date" name="tanggal_peminjaman" class="form-control" placeholder="" value="{{ $peminjamen->tanggal_peminjaman }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Tanggal Pengembalian</label>
-            <input type="date" name="tanggal_pengembalian" class="form-control" placeholder="Tanggal Pengembalian" value="{{ $peminjamen->tanggal_pengembalian }}" readonly>
+            <input type="date" name="tanggal_pengembalian" class="form-control" placeholder="" value="{{ $peminjamen->tanggal_pengembalian }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Keterangan</label>
-            <textarea class="form-control" name="keterangan" placeholder="Keterangan" readonly>{{ $peminjamen->keterangan }}</textarea>
+            <textarea class="form-control" name="keterangan" placeholder="" readonly>{{ $peminjamen->keterangan }}</textarea>
         </div>
         <div class="col mb-3">
-            <label class="form-label">Created At</label>
-            <input type="text" name="created_at" class="form-control" placeholder="Created At" value="{{ $peminjamen->created_at }}" readonly>
+            <label class="form-label">Dibuat Pada</label>
+            <input type="text" name="created_at" class="form-control" placeholder="" value="{{ $peminjamen->created_at }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Updated At</label>
-            <input type="text" name="updated_at" class="form-control" placeholder="Updated At" value="{{ $peminjamen->updated_at }}" readonly>
+            <input type="text" name="updated_at" class="form-control" placeholder="" value="{{ $peminjamen->updated_at }}" readonly>
         </div>
     </div>
 @endsection

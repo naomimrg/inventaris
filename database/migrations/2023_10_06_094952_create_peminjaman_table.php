@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('kode_aset')->unique();
             $table->date('tanggal_peminjaman');
             $table->date('tanggal_pengembalian');
+            $table->enum('status', ['Diajukan', 'Disetujui', 'Ditolak']);
             $table->text('keterangan');
             $table->timestamps();
         });

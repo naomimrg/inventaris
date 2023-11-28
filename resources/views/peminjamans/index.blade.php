@@ -36,27 +36,25 @@
                         <td class="align-middle border">{{ $rs->keterangan }}</td>
                         <td class="align-middle border text-center">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="{{ route('peminjamans.show', $rs->id) }}" type="button"
-                                    class="btn btn-secondary">Detail</a>
-                                <a href="{{ route('peminjamans.edit', $rs->id) }}" type="button"
-                                    class="btn btn-warning">Edit</a>
-
-                                <!-- Tombol untuk menyetujui peminjaman -->
+                                <a href="{{ route('peminjamans.show', $rs->id) }}" type="button" class="btn btn-secondary">
+                                    <i class="fas fa-eye"></i>
+                                </a>
                                 <form action="{{ route('peminjamans.approve', $rs->id) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('PATCH')
-                                    <button type="submit" class="btn btn-success">Setujui</button>
+                                    <button type="submit" class="btn btn-success ml-1">
+                                        <i class="fas fa-check"></i>
+                                    </button>
                                 </form>
-
-                                <!-- Tombol untuk menolak peminjaman -->
                                 <form action="{{ route('peminjamans.reject', $rs->id) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('PATCH')
-                                    <button type="submit" class="btn btn-danger">Tolak</button>
+                                    <button type="submit" class="btn btn-danger ml-1">
+                                        <i class="fas fa-times"></i>
+                                    </button>
                                 </form>
                             </div>
                         </td>
-
                     </tr>
                 @endforeach
             @else

@@ -76,16 +76,18 @@ class PeminjamanController extends Controller
     public function approve($id)
     {
         $peminjaman = Peminjaman::findOrFail($id);
-        $peminjaman->update(['status' => 'approved']);
+        $peminjaman->status = 'Disetujui';
+        $peminjaman->save();
 
-        return redirect()->route('peminjamans.index')->with('success', 'Peminjaman disetujui');
+        return redirect()->route('peminjamans.index')->with('success', 'Peminjaman disetujui.');
     }
 
     public function reject($id)
     {
         $peminjaman = Peminjaman::findOrFail($id);
-        $peminjaman->update(['status' => 'rejected']);
+        $peminjaman->status = 'Ditolak';
+        $peminjaman->save();
 
-        return redirect()->route('peminjamans.index')->with('success', 'Peminjaman ditolak');
+        return redirect()->route('peminjamans.index')->with('success', 'Peminjaman ditolak.');
     }
 }

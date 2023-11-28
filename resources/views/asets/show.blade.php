@@ -3,7 +3,7 @@
 @section('contents')
     <hr />
         <div class="col mb-3">
-            <label class="form-label">Nama</label>
+            <label class="form-label">Nama Aset</label>
             <input type="string" name="nama" class="form-control" placeholder="" value="{{ $aset->nama }}" readonly>
         </div>
         <div class="col mb-3">
@@ -19,12 +19,20 @@
             <input type="text" name="kategoris_id" class="form-control" placeholder="" value="{{ $aset->kategoris->nama_kategori }}" readonly>
         </div>
         <div class="col mb-3">
-            <label class="form-label">Lokasi</label>
+            <label class="form-label">Lokasi Fisik Aset</label>
             <input type="text" name="lokasis_id" class="form-control" placeholder="" value="{{ $aset->lokasis->nama_lokasi }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Harga</label>
             <input type="number" name="harga" class="form-control" placeholder="" value="{{ $aset->harga }}" readonly>
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Merk</label>
+            <input type="string" name="merk" class="form-control" placeholder="" value="{{ $aset->merk }}" readonly>
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Status Kepemilikan</label>
+            <input type="string" name="status_kepemilikan" class="form-control" placeholder="" value="{{ $aset->status_kepemilikan }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Deskripsi</label>

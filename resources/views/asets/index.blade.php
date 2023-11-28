@@ -15,10 +15,10 @@
         <thead class="table-primary">
             <tr>
                 <th class="text-center border">No</th>
-                <th class="text-center border">Nama</th>
+                <th class="text-center border">Nama Aset</th>
                 <th class="text-center border">Kode Aset</th>
                 <th class="text-center border">Kategori</th>
-                <th class="text-center border">Lokasi</th>
+                <th class="text-center border">Lokasi Fisik Aset</th>
                 <th class="text-center border">Harga</th>
                 <th class="text-center border">Deskripsi</th>
                 <th class="text-center border">Aksi</th>

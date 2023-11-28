@@ -54,7 +54,9 @@ class AsetController extends Controller
     public function edit(string $id)
     {
         $aset = Aset::findOrFail($id);
-        return view('asets.edit', compact('aset'));
+        $kategoris = Kategori::all();
+        $lokasis = Lokasi::all();
+        return view('asets.edit', compact('aset', 'kategoris', 'lokasis'));
     }
 
     /**

@@ -7,13 +7,13 @@
         <div class="mb-3">
             <div class="col">
                 <label for="nama" class="form-label">Nama Aset</label>
-                <input type="string" name="nama" class="form-control" placeholder="">
+                <input type="text" name="nama" class="form-control" placeholder="">
             </div>
         </div>
         <div class="mb-3">
             <div class="col">
                 <label for="kode_aset" class="form-label">Kode Aset</label>
-                <input type="string" name="kode_aset" class="form-control" placeholder="">
+                <input type="text" name="kode_aset" class="form-control" placeholder="">
             </div>
         </div>
         <div class="mb-3">
@@ -24,20 +24,31 @@
         </div>
         <div class="mb-3">
             <div class="col">
-                <label for="deskripsi" class="form-label">Deskripsi</label>
+                <label for="deskripsi" class="form-label">Deskripsi Perbaikan</label>
                 <textarea class="form-control" name="deskripsi" placeholder=""></textarea>
             </div>
         </div>
         <div class="mb-3">
             <div class="col">
                 <label for="status" class="form-label">Status</label>
-                <input type="string" name="status" class="form-control" placeholder="">
+                <select name="status" class="form-control">
+                    <option value=""></option>
+                    <option value="Belum Diperbaiki">Belum Diperbaiki</option>
+                    <option value="Sedang Diperbaiki">Sedang Diperbaiki</option>
+                    <option value="Sudah Diperbaiki">Sudah Diperbaiki</option>
+                </select>
             </div>
         </div>
         <div class="mb-3">
             <div class="col">
-                <label for="user" class="form-label">Nama</label>
-                <input type="string" name="user" class="form-control" placeholder="">
+                <label for="nama_pelapor" class="form-label">Nama Pelapor Perbaikan</label>
+                <input type="text" name="nama_pelapor" class="form-control" placeholder="">
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="col">
+                <label for="deskripsi" class="form-label">Informasi Umum Keadaan Aset</label>
+                <textarea class="form-control" name="deskripsi" placeholder=""></textarea>
             </div>
         </div>
         <div class="row justify-content-end">

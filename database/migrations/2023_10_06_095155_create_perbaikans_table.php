@@ -18,7 +18,8 @@ return new class extends Migration
             $table->date('tanggal_permintaan_perbaikan');
             $table->text('deskripsi');
             $table->enum('status', ['Belum Diperbaiki', 'Sedang Diperbaiki', 'Sudah Diperbaiki']);
-            $table->foreignId('users_id')->constrained('users'); 
+            $table->string('nama_pelapor');
+            $table->text('informasi');
             $table->foreignId('asets_id')->constrained('asets');
             $table->timestamps();
         });

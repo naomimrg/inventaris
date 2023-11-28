@@ -22,10 +22,10 @@ class DummyUsersSeeder extends Seeder
             ],
 
             [
-                'name' => 'Naomi Manurung',
+                'name' => 'Staf Aset 1',
                 'username' => 'staf1',
                 'role' => 'staf_aset',
-                'password' => bcrypt('87654321')
+                'password' => bcrypt('12345678')
             ],
 
         ];

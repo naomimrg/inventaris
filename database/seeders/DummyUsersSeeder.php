@@ -18,14 +18,22 @@ class DummyUsersSeeder extends Seeder
                 'name' => 'Admin',
                 'username' => 'admin',
                 'role' => 'admin',
-                'password' => bcrypt('12345678')
+                'password' => bcrypt('12345678'),
+                'email' => 'admin@gmail.com',
+                'nomor_handphone' => 81234567890,
+                'alamat' => 'Rajabasa, Bandar Lampung',
+                'unit' => 'Tenaga Kependidikan'
             ],
 
             [
                 'name' => 'Staf Aset 1',
                 'username' => 'staf1',
                 'role' => 'staf_aset',
-                'password' => bcrypt('12345678')
+                'password' => bcrypt('12345678'),
+                'email' => 'staf1@gmail.com',
+                'nomor_handphone' => 80987654321,
+                'alamat' => 'Way Halim, Bandar Lampung',
+                'unit' => 'Tenaga Kependidikan'
             ],
 
         ];

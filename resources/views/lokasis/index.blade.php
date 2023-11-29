@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', 'Lokasi Aset')
 @section('contents')
+<h1 class="mb-0">Data Lokasi Aset</h1>
 <div class="d-flex align-items-center justify-content-between mb-3">
     <h1></h1>
     <a href="{{ route('lokasis.create') }}" class="btn btn-primary">Tambah Lokasi</a>

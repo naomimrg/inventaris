@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,6 +11,14 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
+    /**
+     * Display the user's profile.
+     */
+    public function index(Request $request): View
+    {
+        return view('profile.index', ['user' => $request->user()]);
+    }
+
     /**
      * Display the user's profile form.
      */
@@ -25,29 +34,8 @@ class ProfileController extends Controller
      */
     public function update(Request $request): RedirectResponse
     {
-        $request->user()->update($request->only('username'));
-
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
-    }
-
-    /**
-     * Delete the user's account.
-     */
-    public function destroy(Request $request): RedirectResponse
-    {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
-        ]);
-
         $user = $request->user();
-
-        Auth::logout();
-
-        $user->delete();
-
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return Redirect::to('/');
+        $user->update($request->all());
+        return redirect()->route('profile')->with('success', 'Data Profile Berhasil Diperbaharui');
     }
 }

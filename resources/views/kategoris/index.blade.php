@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', 'Kategori Aset')
 @section('contents')
+<h1 class="mb-0">Data Kategori Aset</h1>
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h1></h1>
         <a href="{{ route('kategoris.create') }}" class="btn btn-primary">Tambah Kategori</a>

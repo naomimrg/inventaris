@@ -32,7 +32,6 @@ class SesiController extends Controller
 
         if (Auth::attempt($infologin)) {
             if (Auth::user()->role == 'admin') {
-                // return redirect('auth/admin');
                 return redirect('dashboard');
             } elseif (Auth::user()->role == 'staf_aset') {
                 return redirect('dashboard');
@@ -46,10 +45,5 @@ class SesiController extends Controller
     {
         Auth::logout();
         return redirect('');
-    }
-
-    public function profile()
-    {
-        return view('profile');
     }
 };

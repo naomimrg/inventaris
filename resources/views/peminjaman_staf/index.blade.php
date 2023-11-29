@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', 'Peminjaman Aset')
 @section('contents')
+<h1 class="mb-0">Peminjaman Aset</h1>
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h1></h1>
         <a href="{{ route('peminjaman_staf.create') }}" class="btn btn-primary">Tambah Peminjaman</a>

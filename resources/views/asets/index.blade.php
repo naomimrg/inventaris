@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', 'Daftar Aset')
 @section('contents')
+<h1 class="mb-0">Data Aset</h1>
     <div class="d-flex align-items-center justify-content-between mb-3">
         <h1></h1>
         <a href="{{ route('asets.create') }}" class="btn btn-primary">Tambah Aset</a>

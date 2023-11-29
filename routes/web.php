@@ -10,6 +10,7 @@ use App\Http\Controllers\LokasiController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PeminjamanStafController;
 use App\Http\Controllers\PerbaikanController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\SesiController;
 use Illuminate\Support\Facades\Route;
@@ -26,9 +27,14 @@ Route::get('/home', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/auth', [AuthController::class, 'index']);
     Route::get('/logout', [SesiController::class, 'logout'])->name('logout');
-    Route::get('/profile', [SesiController::class, 'profile'])->name('profile');
 });
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::controller(ProfileController::class)->prefix('profile')->group(function () {
+        Route::get('', 'index')->name('profile');
+        Route::get('edit', 'edit')->name('profile.edit');
+        Route::put('update', 'update')->name('profile.update');
+    });
 
     Route::controller(AsetController::class)->prefix('asets')->group(function () {
         Route::get('', 'index')->name('asets');

@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', 'Kerusakan Aset')
 @section('contents')
+<h1 class="mb-0">Laporan Kerusakan Aset</h1>
     <div class="d-flex align-items-center justify-content-between mb-3">
         <h1></h1>
         <a href="{{ route('kerusakan_staf.create') }}" class="btn btn-primary">Tambah Laporan Kerusakan</a>

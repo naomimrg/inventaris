@@ -16,6 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('username')->unique();
             $table->string('password');
+            $table->string('email');
+            $table->bigInteger('nomor_handphone');
+            $table->string('alamat');
+            $table->string('unit');
             $table->enum('role', ['admin', 'staf_aset'])
             ->default('admin');
             $table->rememberToken();

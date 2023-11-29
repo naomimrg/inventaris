@@ -32,9 +32,10 @@ class SesiController extends Controller
 
         if (Auth::attempt($infologin)) {
             if (Auth::user()->role == 'admin') {
-                return redirect('auth/admin');
+                // return redirect('auth/admin');
+                return redirect('dashboard');
             } elseif (Auth::user()->role == 'staf_aset') {
-                return redirect('auth/staf_aset');
+                return redirect('dashboard');
             }
         } else {
             return redirect()->route('login')->withErrors(['error' => 'Username atau password yang dimasukkan salah'])->withInput();

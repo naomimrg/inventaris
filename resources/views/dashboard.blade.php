@@ -62,7 +62,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $asetCount }}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $aset }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -80,7 +80,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $kerusakanCount }}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $kerusakan }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-exclamation-circle fa-2x text-gray-300"></i>
@@ -98,7 +98,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $peminjamanCount }}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $peminjaman }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-shopping-cart fa-2x text-gray-300"></i>

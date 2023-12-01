@@ -31,14 +31,15 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
     // Rute API untuk Aset
-    Route::prefix('asets')->group(function () {
-        Route::get('', [AsetController::class, 'index']);
-        Route::get('{id}', [AsetController::class, 'show']);
-        Route::post('create', [AsetController::class, 'store']);
-        Route::put('update/{id}', [AsetController::class, 'update']);
-        Route::delete('delete/{id}', [AsetController::class, 'destroy']);
-    });
+    // Route::prefix('asets')->group(function () {
+    //     Route::get('', [AsetController::class, 'index']);
+    //     Route::get('{id}', [AsetController::class, 'show']);
+    //     Route::post('create', [AsetController::class, 'store']);
+    //     Route::put('update/{id}', [AsetController::class, 'update']);
+    //     Route::delete('delete/{id}', [AsetController::class, 'destroy']);
+    // });
 
+    Route::apiResource('asets', AsetController::class);
     // Rute API untuk Kerusakan
     Route::prefix('kerusakans')->group(function () {
         Route::get('', [KerusakanController::class, 'index']);
@@ -92,4 +93,5 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put('update/{id}', [RiwayatController::class, 'update']);
         Route::delete('delete/{id}', [RiwayatController::class, 'destroy']);
     });
+
 });

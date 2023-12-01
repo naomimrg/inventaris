@@ -65,5 +65,28 @@
             </div>
             <div class="col-md-12 separator"></div>
         </div>
+
+     <div class="col-md-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-info">Kepatuhan Terhadap Regulasi dan Standar Aset</h6>
+            </div>
+            <div class="card-body">
+                <p> Berikut beberapa indikator kepatuhan terhadap regulasi manajemen aset:</p>
+                <ul>
+                    <li>Regulasi 1: Ketersediaan dan pembaruan berkala kebijakan serta prosedur manajemen aset.</li>
+                    <li>Regulasi 2: Regulasi inventaris yang teratur dan pembaruan data aset yang akurat.</li>
+                    <li>Regulasi 3: Pelaksanaan pemeliharaan rutin dan perawatan pada aset fisik.</li>
+                    <li>Regulasi 4: Implementasi langkah-langkah keamanan fisik dan siber untuk melindungi aset universitas.</li>
+                    <li>Regulasi 5: Penerapan prosedur peminjaman aset sesuai dengan kebijakan.</li>
+                    <li>Regulasi 6: Akurasi dan keteraturan pelaporan keuangan terkait aset.</li>
+                    <li>Regulasi 7: Kepatuhan terhadap standar dan regulasi pendidikan yang mengatur manajemen aset di institusi pendidikan tinggi.</li>
+                    <li>Regulasi 8: Tingkat partisipasi dan pemahaman staf dan pemangku kepentingan terhadap kebijakan dan praktik manajemen aset.</li>
+                    <li>Regulasi 9: Kepatuhan terhadap pelaporan dan analisis secara berkala.</li>
+                    <li>Regulasi 10: Ketersediaan informasi terbuka kepada pengguna terkait status perbaikan aset.</li>
+                </ul>
+            </div>
+        </div>
     </div>
+</div>
 @endsection

@@ -19,4 +19,9 @@ class Lokasi extends Model
     {
         return $this->hasMany(Aset::class,'lokasis_id');
     }
+
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

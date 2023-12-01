@@ -13,7 +13,6 @@ class DashboardController extends Controller
         $aset = Aset::count();
         $kerusakan = Kerusakan::count();
         $peminjaman = Peminjaman::count();
-        // return view('dashboard', compact('aset', 'kerusakan', 'peminjaman'));
         return view('dashboard', ['aset' => $aset, 'kerusakan' => $kerusakan, 'peminjaman' => $peminjaman]);
     }
 }

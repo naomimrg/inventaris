@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('harga');
             $table->string('merk');
             $table->string('status_kepemilikan');
+            $table->string('kondisi');
             $table->text('deskripsi');
             $table->timestamps();
         });

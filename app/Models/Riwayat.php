@@ -63,4 +63,9 @@ class riwayat extends Model
     {
         return $this->belongsTo(Lokasi::class, 'lokasis_id');
     }
+
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

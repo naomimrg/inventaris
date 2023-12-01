@@ -65,6 +65,15 @@
                 <option value="Dalam Proses Akuisisi">Dalam Proses Akuisisi</option>
                 <option value="Penggunaan Bersama">Penggunaan Bersama</option>
             </select>
+        </div>
+        <div class="mb-3">
+            <label for="kondisi" class="form-label">Kondisi Aset</label>
+            <select name="kondisi" class="form-control" id="kondisi">
+                <option value=""></option>
+                <option value="Baik">Baik</option>
+                <option value="Rusak Ringan">Rusak Ringan</option>
+                <option value="Rusak Berat">Rusak Berat</option>
+            </select>
         </div>        
         <div class="mb-3">
             <label for="deskripsi" class="form-label">Deskripsi</label>

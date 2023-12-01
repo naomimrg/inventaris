@@ -35,6 +35,10 @@
             <input type="string" name="status_kepemilikan" class="form-control" placeholder="" value="{{ $aset->status_kepemilikan }}" readonly>
         </div>
         <div class="col mb-3">
+            <label class="form-label">Kondisi Aset</label>
+            <input type="string" name="kondisi" class="form-control" placeholder="" value="{{ $aset->kondisi }}" readonly>
+        </div>
+        <div class="col mb-3">
             <label class="form-label">Deskripsi</label>
             <textarea class="form-control" name="deskripsi" placeholder="" readonly>{{ $aset->deskripsi }}</textarea>
         </div>

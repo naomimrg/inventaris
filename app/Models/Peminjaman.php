@@ -25,4 +25,9 @@ class Peminjaman extends Model
     {
         return $this->belongsTo(Aset::class, 'asets_id');
     }
+
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

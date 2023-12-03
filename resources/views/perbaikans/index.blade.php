@@ -20,7 +20,7 @@
                 <th class="text-center border">Tanggal Permintaan Perbaikan</th>
                 <th class="text-center border">Deskripsi</th>
                 <th class="text-center border">Status</th>
-                <th class="text-center border">User</th>
+                <th class="text-center border">Nama Pelapor Perbaikan</th>
                 <th class="text-center border">Aksi</th>
             </tr>
         </thead>
@@ -33,7 +33,7 @@
                         <td class="align-middle border">{{ $rs->kode_aset }}</td>
                         <td class="align-middle border">{{ $rs->tanggal_permintaan_perbaikan }}</td>
                         <td class="align-middle border">{{ $rs->deskripsi }}</td>
-                        <td class="align-middle border">{{ $rs->status }}</td>
+                        <td class="align-middle border">{{ $rs->nama_pelapor }}</td>
                         <td class="align-middle border">{{ $rs->users_id }}</td>
                         <td class="align-middle border text-center">
                             <div class="btn-group" role="group" aria-label="Basic example">

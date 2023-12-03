@@ -1,7 +1,7 @@
 <script>
     function greetings() {
         let asiaTime = new Date().toLocaleString('en-US', {
-            timeZone: 'Asia/Indonesia'
+            timeZone: 'Asia/Jakarta'
         });
         asiaTime = new Date(asiaTime);
         let hours = asiaTime.getHours();

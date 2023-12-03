@@ -17,13 +17,10 @@
                 <th class="text-center border">No</th>
                 <th class="text-center border">Nama Aset</th>
                 <th class="text-center border">Kode Aset</th>
-                <th class="text-center border">Kategori</th>
-                <th class="text-center border">Lokasi</th>
                 <th class="text-center border">Tanggal</th>
                 <th class="text-center border">Jenis Perubahan</th>
                 <th class="text-center border">Deskripsi</th>
                 <th class="text-center border">Status</th>
-                <th class="text-center border">Catatan Tambahan</th>
                 <th class="text-center border">Aksi</th>
             </tr>
         </thead>

@@ -19,7 +19,6 @@
                 <th class="text-center border">Kode Aset</th>
                 <th class="text-center border">Tanggal Peminjaman</th>
                 <th class="text-center border">Tanggal Pengembalian</th>
-                <th class="text-center border">Keterangan</th>
                 <th class="text-center border">Status</th>
                 <th class="text-center border">Aksi</th>
             </tr>

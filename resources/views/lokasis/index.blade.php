@@ -15,7 +15,7 @@
     <table class="table table-hover">
         <thead class="table-primary">
             <tr>
-                <th class="text-center border" >No</th>
+                <th class="text-center border">No</th>
                 <th class="text-center border">Nama Lokasi</th>
                 <th class="text-center border">Deskripsi</th>
                 <th class="text-center border">Aksi</th>
@@ -25,7 +25,7 @@
             @if($lokasis->count() > 0)
             @foreach($lokasis as $rs)
             <tr>
-                <td class="align-middle border">{{ $loop->iteration }}</td>
+                <td class="align-middle border text-center border">{{ $loop->iteration }}</td>
                 <td class="align-middle border">{{ $rs->nama_lokasi }}</td>
                 <td class="align-middle border">{{ $rs->deskripsi }}</td>
                 <td class="align-middle text-center border">

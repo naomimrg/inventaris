@@ -10,8 +10,38 @@
         </div>
         <div class="mb-3">
             <label for="kode_aset" class="form-label">Kode Aset</label>
-            <input type="text" name="kode_aset" class="form-control" id="kode_aset" placeholder="">
-        </div>
+            <div class="input-group">
+                <!-- Dropdown Golongan -->
+                <select name="golongan" class="form-control">
+                    <option value=""></option>
+                   
+                </select>
+        
+                <!-- Dropdown Bidang -->
+                <select name="bidang" class="form-control">
+                    <option value=""></option>
+                   
+                </select>
+        
+                <!-- Dropdown Kelompok -->
+                <select name="kelompok" class="form-control">
+                    <option value=""></option>
+                  
+                </select>
+        
+                <!-- Dropdown Sub Kelompok -->
+                <select name="sub_kelompok" class="form-control">
+                    <option value=""></option>
+                  
+                </select>
+        
+                <!-- Dropdown Sub-Sub Kelompok -->
+                <select name="sub_sub_kelompok" class="form-control">
+                    <option value=""></option>
+                   
+                </select>
+            </div>
+        </div>        
         <div class="mb-3">
             <label for="tanggal_pembelian" class="form-label">Tanggal Pembelian</label>
             <input type="date" name="tanggal_pembelian" class="form-control" id="tanggal_pembelian" placeholder="">

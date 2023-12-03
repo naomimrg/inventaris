@@ -30,7 +30,6 @@
                 <td class="align-middle border">{{ $rs->deskripsi }}</td>
                 <td class="align-middle text-center border">
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="{{ route('lokasis.show', $rs->id) }}" type="button" class="btn btn-secondary"> <i class="fas fa-eye"></i> </a>
                         <a href="{{ route('lokasis.edit', $rs->id) }}" type="button" class="btn btn-warning ml-1"> <i class="fas fa-edit"></i> </a>
                         <form action="{{ route('lokasis.destroy', $rs->id) }}" method="POST" type="button" class="btn btn-danger p-0 ml-1"
                             onsubmit="return confirm('Delete?')">

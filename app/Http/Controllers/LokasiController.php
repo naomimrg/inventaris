@@ -34,15 +34,6 @@ class LokasiController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        $lokasi = Lokasi::findOrFail($id);
-        return view('lokasis.show', compact('lokasi'));
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)

@@ -13,6 +13,63 @@
             <label class="form-label">Kode Aset</label>
             <input type="text" name="kode_aset" class="form-control" placeholder="" value="{{ $aset->kode_aset }}" >
         </div>
+        <div class="row">
+            <div class="col mb-3">
+                <select name="golongan" class="form-control" id="golongan">
+                    <option value="">Pilih Golongan</option>
+                    <option value="1 - Tanah">1 - Tanah</option>
+                    <option value="2 - Bangunan">2 - Bangunan</option>
+                    <option value="3 - Peralatan">3 - Peralatan</option>
+                    <option value="4 - Kendaraan">4 - Kendaraan</option>
+                    <option value="5 - Inventaris">5 - Inventaris</option>
+                </select>
+                </select>
+            </div>
+            <div class="col mb-3">
+                <select name="bidang" class="form-control" id="bidang">
+                    <option value="">Pilih Bidang</option>
+                    <option value="01 - Gedung Pendidikan">01 - Gedung Pendidikan</option>
+                    <option value="02 - Gedung Administrasi">02 - Gedung Administrasi</option>
+                    <option value="03 - Tanah Utama">03 - Tanah Utama</option>
+                    <option value="04 - Tanah Pertanian">04 - Tanah Pertanian</option>
+                    <option value="05 - Peralatan Komputer">05 - Peralatan Komputer</option>
+                    <option value="06 - Peralatan Laboratorium">06 - Peralatan Laboratorium</option>
+                </select>
+            </div>
+            <div class="col mb-3">
+                <select name="kelompok" class="form-control" id="kelompok">
+                    <option value="">Pilih Kelompok</option>
+                    <option value="11 - Gedung Kuliah">11 - Gedung Kuliah</option>
+                    <option value="12 - Gedung Laboratorium">12 - Gedung Laboratorium</option>
+                    <option value="13 - Tanah Kampus Utama">13 - Tanah Kampus Utama</option>
+                    <option value="14 - Tanah Parkir">14 - Tanah Parkir</option>
+                    <option value="15 - Komputer Desktop">15 - Komputer Desktop</option>
+                    <option value="16 - Laptop">16 - Laptop</option>
+                </select>
+            </div>
+            <div class="col mb-3">
+                <select name="sub_kelompok" class="form-control" id="sub_kelompok">
+                    <option value="">Pilih Sub-Kelompok</option>
+                    <option value="01 - Gedung Aula">01 - Gedung Aula</option>
+                    <option value="02 - Gedung Kelas">02 - Gedung Kelas</option>
+                    <option value="03 - Tanah Bangunan A">03 - Tanah Bangunan A</option>
+                    <option value="04 - Tanah Bangunan B">04 - Tanah Bangunan B</option>
+                    <option value="05 - Komputer Staf">05 - Komputer Staf</option>
+                    <option value="06 - Komputer Laboratorium">06 - Komputer Laboratorium</option>
+                </select>
+            </div>
+            <div class="col mb-3">
+                <select name="sub_sub_kelompok" class="form-control" id="sub_sub_kelompok">
+                    <option value="">Pilih Sub-Sub Kelompok</option>
+                    <option value="001 - Gedung Aula Utama">001 - Gedung Aula Utama</option>
+                    <option value="002 - Gedung Aula Depan">002 - Gedung Aula Depan</option>
+                    <option value="003 - Tanah Depan Gedung A">003 - Tanah Depan Gedung A</option>
+                    <option value="004 - Tanah Belakang Gedung A">004 - Tanah Belakang Gedung A</option>
+                    <option value="005 - Komputer Staf Departemen X">005 - Komputer Staf Departemen X</option>
+                    <option value="006 - Komputer Staf Departemen Y">006 - Komputer Staf Departemen Y</option>
+                </select>
+            </div>
+        </div>
         <div class="col mb-3">
             <label class="form-label">Tanggal Pembelian</label>
             <input type="date" name="tanggal_pembelian" class="form-control" placeholder="" value="{{ $aset->tanggal_pembelian }}" >
@@ -20,7 +77,7 @@
         <div class="col mb-3">
             <label class="form-label">Kategori Aset</label>
             <select name="kategoris_id" class="form-control">
-                <option value=""></option>
+                <option value="">Pilih Kategori Aset</option>
                 @foreach ($kategoris as $rs)
                     <option value="{{ $rs->id }}" {{ $rs->nama_kategori == $aset->kategoris->nama_kategori}}>
                         {{ $rs->nama_kategori }}
@@ -31,7 +88,7 @@
         <div class="col mb-3">
             <label class="form-label">Lokasi Fisik Aset</label>
             <select name="lokasis_id" class="form-control">
-                <option value=""></option>
+                <option value="">Pilih Lokasi Fisik Aset</option>
                 @foreach ($lokasis as $rs)
                     <option value="{{ $rs->id }}" {{ $rs->nama_lokasi == $aset->lokasis->nama_lokasi}}>
                         {{ $rs->nama_lokasi }}
@@ -50,7 +107,7 @@
         <div class="col mb-3">
             <label class="form-label">Status Kepemilikan</label>
             <select name="status_kepemilikan" class="form-control">
-                <option value="" {{ $aset->status_kepemilikan == ''  }}></option>
+                <option value="" {{ $aset->status_kepemilikan == ''  }}>Pilih Status Kepemilikan</option>
                 <option value="Milik" {{ $aset->status_kepemilikan == 'Milik'  }}>Milik</option>
                 <option value="Disewa" {{ $aset->status_kepemilikan == 'Disewa'  }}>Disewa</option>
                 <option value="Dipinjam" {{ $aset->status_kepemilikan == 'Dipinjam'  }}>Dipinjam</option>
@@ -61,6 +118,15 @@
                 <option value="Pemusnahan" {{ $aset->status_kepemilikan == 'Pemusnahan'  }}>Pemusnahan</option>
                 <option value="Dalam Proses Akuisisi" {{ $aset->status_kepemilikan == 'Dalam Proses Akusisi'  }}>Dalam Proses Akusisi</option>
                 <option value="Penggunaan Bersama" {{ $aset->status_kepemilikan == 'Penggunaan Bersama'  }}>Penggunaan Bersama</option>
+            </select>
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Kondisi Aset</label>
+            <select name="kondisi" class="form-control">
+                <option value="" {{ $aset->kondisi == ''  }}>Pilih Kondisi Aset</option>
+                <option value="Baik" {{ $aset->kondisi == 'Baik'  }}>Baik</option>
+                <option value="Rusak Ringan" {{ $aset->kondisi == 'Rusak Ringan'  }}>Rusak Ringan</option>
+                <option value="Rusak Berat" {{ $aset->kondisi == 'Rusak Berat'  }}>Rusak Berat</option>
             </select>
         </div>
         <div class="col mb-3">

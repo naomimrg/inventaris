@@ -22,7 +22,7 @@ class PeminjamanController extends Controller
      */
     public function show(string $id)
     {
-        $peminjaman = Peminjaman::findOrFail($id);
+        $peminjamen = Peminjaman::findOrFail($id);
         return view('peminjamans.show', compact('peminjamen'));
     }
 

@@ -34,7 +34,6 @@
                             <td class="align-middle border">{{ $rs->kode_aset }}</td>
                             <td class="align-middle border">{{ $rs->tanggal_peminjaman }}</td>
                             <td class="align-middle border">{{ $rs->tanggal_pengembalian }}</td>
-                            <td class="align-middle border">{{ $rs->keterangan }}</td>
                             <td class="align-middle border">{{ $rs->status }}</td>
                             <td class="align-middle border text-center">
                                 <div class="btn-group" role="group" aria-label="Basic example">

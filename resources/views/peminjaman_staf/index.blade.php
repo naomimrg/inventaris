@@ -34,7 +34,7 @@
                         <td class="align-middle border">{{ $rs->kode_aset }}</td>
                         <td class="align-middle border">{{ $rs->tanggal_peminjaman }}</td>
                         <td class="align-middle border">{{ $rs->tanggal_pengembalian }}</td>
-                        <td class="align-middle border">{{ $rs->keterangan }}</td>
+                        
                         <td class="align-middle border">
                             @if ($rs->status == 'Disetujui')
                                 <span class="badge badge-success">{{ $rs->status }}</span>

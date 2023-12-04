@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Tambah Kategori Aset')
+@section('title', 'Tambah Riwayat Aset')
 @section('contents')
     <hr />
     <form action="{{ route('riwayats.store') }}" method="POST" enctype="multipart/form-data">

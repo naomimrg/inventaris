@@ -53,8 +53,6 @@ class AsetController extends Controller
         $selectedSubSubKelompok = explode(' - ', $request->sub_sub_kelompok)[0];
     
         $kodeAset = "{$selectedGolongan}{$selectedBidang}{$selectedKelompok}{$selectedSubKelompok}{$selectedSubSubKelompok}";
-    
-        // Hapus tanda "-" dari kode aset
         $kodeAset = str_replace('-', '', $kodeAset);
     
         $aset = new Aset([
@@ -76,7 +74,6 @@ class AsetController extends Controller
         ]);
     
         $aset->save();
-    
         return redirect()->route('asets');
     }    
 

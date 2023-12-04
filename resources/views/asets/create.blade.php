@@ -6,7 +6,10 @@
         @csrf
         <div class="mb-3">
             <label for="nama" class="form-label">Nama Aset</label>
-            <input type="text" name="nama" class="form-control" id="nama" placeholder="">
+            <input type="text" name="nama" class="form-control" id="nama" required>
+            @error('nama')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="kode_aset" class="form-label">Kode Aset</label>
@@ -68,10 +71,12 @@
                 </div>
             </div>
         </div>
-
         <div class="mb-3">
             <label for="tanggal_pembelian" class="form-label">Tanggal Pembelian</label>
-            <input type="date" name="tanggal_pembelian" class="form-control" id="tanggal_pembelian" placeholder="">
+            <input type="date" name="tanggal_pembelian" class="form-control" id="tanggal_pembelian" required>
+            @error('tanggal_pembelian')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="kategoris_id" class="form-label">Kategori</label>
@@ -101,11 +106,14 @@
         </div>
         <div class="mb-3">
             <label for="harga" class="form-label">Harga</label>
-            <input type="number" name="harga" class="form-control" id="harga" placeholder="">
+            <input type="number" name="harga" class="form-control" id="harga" required>
+            @error('harga')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="merk" class="form-label">Merk</label>
-            <input type="text" name="merk" class="form-control" id="merk" placeholder="">
+            <input type="text" name="merk" class="form-control" id="merk">
         </div>
         <div class="mb-3">
             <label for="status_kepemilikan" class="form-label">Status Kepemilikan</label>
@@ -134,7 +142,7 @@
         </div>
         <div class="mb-3">
             <label for="deskripsi" class="form-label">Deskripsi</label>
-            <textarea class="form-control" name="deskripsi" id="deskripsi" placeholder=""></textarea>
+            <textarea class="form-control" name="deskripsi" id="deskripsi" required></textarea>
         </div>
         <div class="row justify-content-end">
             <div class="col-auto">

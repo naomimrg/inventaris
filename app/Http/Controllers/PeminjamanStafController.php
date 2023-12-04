@@ -33,7 +33,7 @@ class PeminjamanStafController extends Controller
     public function show($id)
     {
         $peminjaman = Peminjaman::findOrFail($id);
-        return view('peminjamans.show', compact('peminjaman'));
+        return view('peminjaman_staf.show', compact('peminjaman'));
     }
 
     /**
@@ -41,8 +41,9 @@ class PeminjamanStafController extends Controller
      */
     public function edit($id)
     {
+        $asets = Aset::all();
         $peminjaman = Peminjaman::findOrFail($id);
-        return view('peminjaman_staf.edit', compact('peminjaman'));
+        return view('peminjaman_staf.edit', compact('peminjaman', 'asets'));
     }
 
     /**

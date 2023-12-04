@@ -12,13 +12,15 @@ class Perbaikan extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama',
+        'asets_id',
         'kode_aset',
+        'kategoris_id',
+        'lokasis_id',
         'tanggal_permintaan_perbaikan',
         'deskripsi',
         'status',
-        'user_id',
-        'asets_id',
+        'nama_pelapor',
+        'informasi',
     ];
 
     public function users()
@@ -29,5 +31,15 @@ class Perbaikan extends Model
     public function asets()
     {
         return $this->belongsTo(Aset::class, 'asets_id');
+    }
+
+    public function kategoris()
+    {
+        return $this->belongsTo(Kategori::class, 'kategoris_id');
+    }
+
+    public function lokasis()
+    {
+        return $this->belongsTo(Lokasi::class, 'lokasis_id');
     }
 }

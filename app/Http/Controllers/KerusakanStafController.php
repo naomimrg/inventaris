@@ -48,9 +48,10 @@ class KerusakanStafController extends Controller
      */
     public function edit($id)
     {
+        $asets = Aset::all();
         $kerusakan = Kerusakan::findOrFail($id);
         $lokasis = Lokasi::all();
-        return view('kerusakan_staf.edit', compact('kerusakan', 'lokasis'));
+        return view('kerusakan_staf.edit', compact('kerusakan', 'lokasis', 'asets'));
     }
 
     /**

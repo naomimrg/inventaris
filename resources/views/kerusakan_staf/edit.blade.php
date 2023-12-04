@@ -11,12 +11,23 @@
         </div>
         <div class="col mb-3">
             <label class="form-label">Nama Aset</label>
-            <input type="text" name="nama" class="form-control" placeholder="" value="{{ $kerusakan->nama }}">
+            <select name="asets_id" class="form-control">
+                <option value="">Pilih Aset</option>
+                @foreach ($asets as $rs)
+                    <option value="{{ $rs->id }}" {{ $rs->nama == $kerusakan->asets->nama}}>
+                        {{ $rs->nama }}
+                    </option>
+                @endforeach
+            </select>
+        </div>  
+        <div class="col mb-3">
+            <label class="form-label">Tanggal Laporan</label>
+            <input type="date" name="tanggal_laporan" class="form-control" placeholder="" value="{{ $kerusakan->tanggal_laporan }}">
         </div>
         <div class="col mb-3">
             <label class="form-label">Lokasi Fisik Aset</label>
             <select name="lokasis_id" class="form-control">
-                <option value=""></option>
+                <option value="">Pilih Lokasi</option>
                 @foreach ($lokasis as $rs)
                     <option value="{{ $rs->id }}" {{ $rs->nama_lokasi == $kerusakan->lokasis->nama_lokasi}}>
                         {{ $rs->nama_lokasi }}
@@ -26,7 +37,7 @@
         </div>    
         <div class="col mb-3">
             <label class="form-label">Deskripsi Kerusakan</label>
-            <textarea class="form-control" name="dekskripsi" placeholder="">{{ $kerusakan->dekskripsi }}</textarea>
+            <textarea class="form-control" name="deskripsi_kerusakan" placeholder="">{{ $kerusakan->deskripsi_kerusakan }}</textarea>
         </div>
         <div class="row justify-content-end">
             <div class="col-auto">

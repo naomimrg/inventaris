@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Aset;
 use App\Models\Kategori;
 use App\Models\Lokasi;
 use App\Models\Riwayat;
@@ -26,7 +28,8 @@ class RiwayatController extends Controller
     {
         $kategoris = Kategori::all();
         $lokasis = Lokasi::all();
-        return view('riwayats.create', compact('kategoris', 'lokasis'));
+        $asets = Aset::all();
+        return view('riwayats.create', compact('kategoris', 'lokasis', 'asets'));
     }
 
     /**
@@ -43,8 +46,11 @@ class RiwayatController extends Controller
      */
     public function show(string $id)
     {
+        $kategoris = Kategori::all();
+        $lokasis = Lokasi::all();
+        $asets = Aset::all();
         $riwayats= Riwayat::findOrFail($id);
-        return view('riwayats.show', compact('riwayats'));
+        return view('riwayats.show', compact('riwayats', 'kategoris', 'lokasis', 'asets'));
     }
 
     /**
@@ -52,10 +58,11 @@ class RiwayatController extends Controller
      */
     public function edit(string $id)
     {
+        $asets = Aset::all();
         $kategoris = Kategori::all();
         $lokasis = Lokasi::all();
         $riwayats = riwayat::findOrFail($id);
-        return view('riwayats.edit', compact('riwayats','kategoris', 'lokasis'));
+        return view('riwayats.edit', compact('riwayats','kategoris', 'lokasis', 'asets'));
     }
 
     /**

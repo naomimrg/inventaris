@@ -16,10 +16,7 @@ class riwayat extends Model
     protected $table = 'riwayats';
 
     protected $fillable = [
-        'nama',
-        'kode_aset',
-        'kategoris_id',
-        'lokasis_id',
+        'asets_id',
         'tanggal',
         'jenis_perubahan',
         'deskripsi',

@@ -6,43 +6,14 @@
         @csrf
         <div class="mb-3">
             <div class="col">
-                <label for="nama" class="form-label">Nama Aset</label>
-                <input type="string" name="nama" class="form-control" placeholder="">
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="col">
-                <label for="kode_aset" class="form-label">Kode Aset</label>
-                <input type="string" name="kode_aset" class="form-control" placeholder="">
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="col">
-                <label for="kategoris_id" class="form-label">Kategori</label>
-                <div class="input-group">
-                    <select name="kategoris_id" class="form-control">
-                        <option value=""></option>
-                        @foreach ($kategoris as $rs)
-                            <option value="{{ $rs->id }}">{{ $rs->nama_kategori }}</option>
-                        @endforeach
-                    </select>
-                    <div class="input-group-append">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="col">
-                <label for="lokasis_id" class="form-label">Lokasi</label>
-                <div class="input-group">
-                    <select name="lokasis_id" class="form-control">
-                        <option value=""></option>
-                        @foreach ($lokasis as $rs)
-                            <option value="{{ $rs->id }}">{{ $rs->nama_lokasi }}</option>
-                        @endforeach
-                    </select>
-                    <div class="input-group-append">
-                    </div>
+                <label for="asets_id" class="form-label">Nama Aset</label>
+                <select name="asets_id" class="form-control">
+                    <option value="">Pilih Aset</option>
+                    @foreach ($asets as $rs)
+                        <option value="{{ $rs->id }}">{{ $rs->nama }}</option>
+                    @endforeach
+                </select>
+                <div class="input-group-append">
                 </div>
             </div>
         </div>
@@ -56,7 +27,7 @@
             <div class="col">
                 <label for="jenis_perubahan" class="form-label">Jenis Perubahan</label>
                 <select name="jenis_perubahan" class="form-control">
-                    <option value=""></option>
+                    <option value="">Pilih Jenis Perubahan</option>
                     <option value="Pembelian">Pembelian</option>
                     <option value="Pemindahtanganan">Pemindahtanganan</option>
                     <option value="Perbaikan">Perbaikan</option>
@@ -79,7 +50,7 @@
             <div class="col" placeholder="">
                 <label for="status" class="form-label">Status</label>
                 <select name="status" class="form-control">
-                    <option value=""></option>
+                    <option value="">Pilih Status</option>
                     <option value="Baik">Baik</option>
                     <option value="Rusak">Rusak</option>
                     <option value="Hilang">Hilang</option>

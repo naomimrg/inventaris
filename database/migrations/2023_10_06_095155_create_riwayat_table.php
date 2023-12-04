@@ -13,10 +13,7 @@ return new class extends Migration
     {
         Schema::create('riwayats', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('kode_aset')->unique();
-            $table->unsignedBigInteger('kategoris_id'); 
-            $table->unsignedBigInteger('lokasis_id');
+            $table->foreignId('asets_id')->constrained('asets');
             $table->date('tanggal');
             $table->enum('jenis_perubahan', ['Pembelian', 'Pemindahtanganan', 'Perbaikan']);
             $table->text('deskripsi');

@@ -12,13 +12,12 @@
             <label for="asets_id" class="form-label">Nama Aset</label>
             <div class="input-group">
                 <select name="asets_id" class="form-control">
-                    <option value=""></option>
+                    <option value="">Pilih Aset</option>
                     @foreach ($asets as $rs)
                         <option value="{{ $rs->id }}">{{ $rs->nama }}</option>
                     @endforeach
                 </select>
-                <div class="input-group-append">
-                </div>
+                <div class="input-group-append"></div>
             </div>
         </div>
         <div class="mb-3">
@@ -29,7 +28,7 @@
             <label for="lokasis_id" class="form-label">Lokasi</label>
             <div class="input-group">
                 <select name="lokasis_id" class="form-control">
-                    <option value=""></option>
+                    <option value="">Pilih Lokasi</option>
                     @foreach ($lokasis as $rs)
                         <option value="{{ $rs->id }}">{{ $rs->nama_lokasi }}</option>
                     @endforeach

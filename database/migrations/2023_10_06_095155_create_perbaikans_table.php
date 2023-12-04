@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('perbaikans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('kode_aset')->unique();
+            $table->foreignId('asets_id')->constrained('asets');
+            $table->foreignId('kategoris_id')->constrained('kategoris');
+            $table->foreignId('lokasis_id')->constrained('lokasis');
             $table->date('tanggal_permintaan_perbaikan');
             $table->text('deskripsi');
             $table->enum('status', ['Belum Diperbaiki', 'Sedang Diperbaiki', 'Sudah Diperbaiki']);
             $table->string('nama_pelapor');
             $table->text('informasi');
-            $table->foreignId('asets_id')->constrained('asets');
             $table->timestamps();
         });
     }

@@ -16,7 +16,6 @@
             <tr>
                 <th class="text-center border">No</th>
                 <th class="text-center border">Nama Aset</th>
-                <th class="text-center border">Kode Aset</th>
                 <th class="text-center border">Tanggal Permintaan Perbaikan</th>
                 <th class="text-center border">Deskripsi</th>
                 <th class="text-center border">Status</th>
@@ -29,12 +28,11 @@
                 @foreach($perbaikans as $rs)
                     <tr>
                         <td class="align-middle border">{{ $loop->iteration }}</td>
-                        <td class="align-middle border">{{ $rs->nama }}</td>
-                        <td class="align-middle border">{{ $rs->kode_aset }}</td>
+                        <td class="align-middle border">{{ $rs->asets->nama }}</td>
                         <td class="align-middle border">{{ $rs->tanggal_permintaan_perbaikan }}</td>
                         <td class="align-middle border">{{ $rs->deskripsi }}</td>
+                        <td class="align-middle border">{{ $rs->status }}</td>
                         <td class="align-middle border">{{ $rs->nama_pelapor }}</td>
-                        <td class="align-middle border">{{ $rs->users_id }}</td>
                         <td class="align-middle border text-center">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a href="{{ route('perbaikans.show', $rs->id) }}" type="button" class="btn btn-secondary"> <i class="fas fa-eye"></i> </a>

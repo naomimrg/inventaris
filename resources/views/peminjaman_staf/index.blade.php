@@ -16,8 +16,7 @@
             <tr>
                 <th class="text-center border">No</th>
                 <th class="text-center border">Nama Peminjam</th>
-                <th class="text-center border">Nama</th>
-                <th class="text-center border">Kode Aset</th>
+                <th class="text-center border">Nama Aset</th>
                 <th class="text-center border">Tanggal Peminjaman</th>
                 <th class="text-center border">Tanggal Pengembalian</th>
                 <th class="text-center border">Status</th>
@@ -31,7 +30,6 @@
                         <td class="align-middle border">{{ $loop->iteration }}</td>
                         <td class="align-middle border">{{ $rs->nama_peminjam }}</td>
                         <td class="align-middle border">{{ $rs->asets->nama }}</td>
-                        <td class="align-middle border">{{ $rs->kode_aset }}</td>
                         <td class="align-middle border">{{ $rs->tanggal_peminjaman }}</td>
                         <td class="align-middle border">{{ $rs->tanggal_pengembalian }}</td>
                         

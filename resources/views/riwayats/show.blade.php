@@ -5,19 +5,19 @@
     <div>
         <div class="col mb-3">
             <label class="form-label">Nama</label>
-            <input type="text" name="nama" class="form-control" placeholder="" value="{{ $riwayats->nama }}" readonly>
+            <input type="text" name="nama" class="form-control" placeholder="" value="{{ $riwayats->asets->nama }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Kode Aset</label>
-            <input type="text" name="kode_aset" class="form-control" placeholder="" value="{{ $riwayats->kode_aset }}" readonly>
+            <input type="text" name="kode_aset" class="form-control" placeholder="" value="{{ $riwayats->asets->kode_aset }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Kategori</label>
-            <input type="text" name="kategoris_id" class="form-control" placeholder="" value="{{ $riwayats->kategoris->nama_kategori }}" readonly>
+            <input type="text" name="kategoris_id" class="form-control" placeholder="" value="{{ $riwayats->asets->kategoris->nama_kategori }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Lokasi</label>
-            <input type="text" name="lokasis_id" class="form-control" placeholder="" value="{{ $riwayats->lokasis->nama_lokasi }}" readonly>
+            <input type="text" name="lokasis_id" class="form-control" placeholder="" value="{{ $riwayats->asets->lokasis->nama_lokasi }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Tanggal</label>

@@ -9,7 +9,15 @@
         </div>
         <div class="col mb-3">
             <label class="form-label">Kode Aset</label>
-            <input type="text" name="kode_aset" class="form-control" placeholder="" value="{{ $peminjaman->kode_aset }}" readonly>
+            <input type="text" name="kode_aset" class="form-control" placeholder="" value="{{ $peminjaman->asets->kode_aset }}" readonly>
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Kategori</label>
+            <input type="text" name="nama_kategori" class="form-control" placeholder="" value="{{ $peminjaman->asets->kategoris->nama_kategori }}" readonly>
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Lokasi Fisik Aset</label>
+            <input type="text" name="nama_lokasi" class="form-control" placeholder="" value="{{ $peminjaman->asets->lokasis->nama_lokasi }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Tanggal Peminjaman</label>

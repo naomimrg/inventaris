@@ -5,14 +5,18 @@
     <form action="{{ route('perbaikans.edit', $perbaikans->id) }}" method="POST">
         @csrf
         @method('PUT')
-        <div class="row">
-            <div class="col-12 mb-3">
-                <label class="form-label">Nama Aset</label>
-                <input type="text" name="nama" class="form-control" placeholder="" value="{{ $perbaikans->nama }}" >
-            </div>
-            <div class="col-12 mb-3">
-                <label class="form-label">Kode Aset</label>
-                <input type="text" name="kode_aset" class="form-control" placeholder="" value="{{ $perbaikans->kode_aset }}" >
+            <div class="mb-3">
+                <div class="col">
+                    <label for="asets_id" class="form-label">Nama Aset</label>
+                    <select name="asets_id" class="form-control">
+                        <option value="">Pilih Aset</option>
+                        @foreach ($asets as $rs)
+                            <option value="{{ $rs->id }}">{{ $rs->nama }}</option>
+                        @endforeach
+                    </select>
+                    <div class="input-group-append">
+                    </div>
+                </div>
             </div>
             <div class="col-12 mb-3">
                 <label class="form-label">Tanggal Permintaan Perbaikan</label>
@@ -20,7 +24,7 @@
             </div>
             <div class="col-12 mb-3">
                 <label class="form-label">Deskripsi</label>
-                <textarea class="form-control" name="dekskripsi" placeholder="" >{{ $perbaikans->dekskripsi }}</textarea>
+                <textarea class="form-control" name="deskripsi" placeholder="" >{{ $perbaikans->deskripsi }}</textarea>
             </div>
             <div class="col-12 mb-3">
                 <label class="form-label">Status</label>
@@ -32,12 +36,11 @@
             </div>
             <div class="col-12 mb-3">
                 <label class="form-label">Informasi Umum Keadaan Aset</label>
-                <textarea class="form-control" name="inforasi" placeholder="" >{{ $perbaikans->inforasi }}</textarea>
+                <textarea class="form-control" name="informasi" placeholder="" >{{ $perbaikans->informasi }}</textarea>
             </div>
-        </div>
-        <div class="row">
-            <div class="d-grid">
-                <button class="btn btn-warning">Update</button>
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <button type="update" class="btn btn-warning">Update</button>
             </div>
         </div>
     </form>

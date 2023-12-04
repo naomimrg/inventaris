@@ -12,6 +12,14 @@
             <input type="text" name="nama" class="form-control" placeholder="" value="{{ $kerusakan->asets->nama }}" readonly>
         </div>
         <div class="col mb-3">
+            <label class="form-label">Kode Aset</label>
+            <input type="text" name="kode_aset" class="form-control" placeholder="" value="{{ $kerusakan->asets->kode_aset }}" readonly>
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Kategori</label>
+            <input type="text" name="nama_kategori" class="form-control" placeholder="" value="{{ $kerusakan->asets->kategoris->nama_kategori }}" readonly>
+        </div>
+        <div class="col mb-3">
             <label class="form-label">Lokasi</label>
             <input type="text" name="lokasis_id" class="form-control" placeholder="" value="{{ $kerusakan->lokasis->nama_lokasi }}" readonly>
         </div>

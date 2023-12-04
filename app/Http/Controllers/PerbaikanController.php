@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aset;
+use App\Models\Kategori;
+use App\Models\Lokasi;
 use App\Models\Perbaikan;
 use Illuminate\Http\Request;
 
@@ -21,7 +24,8 @@ class PerbaikanController extends Controller
      */
     public function create()
     {
-        return view('perbaikans.create');
+        $asets = Aset::all();
+        return view('perbaikans.create', compact('asets'));
     }
 
     /**
@@ -38,8 +42,9 @@ class PerbaikanController extends Controller
      */
     public function show(string $id)
     {
+        $asets = Aset::all();
         $perbaikans= Perbaikan::findOrFail($id);
-        return view('perbaikans.show', compact('perbaikan'));
+        return view('perbaikans.show', compact('perbaikans', 'asets'));
     }
 
     /**
@@ -47,8 +52,9 @@ class PerbaikanController extends Controller
      */
     public function edit(string $id)
     {
+        $asets = Aset::all();
         $perbaikans = Perbaikan::findOrFail($id);
-        return view('perbaikans.edit', compact('perbaikan'));
+        return view('perbaikans.edit', compact('perbaikans', 'asets'));
     }
 
     /**

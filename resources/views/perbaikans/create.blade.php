@@ -6,14 +6,15 @@
         @csrf
         <div class="mb-3">
             <div class="col">
-                <label for="nama" class="form-label">Nama Aset</label>
-                <input type="text" name="nama" class="form-control" placeholder="">
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="col">
-                <label for="kode_aset" class="form-label">Kode Aset</label>
-                <input type="text" name="kode_aset" class="form-control" placeholder="">
+                <label for="asets_id" class="form-label">Nama Aset</label>
+                <select name="asets_id" class="form-control">
+                    <option value=""></option>
+                    @foreach ($asets as $rs)
+                        <option value="{{ $rs->id }}">{{ $rs->nama }}</option>
+                    @endforeach
+                </select>
+                <div class="input-group-append">
+                </div>
             </div>
         </div>
         <div class="mb-3">
@@ -47,8 +48,8 @@
         </div>
         <div class="mb-3">
             <div class="col">
-                <label for="deskripsi" class="form-label">Informasi Umum Keadaan Aset</label>
-                <textarea class="form-control" name="deskripsi" placeholder=""></textarea>
+                <label for="informasi" class="form-label">Informasi Umum Keadaan Aset</label>
+                <textarea class="form-control" name="informasi" placeholder=""></textarea>
             </div>
         </div>
         <div class="row justify-content-end">

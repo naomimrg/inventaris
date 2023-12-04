@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('nama_peminjam');
             $table->foreignId('asets_id')->constrained('asets'); 
-            $table->string('kode_aset')->unique();
             $table->date('tanggal_peminjaman');
             $table->date('tanggal_pengembalian');
             $table->enum('status', ['Diajukan', 'Disetujui', 'Ditolak']);

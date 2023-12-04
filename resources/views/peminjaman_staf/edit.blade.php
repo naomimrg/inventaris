@@ -9,13 +9,20 @@
             <label class="form-label">Nama Peminjam</label>
             <input type="text" name="nama_peminjam" class="form-control" placeholder="" value="{{ $peminjaman->nama_peminjam }}">
         </div>
-        <div class="col mb-3">
-            <label class="form-label">Nama Aset</label>
-            <input type="text" name="nama" class="form-control" placeholder="" value="{{ $peminjaman->nama }}">
-        </div>
-        <div class="col mb-3">
-            <label class="form-label">Kode Aset</label>
-            <input type="text" name="kode_aset" class="form-control" placeholder="" value="{{ $peminjaman->kode_aset }}">
+        <div class="mb-3">
+            <div class="col">
+                <label for="asets_id" class="form-label">Nama Aset</label>
+                <div class="input-group">
+                    <select name="asets_id" class="form-control">
+                        <option value="">Pilih Aset</option>
+                        @foreach ($asets as $rs)
+                            <option value="{{ $rs->id }}">{{ $rs->nama }}</option>
+                        @endforeach
+                    </select>
+                    <div class="input-group-append">
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col mb-3">
             <label class="form-label">Tanggal Peminjaman</label>

@@ -16,7 +16,6 @@
             <tr>
                 <th class="text-center border">No</th>
                 <th class="text-center border">Nama Aset</th>
-                <th class="text-center border">Kode Aset</th>
                 <th class="text-center border">Tanggal</th>
                 <th class="text-center border">Jenis Perubahan</th>
                 <th class="text-center border">Deskripsi</th>
@@ -29,15 +28,11 @@
                 @foreach($riwayats as $rs)
                     <tr>
                         <td class="align-middle border">{{ $loop->iteration }}</td>
-                        <td class="align-middle border">{{ $rs->nama }}</td>
-                        <td class="align-middle border">{{ $rs->kode_aset }}</td>
-                        <td class="align-middle border">{{ $rs->kategoris->nama_kategori }}</td>
-                        <td class="align-middle border">{{ $rs->lokasis->nama_lokasi }}</td>
+                        <td class="align-middle border">{{ $rs->asets->nama }}</td>
                         <td class="align-middle border">{{ $rs->tanggal }}</td>
                         <td class="align-middle border">{{ $rs->jenis_perubahan }}</td>
                         <td class="align-middle border">{{ $rs->deskripsi }}</td>
                         <td class="align-middle border">{{ $rs->status }}</td>
-                        <td class="align-middle border">{{ $rs->catatan_tambahan }}</td>
                         <td class="align-middle border text-center">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a href="{{ route('riwayats.show', $rs->id) }}" type="button" class="btn btn-secondary"> <i class="fas fa-eye"></i> </a>

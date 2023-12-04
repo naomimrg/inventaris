@@ -15,7 +15,7 @@
                 <label for="asets_id" class="form-label">Nama Aset</label>
                 <div class="input-group">
                     <select name="asets_id" class="form-control">
-                        <option value=""></option>
+                        <option value="">Pilih Aset</option>
                         @foreach ($asets as $rs)
                             <option value="{{ $rs->id }}">{{ $rs->nama }}</option>
                         @endforeach
@@ -23,12 +23,6 @@
                     <div class="input-group-append">
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="mb-3">
-            <div class="col">
-                <label for="kode_aset" class="form-label">Kode Aset</label>
-                <input type="string" name="kode_aset" class="form-control" placeholder="">
             </div>
         </div>
         <div class="mb-3">

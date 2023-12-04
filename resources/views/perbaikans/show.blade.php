@@ -5,11 +5,19 @@
     <div>
         <div class="col mb-3">
             <label class="form-label">Nama Aset</label>
-            <input type="text" name="nama" class="form-control" placeholder="" value="{{ $perbaikans->nama }}" readonly>
+            <input type="text" name="nama" class="form-control" placeholder="" value="{{ $perbaikans->asets->nama }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Kode Aset</label>
-            <input type="text" name="kode_aset" class="form-control" placeholder="" value="{{ $perbaikans->kode_aset }}" readonly>
+            <input type="text" name="kode_aset" class="form-control" placeholder="" value="{{ $perbaikans->asets->kode_aset }}" readonly>
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Kategori Aset</label>
+            <input type="text" name="nama_kategori" class="form-control" placeholder="" value="{{ $perbaikans->asets->kategoris->nama_kategori }}" readonly>
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Lokasi Fisik Aset</label>
+            <input type="text" name="nama_lokasi" class="form-control" placeholder="" value="{{ $perbaikans->asets->lokasis->nama_lokasi }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Tanggal Permintaan Perbaikan</label>

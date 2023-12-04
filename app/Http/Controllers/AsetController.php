@@ -35,7 +35,6 @@ class AsetController extends Controller
      */
     public function store(Request $request)
     {
-        // Validasi input sesuai kebutuhan
         $request->validate([
             'nama' => 'required',
             'tanggal_pembelian' => 'required|date',
@@ -46,18 +45,18 @@ class AsetController extends Controller
             'kondisi' => 'required',
             'deskripsi' => 'required',
         ]);
-
-        // Logika untuk memisahkan angka dari opsi
+    
         $selectedGolongan = explode(' - ', $request->golongan)[0];
         $selectedBidang = explode(' - ', $request->bidang)[0];
         $selectedKelompok = explode(' - ', $request->kelompok)[0];
         $selectedSubKelompok = explode(' - ', $request->sub_kelompok)[0];
         $selectedSubSubKelompok = explode(' - ', $request->sub_sub_kelompok)[0];
-
-        // Gabungkan angka-angka yang dipisahkan untuk membentuk kode aset
-        $kodeAset = "{$selectedGolongan}-{$selectedBidang}-{$selectedKelompok}-{$selectedSubKelompok}-{$selectedSubSubKelompok}";
-
-        // Simpan data aset beserta kode aset ke database
+    
+        $kodeAset = "{$selectedGolongan}{$selectedBidang}{$selectedKelompok}{$selectedSubKelompok}{$selectedSubSubKelompok}";
+    
+        // Hapus tanda "-" dari kode aset
+        $kodeAset = str_replace('-', '', $kodeAset);
+    
         $aset = new Aset([
             'nama' => $request->nama,
             'kode_aset' => $kodeAset,
@@ -75,12 +74,11 @@ class AsetController extends Controller
             'kondisi' => $request->kondisi,
             'deskripsi' => $request->deskripsi,
         ]);
-
+    
         $aset->save();
-
-        // Redirect atau berikan respons sesuai kebutuhan
+    
         return redirect()->route('asets');
-    }
+    }    
 
     /**
      * Display the specified resource.

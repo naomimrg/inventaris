@@ -22,6 +22,8 @@
                         <option value="3 - Peralatan">3 - Peralatan</option>
                         <option value="4 - Kendaraan">4 - Kendaraan</option>
                         <option value="5 - Inventaris">5 - Inventaris</option>
+                        <option value="6 - Elektronik">6 - Elektronik</option>
+                        <option value="0 - Lainnya">0 - Lainnya</option>
                     </select>
                     </select>
                 </div>
@@ -31,9 +33,11 @@
                         <option value="01 - Gedung Pendidikan">01 - Gedung Pendidikan</option>
                         <option value="02 - Gedung Administrasi">02 - Gedung Administrasi</option>
                         <option value="03 - Tanah Utama">03 - Tanah Utama</option>
-                        <option value="04 - Tanah Pertanian">04 - Tanah Pertanian</option>
+                        <option value="04 - Inventaris Kantor">04 - Inventaris Kantor</option>
                         <option value="05 - Peralatan Komputer">05 - Peralatan Komputer</option>
                         <option value="06 - Peralatan Laboratorium">06 - Peralatan Laboratorium</option>
+                        <option value="07 - Audio Visual">07 - Audio Visual</option>
+                        <option value="99 - Lainnya">0 - Lainnya</option>
                     </select>
                 </div>
                 <div class="col">
@@ -44,7 +48,11 @@
                         <option value="13 - Tanah Kampus Utama">13 - Tanah Kampus Utama</option>
                         <option value="14 - Tanah Parkir">14 - Tanah Parkir</option>
                         <option value="15 - Komputer Desktop">15 - Komputer Desktop</option>
-                        <option value="16 - Laptop">16 - Laptop</option>
+                        <option value="16 - Peralatan Server">16 - Peralatan Server</option>
+                        <option value="17 - Inventaris Kursi dan Meja">17 - Inventaris Kursi dan Meja</option>
+                        <option value="18 - Perangkat Audio">18 - Perangkat Audio</option>
+
+                        <option value="99 - Lainnya">0 - Lainnya</option>
                     </select>
                 </div>
                 <div class="col">
@@ -56,17 +64,29 @@
                         <option value="04 - Tanah Bangunan B">04 - Tanah Bangunan B</option>
                         <option value="05 - Komputer Staf">05 - Komputer Staf</option>
                         <option value="06 - Komputer Laboratorium">06 - Komputer Laboratorium</option>
+                        <option value="07 - Gedung Pusat Perpustakaan">07 - Gedung Pusat Perpustakaan</option>
+                        <option value="08 - Mikrofon (Mic)">08 - Mikrofon/Mic</option>
+                        <option value="09 - Speaker">09 - Speaker</option>
+                        <option value="10 - Prosesor Audio">10 - Prosesor Audio</option>
+
+                        <option value="99 - Lainnya">0 - Lainnya</option>
                     </select>
                 </div>
                 <div class="col">
                     <select name="sub_sub_kelompok" class="form-control" id="sub_sub_kelompok">
                         <option value="">Pilih Sub-Sub Kelompok</option>
-                        <option value="001 - Gedung Aula Utama">001 - Gedung Aula Utama</option>
-                        <option value="002 - Gedung Aula Depan">002 - Gedung Aula Depan</option>
+                        <option value="001 - Ruang Aula Utama">001 - Ruang Aula Utama</option>
+                        <option value="002 - Ruang Aula Depan">002 - Ruang Aula Depan</option>
                         <option value="003 - Tanah Depan Gedung A">003 - Tanah Depan Gedung A</option>
                         <option value="004 - Tanah Belakang Gedung A">004 - Tanah Belakang Gedung A</option>
                         <option value="005 - Komputer Staf Departemen X">005 - Komputer Staf Departemen X</option>
                         <option value="006 - Komputer Staf Departemen Y">006 - Komputer Staf Departemen Y</option>
+                        <option value="007 - Mikrofon Kondensor">007 - Mikrofon Kondensor</option>
+                        <option value="008 - Mikrofon Dinamis">008 - Mikrofon Dinamis</option>
+                        <option value="009 - Speaker Aktif">009 - Speaker Aktif</option>
+                        <option value="010 - Speaker Pasif">010 - Speaker Pasif</option>
+                        <option value="011 - Prosesor Audio Digital">011 - Prosesor Audio Digital</option>
+                        <option value="99 - Lainnya">0 - Lainnya</option>
                     </select>
                 </div>
             </div>
@@ -142,7 +162,7 @@
         </div>
         <div class="mb-3">
             <label for="deskripsi" class="form-label">Deskripsi</label>
-            <textarea class="form-control" name="deskripsi" id="deskripsi" required></textarea>
+            <textarea class="form-control" name="deskripsi" id="deskripsi" required style="white-space: pre-line;"></textarea>
         </div>
         <div class="row justify-content-end">
             <div class="col-auto">

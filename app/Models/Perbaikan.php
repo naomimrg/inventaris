@@ -13,9 +13,6 @@ class Perbaikan extends Model
 
     protected $fillable = [
         'asets_id',
-        'kode_aset',
-        'kategoris_id',
-        'lokasis_id',
         'tanggal_permintaan_perbaikan',
         'deskripsi',
         'status',
@@ -31,15 +28,5 @@ class Perbaikan extends Model
     public function asets()
     {
         return $this->belongsTo(Aset::class, 'asets_id');
-    }
-
-    public function kategoris()
-    {
-        return $this->belongsTo(Kategori::class, 'kategoris_id');
-    }
-
-    public function lokasis()
-    {
-        return $this->belongsTo(Lokasi::class, 'lokasis_id');
     }
 }

@@ -22,6 +22,7 @@
                     <option value="3 - Peralatan">3 - Peralatan</option>
                     <option value="4 - Kendaraan">4 - Kendaraan</option>
                     <option value="5 - Inventaris">5 - Inventaris</option>
+                    <option value="0 - Lainnya">0 - Lainnya</option>
                 </select>
                 </select>
             </div>
@@ -34,6 +35,7 @@
                     <option value="04 - Tanah Pertanian">04 - Tanah Pertanian</option>
                     <option value="05 - Peralatan Komputer">05 - Peralatan Komputer</option>
                     <option value="06 - Peralatan Laboratorium">06 - Peralatan Laboratorium</option>
+                    <option value="99 - Lainnya">0 - Lainnya</option>
                 </select>
             </div>
             <div class="col mb-3">
@@ -45,6 +47,7 @@
                     <option value="14 - Tanah Parkir">14 - Tanah Parkir</option>
                     <option value="15 - Komputer Desktop">15 - Komputer Desktop</option>
                     <option value="16 - Laptop">16 - Laptop</option>
+                    <option value="99 - Lainnya">0 - Lainnya</option>
                 </select>
             </div>
             <div class="col mb-3">
@@ -56,6 +59,7 @@
                     <option value="04 - Tanah Bangunan B">04 - Tanah Bangunan B</option>
                     <option value="05 - Komputer Staf">05 - Komputer Staf</option>
                     <option value="06 - Komputer Laboratorium">06 - Komputer Laboratorium</option>
+                    <option value="99 - Lainnya">0 - Lainnya</option>
                 </select>
             </div>
             <div class="col mb-3">
@@ -67,6 +71,7 @@
                     <option value="004 - Tanah Belakang Gedung A">004 - Tanah Belakang Gedung A</option>
                     <option value="005 - Komputer Staf Departemen X">005 - Komputer Staf Departemen X</option>
                     <option value="006 - Komputer Staf Departemen Y">006 - Komputer Staf Departemen Y</option>
+                    <option value="99 - Lainnya">0 - Lainnya</option>
                 </select>
             </div>
         </div>
@@ -131,7 +136,7 @@
         </div>
         <div class="col mb-3">
             <label class="form-label">Deskripsi</label>
-            <textarea class="form-control" name="deskripsi" placeholder="" >{{ $aset->deskripsi }}</textarea>
+            <textarea class="form-control" name="deskripsi" placeholder="" required style="white-space: pre-line;" >{{ $aset->deskripsi }}</textarea>
         </div>
         <div class="row justify-content-end">
             <div class="col-auto">

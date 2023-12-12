@@ -37,7 +37,7 @@
                         <option value="05 - Peralatan Komputer">05 - Peralatan Komputer</option>
                         <option value="06 - Peralatan Laboratorium">06 - Peralatan Laboratorium</option>
                         <option value="07 - Audio Visual">07 - Audio Visual</option>
-                        <option value="99 - Lainnya">0 - Lainnya</option>
+                        <option value="99 - Lainnya">99 - Lainnya</option>
                     </select>
                 </div>
                 <div class="col">
@@ -51,8 +51,7 @@
                         <option value="16 - Peralatan Server">16 - Peralatan Server</option>
                         <option value="17 - Inventaris Kursi dan Meja">17 - Inventaris Kursi dan Meja</option>
                         <option value="18 - Perangkat Audio">18 - Perangkat Audio</option>
-
-                        <option value="99 - Lainnya">0 - Lainnya</option>
+                        <option value="99 - Lainnya">99 - Lainnya</option>
                     </select>
                 </div>
                 <div class="col">
@@ -68,8 +67,7 @@
                         <option value="08 - Mikrofon (Mic)">08 - Mikrofon/Mic</option>
                         <option value="09 - Speaker">09 - Speaker</option>
                         <option value="10 - Prosesor Audio">10 - Prosesor Audio</option>
-
-                        <option value="99 - Lainnya">0 - Lainnya</option>
+                        <option value="99 - Lainnya">99 - Lainnya</option>
                     </select>
                 </div>
                 <div class="col">
@@ -86,7 +84,7 @@
                         <option value="009 - Speaker Aktif">009 - Speaker Aktif</option>
                         <option value="010 - Speaker Pasif">010 - Speaker Pasif</option>
                         <option value="011 - Prosesor Audio Digital">011 - Prosesor Audio Digital</option>
-                        <option value="99 - Lainnya">0 - Lainnya</option>
+                        <option value="99 - Lainnya">099 - Lainnya</option>
                     </select>
                 </div>
             </div>
@@ -134,6 +132,10 @@
         <div class="mb-3">
             <label for="merk" class="form-label">Merk</label>
             <input type="text" name="merk" class="form-control" id="merk">
+        </div>
+        <div class="mb-3">
+            <label for="luas" class="form-label">Luas</label>
+            <input type="text" name="luas" class="form-control" id="luas">
         </div>
         <div class="mb-3">
             <label for="status_kepemilikan" class="form-label">Status Kepemilikan</label>

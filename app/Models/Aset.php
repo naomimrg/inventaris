@@ -24,6 +24,7 @@ class Aset extends Model
         'lokasi',
         'harga',
         'merk',
+        'luas',
         'status_kepemilikan',
         'kondisi',
         'deskripsi',

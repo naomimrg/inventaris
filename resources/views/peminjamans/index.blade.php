@@ -31,7 +31,7 @@
                             <td class="align-middle border">{{ $loop->iteration }}</td>
                             <td class="align-middle border">{{ $rs->nama_peminjam }}</td>
                             <td class="align-middle border">{{ $rs->asets->nama }}</td>
-                            <td class="align-middle border">{{ $rs->kode_aset }}</td>
+                            <td class="align-middle border">{{ $rs->asets->kode_aset }}</td>
                             <td class="align-middle border">{{ $rs->tanggal_peminjaman }}</td>
                             <td class="align-middle border">{{ $rs->tanggal_pengembalian }}</td>
                             <td class="align-middle border">{{ $rs->status }}</td>

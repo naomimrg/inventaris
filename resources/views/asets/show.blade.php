@@ -31,6 +31,10 @@
             <input type="string" name="merk" class="form-control" placeholder="" value="{{ $aset->merk }}" readonly>
         </div>
         <div class="col mb-3">
+            <label class="form-label">Luas</label>
+            <input type="string" name="luas" class="form-control" placeholder="" value="{{ $aset->luas }}" readonly>
+        </div>
+        <div class="col mb-3">
             <label class="form-label">Status Kepemilikan</label>
             <input type="string" name="status_kepemilikan" class="form-control" placeholder="" value="{{ $aset->status_kepemilikan }}" readonly>
         </div>

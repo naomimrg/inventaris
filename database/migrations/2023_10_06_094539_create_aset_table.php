@@ -25,6 +25,7 @@ return new class extends Migration
             $table->foreignId('lokasis_id');
             $table->integer('harga');
             $table->string('merk')->nullable();
+            $table->string('luas')->nullable();
             $table->string('status_kepemilikan');
             $table->string('kondisi');
             $table->text('deskripsi');

@@ -5,14 +5,14 @@
     <form action="{{ route('asets.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
-            <label for="nama" class="form-label">Nama Aset</label>
+            <label for="nama" class="form-label">Nama Aset *</label>
             <input type="text" name="nama" class="form-control" id="nama" required>
             @error('nama')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="mb-3">
-            <label for="kode_aset" class="form-label">Kode Aset</label>
+            <label for="kode_aset" class="form-label">Kode Aset *</label>
             <div class="row">
                 <div class="col">
                     <select name="golongan" class="form-control" id="golongan">
@@ -24,7 +24,6 @@
                         <option value="5 - Inventaris">5 - Inventaris</option>
                         <option value="6 - Elektronik">6 - Elektronik</option>
                         <option value="0 - Lainnya">0 - Lainnya</option>
-                    </select>
                     </select>
                 </div>
                 <div class="col">
@@ -90,14 +89,14 @@
             </div>
         </div>
         <div class="mb-3">
-            <label for="tanggal_pembelian" class="form-label">Tanggal Pembelian</label>
+            <label for="tanggal_pembelian" class="form-label">Tanggal Pembelian *</label>
             <input type="date" name="tanggal_pembelian" class="form-control" id="tanggal_pembelian" required>
             @error('tanggal_pembelian')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="mb-3">
-            <label for="kategoris_id" class="form-label">Kategori</label>
+            <label for="kategoris_id" class="form-label">Kategori *</label>
             <div class="input-group">
                 <select name="kategoris_id" class="form-control">
                     <option value="">Pilih Kategori</option>
@@ -110,7 +109,7 @@
             </div>
         </div>
         <div class="mb-3">
-            <label for="lokasis_id" class="form-label">Lokasi Fisik Aset</label>
+            <label for="lokasis_id" class="form-label">Lokasi Fisik Aset *</label>
             <div class="input-group">
                 <select name="lokasis_id" class="form-control">
                     <option value="">Pilih Lokasi</option>
@@ -123,7 +122,7 @@
             </div>
         </div>
         <div class="mb-3">
-            <label for="harga" class="form-label">Harga</label>
+            <label for="harga" class="form-label">Harga *</label>
             <input type="number" name="harga" class="form-control" id="harga" required>
             @error('harga')
                 <div class="text-danger">{{ $message }}</div>
@@ -138,7 +137,7 @@
             <input type="text" name="luas" class="form-control" id="luas">
         </div>
         <div class="mb-3">
-            <label for="status_kepemilikan" class="form-label">Status Kepemilikan</label>
+            <label for="status_kepemilikan" class="form-label">Status Kepemilikan *</label>
             <select name="status_kepemilikan" class="form-control" id="status_kepemilikan">
                 <option value="">Pilih Status Kepemilikan</option>
                 <option value="Milik">Milik</option>
@@ -154,7 +153,7 @@
             </select>
         </div>
         <div class="mb-3">
-            <label for="kondisi" class="form-label">Kondisi Aset</label>
+            <label for="kondisi" class="form-label">Kondisi Aset *</label>
             <select name="kondisi" class="form-control" id="kondisi">
                 <option value="">Pilih Kondisi Aset</option>
                 <option value="Baik">Baik</option>
@@ -163,7 +162,7 @@
             </select>
         </div>
         <div class="mb-3">
-            <label for="deskripsi" class="form-label">Deskripsi</label>
+            <label for="deskripsi" class="form-label">Deskripsi *</label>
             <textarea class="form-control" name="deskripsi" id="deskripsi" required style="white-space: pre-line;"></textarea>
         </div>
         <div class="row justify-content-end">

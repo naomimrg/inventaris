@@ -89,6 +89,13 @@
             </div>
         </div>
         <div class="mb-3">
+            <label for="nomor_register" class="form-label">Nomor Register *</label>
+            <input type="numer" name="nomor_register" class="form-control" id="nomor_register" required>
+            @error('nomor_register')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="mb-3">
             <label for="tanggal_pembelian" class="form-label">Tanggal Pembelian *</label>
             <input type="date" name="tanggal_pembelian" class="form-control" id="tanggal_pembelian" required>
             @error('tanggal_pembelian')

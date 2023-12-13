@@ -89,6 +89,10 @@
             </div>
         </div>
         <div class="col mb-3">
+            <label class="form-label">Nomor Register</label>
+            <input type="number" name="nomor_register" class="form-control" placeholder="" value="{{ $aset->nomor_register }}" >
+        </div>
+        <div class="col mb-3">
             <label class="form-label">Tanggal Pembelian</label>
             <input type="date" name="tanggal_pembelian" class="form-control" placeholder="" value="{{ $aset->tanggal_pembelian }}" >
         </div>

@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('asets', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->char('kode_aset')->unique();
+            $table->char('kode_aset');
             $table->string('golongan');
             $table->string('bidang');
             $table->string('kelompok');
             $table->string('sub_kelompok');
             $table->string('sub_sub_kelompok');
+            $table->integer('nomor_register');
             $table->date('tanggal_pembelian');
             $table->foreignId('kategoris_id');
             $table->foreignId('lokasis_id');

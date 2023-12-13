@@ -11,6 +11,10 @@
             <input type="text" name="kode_aset" class="form-control" placeholder="" value="{{ $aset->kode_aset }}" readonly>
         </div>
         <div class="col mb-3">
+            <label class="form-label">Nomor Register</label>
+            <input type="string" name="nomor_register" class="form-control" placeholder="" value="{{ $aset->nomor_register }}" readonly>
+        </div>
+        <div class="col mb-3">
             <label class="form-label">Tanggal Pembelian</label>
             <input type="date" name="tanggal_pembelian" class="form-control" placeholder="" value="{{ $aset->tanggal_pembelian }}" readonly>
         </div>

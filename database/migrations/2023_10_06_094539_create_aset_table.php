@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('luas')->nullable();
             $table->string('status_kepemilikan');
             $table->string('kondisi');
-            $table->text('deskripsi');
+            $table->text('deskripsi')->nullable();
             $table->timestamps();
         });
     }

@@ -20,7 +20,7 @@
                 <th class="text-center border">Kategori</th>
                 <th class="text-center border">Lokasi Fisik Aset</th>
                 <th class="text-center border">Harga</th>
-                <th class="text-center border">Deskripsi</th>
+                <th class="text-center border">Kondisi Aset</th>
                 <th class="text-center border">Aksi</th>
             </tr>
         </thead>
@@ -34,7 +34,7 @@
                         <td class="align-middle border">{{ $rs->kategoris->nama_kategori }}</td>
                         <td class="align-middle border">{{ $rs->lokasis->nama_lokasi }}</td>
                         <td class="align-middle border">{{ $rs->harga }}</td>
-                        <td class="align-middle border">{{ $rs->deskripsi }}</td>
+                        <td class="align-middle border">{{ $rs->kondisi }}</td>
                         <td class="align-middle border text-center">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a href="{{ route('asets.show', $rs->id) }}" type="button" class="btn btn-secondary"> <i class="fas fa-eye"></i> </a>

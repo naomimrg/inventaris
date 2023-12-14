@@ -19,6 +19,7 @@ class Aset extends Model
         'kelompok',
         'sub_kelompok',
         'sub_sub_kelompok',
+        'nomor_register',
         'tanggal_pembelian',
         'kategori',
         'lokasi',

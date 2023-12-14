@@ -37,13 +37,13 @@ class AsetController extends Controller
     {
         $request->validate([
             'nama' => 'required',
+            'nomor_register' => 'required|numeric',
             'tanggal_pembelian' => 'required|date',
             'kategoris_id' => 'required',
             'lokasis_id' => 'required',
             'harga' => 'required|numeric',
             'status_kepemilikan' => 'required',
             'kondisi' => 'required',
-            'deskripsi' => 'required',
         ]);
     
         $selectedGolongan = explode(' - ', $request->golongan)[0];
@@ -63,6 +63,7 @@ class AsetController extends Controller
             'kelompok' => $request->kelompok,
             'sub_kelompok' => $request->sub_kelompok,
             'sub_sub_kelompok' => $request->sub_sub_kelompok,
+            'nomor_register' => $request->nomor_register,
             'tanggal_pembelian' => $request->tanggal_pembelian,
             'kategoris_id' => $request->kategoris_id,
             'lokasis_id' => $request->lokasis_id,

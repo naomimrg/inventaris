@@ -23,6 +23,7 @@ class Aset extends Model
         'tanggal_pembelian',
         'kategori',
         'lokasi',
+        'kampus',
         'harga',
         'merk',
         'luas',

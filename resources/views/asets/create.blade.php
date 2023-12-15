@@ -24,7 +24,6 @@
                         <option value="5 - Inventaris">5 - Inventaris</option>
                         <option value="6 - Elektronik">6 - Elektronik</option>
                         <option value="7 - Furniture">7 - Furniture</option>
-                        
                         <option value="0 - Lainnya">0 - Lainnya</option>
                     </select>
                 </div>
@@ -40,10 +39,8 @@
                         <option value="07 - Audio Visual">07 - Audio Visual</option>
                         <option value="08 - Furniture Kursi">08 - Furniture Kursi</option>
                         <option value="09 - Furniture Papan Tulis">09 - Furniture Papan Tulis</option>
-                    <option value="10 - Teknologi Informasi">10 - Teknologi Informasi</option>
-                    <option value="11 - Perabotan">11 - Perabotan</option>
-
-
+                        <option value="10 - Teknologi Informasi">10 - Teknologi Informasi</option>
+                        <option value="11 - Perabotan">11 - Perabotan</option>
                         <option value="99 - Lainnya">99 - Lainnya</option>
                     </select>
                 </div>
@@ -67,8 +64,6 @@
                         <option value="24 - Rak Buku">24 - Rak Buku</option>
                         <option value="25 - Meja ">25 - Meja</option>
                         <option value="26 - Sofa ">26 - Sofa</option>
-
-
                         <option value="99 - Lainnya">99 - Lainnya</option>
                     </select>
                 </div>
@@ -98,8 +93,6 @@
                         <option value="21 - Meja Laboratorium">21 - Meja Laboratorium</option>
                         <option value="26 - Sofa Ruang Tamu ">26 - Sofa Ruang Tamu</option>
                         <option value="27 - Sofa Ruang Pimpinan ">27 - Sofa Ruang Pimpinan</option>
-
-
                         <option value="99 - Lainnya">99 - Lainnya</option>
                     </select>
                 </div>
@@ -117,17 +110,13 @@
                         <option value="009 - Speaker Aktif">009 - Speaker Aktif</option>
                         <option value="010 - Speaker Pasif">010 - Speaker Pasif</option>
                         <option value="011 - Prosesor Audio Digital">011 - Prosesor Audio Digital</option>
-                        <option value="012 - Kursi Mahasiswa Plastik Single Seat">012 - Kursi Mahasiswa Plastik Single Seat
-                        </option>
-                        <option value="013 - Kursi Mahasiswa Plastik Double Seat">013 - Kursi Mahasiswa Plastik Double Seat
-                        </option>
+                        <option value="012 - Kursi Mahasiswa Plastik Single Seat">012 - Kursi Mahasiswa Plastik Single Seat</option>
+                        <option value="013 - Kursi Mahasiswa Plastik Double Seat">013 - Kursi Mahasiswa Plastik Double Seat</option>
                         <option value="014 - Kursi Mahasiswa Lipat Plastik">014 - Kursi Mahasiswa Lipat Plastik</option>
                         <option value="015 - Kursi Mahasiswa Lipat Kayu">015 - Kursi Mahasiswa Lipat Kayu</option>
-                        <option value="016 - Papan Tulis Putih Magnetik dengan Bingkai Alumunium">016 - Papan Tulis Putih
-                            Magnetik dengan Bingkai Alumunium</option>
+                        <option value="016 - Papan Tulis Putih Magnetik dengan Bingkai Alumunium">016 - Papan Tulis Putih Magnetik dengan Bingkai Alumunium</option>
                         <option value="017 - Papan Tulis Hitam Kayu Standar">017 - Papan Tulis Hitam Kayu Standar</option>
-                        <option value="018 - Papan Tulis Interaktif dengan Proyektor Terintegrasi">018 - Papan Tulis
-                            Interaktif dengan Proyektor Terintegrasi</option>
+                        <option value="018 - Papan Tulis Interaktif dengan Proyektor Terintegrasi">018 - Papan Tulis Interaktif dengan Proyektor Terintegrasi</option>
                         <option value="019 - Komputer Laboratorium 1">019 - Komputer Laboratorium 1</option>
                         <option value="020 - Komputer Laboratorium 2">020 - Komputer Laboratorium 2</option>
                         <option value="021 - Kursi Pimpinan Jurusan Akuntansi">021 - Kursi Pimpinan Jurusan Akuntansi</option>
@@ -138,9 +127,6 @@
                         <option value="026 - Meja Logam">026 - Meja Logam</option>
                         <option value="027 - Sofa Penerima Tamu ">027 - Sofa Penerima Tamu</option>
                         <option value="028 - Sofa Santai">028 - Sofa Santai</option>
-
-
-
                         <option value="099 - Lainnya">099 - Lainnya</option>
                     </select>
                 </div>
@@ -180,6 +166,19 @@
                     <option value="">Pilih Lokasi</option>
                     @foreach ($lokasis as $rs)
                         <option value="{{ $rs->id }}">{{ $rs->nama_lokasi }}</option>
+                    @endforeach
+                </select>
+                <div class="input-group-append">
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="kampus_id" class="form-label">Lokasi Kampus *</label>
+            <div class="input-group">
+                <select name="kampus_id" class="form-control">
+                    <option value="">Pilih Lokasi Kampus</option>
+                    @foreach ($kampus as $rs)
+                        <option value="{{ $rs->id }}">{{ $rs->nama_kampus }}</option>
                     @endforeach
                 </select>
                 <div class="input-group-append">

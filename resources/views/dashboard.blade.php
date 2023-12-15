@@ -13,7 +13,7 @@
             <div class="col-md-4">
                 <div class="card border-left-primary shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Total Data Aset</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Total Data Aset Kampus Way Kanan</h6>
                     </div>
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -31,7 +31,7 @@
             <div class="col-md-4">
                 <div class="card border-left-danger shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-danger">Total Laporan Kerusakan</h6>
+                        <h6 class="m-0 font-weight-bold text-danger">Total Laporan Kerusakan Kampus Way Kanan</h6>
                     </div>
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -49,7 +49,7 @@
             <div class="col-md-4">
                 <div class="card border-left-success shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-success">Total Laporan Peminjaman</h6>
+                        <h6 class="m-0 font-weight-bold text-success">Total Laporan Peminjaman Kampus Way Kanan</h6>
                     </div>
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -63,8 +63,28 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 separator"></div>
         </div>
+
+        <div class="col-md-4">
+            <div class="card border-left-primary shadow mb-4"> 
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Total Harga Aset Kampus Way Kanan</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                Rp {{ number_format($totalHargaAset, 2, ',', '.') }} 
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-coins fa-2x text-gray-300"></i> 
+                        </div>
+                    </div>
+                </div>
+            </div>       
+        <div class="col-md-12 separator"></div>
+        </div>        
 
      <div class="col-md-12">
         <div class="card shadow mb-4">

@@ -12,12 +12,50 @@ class AsetController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $aset = Aset::orderBy('created_at', 'DESC')->get();
         $kategoris = Kategori::all();
         $lokasis = Lokasi::all();
-        return view('asets.index', compact('aset', 'kategoris', 'lokasis'));
+        $kategoris_id = $request->input('kategoris_id');
+        $search = $request->input('search');
+        $asetQuery = Aset::query();
+
+        if ($kategoris_id) {
+            $asetQuery->where('kategoris_id', $kategoris_id);
+        }
+
+        if ($search) {
+            $asetQuery->where('nama', 'LIKE', '%' . $search . '%');
+        }
+
+        $aset = $asetQuery->orderBy('created_at', 'DESC')->get();
+
+        return view('asets.index', compact('aset', 'kategoris', 'lokasis', 'kategoris_id', 'search'));
+    }
+
+
+    public function search(Request $request)
+    {
+        $kategoris_id = $request->input('kategoris_id', '');
+        $start = $request->input('start', '');
+        $end = $request->input('end', '');
+        $search = $request->input('search', '');
+
+        $asetQuery = Aset::orderBy('created_at', 'DESC');
+
+        if (!empty($kategoris_id)) {
+            $kategori = Kategori::find($kategoris_id);
+            $kategoriNama = $kategori ? $kategori->nama_kategori : 'Semua Kategori';
+            $asetQuery->where('kategoris_id', $kategoris_id);
+        } else {
+            $kategoriNama = 'Semua Kategori';
+        }
+
+        $aset = $asetQuery->get();
+        $kategoris = Kategori::all();
+        $lokasis = Lokasi::all();
+
+        return view('asets.index', compact('aset', 'kategoris', 'lokasis', 'kategoris_id', 'start', 'end', 'search', 'kategoriNama'));
     }
 
     /**
@@ -45,16 +83,16 @@ class AsetController extends Controller
             'status_kepemilikan' => 'required',
             'kondisi' => 'required',
         ]);
-    
+
         $selectedGolongan = explode(' - ', $request->golongan)[0];
         $selectedBidang = explode(' - ', $request->bidang)[0];
         $selectedKelompok = explode(' - ', $request->kelompok)[0];
         $selectedSubKelompok = explode(' - ', $request->sub_kelompok)[0];
         $selectedSubSubKelompok = explode(' - ', $request->sub_sub_kelompok)[0];
-    
+
         $kodeAset = "{$selectedGolongan}{$selectedBidang}{$selectedKelompok}{$selectedSubKelompok}{$selectedSubSubKelompok}";
         $kodeAset = str_replace('-', '', $kodeAset);
-    
+
         $aset = new Aset([
             'nama' => $request->nama,
             'kode_aset' => $kodeAset,
@@ -73,10 +111,10 @@ class AsetController extends Controller
             'kondisi' => $request->kondisi,
             'deskripsi' => $request->deskripsi,
         ]);
-    
+
         $aset->save();
         return redirect()->route('asets');
-    }    
+    }
 
     /**
      * Display the specified resource.

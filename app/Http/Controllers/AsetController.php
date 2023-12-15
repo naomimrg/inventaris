@@ -13,34 +13,34 @@ class AsetController extends Controller
      * Display a listing of the resource.
      */
     public function index(Request $request)
-    {
-        $kategoris = Kategori::all();
-        $lokasis = Lokasi::all();
-        $kategoris_id = $request->input('kategoris_id');
-        $search = $request->input('search');
-        $asetQuery = Aset::query();
+{
+    $kategoris = Kategori::all();
+    $lokasis = Lokasi::all();
+    $kategoris_id = $request->input('kategoris_id');
+    $search = $request->input('search');
+    $perPage = $request->input('per_page');
+    $sort = $request->input('sort', 'created_at'); 
+    $order = $request->input('order', 'desc'); 
+    $asetQuery = Aset::query();
 
-        if ($kategoris_id) {
-            $asetQuery->where('kategoris_id', $kategoris_id);
-        }
-
-        if ($search) {
-            $asetQuery->where('nama', 'LIKE', '%' . $search . '%');
-        }
-
-        $aset = $asetQuery->orderBy('created_at', 'DESC')->get();
-
-        return view('asets.index', compact('aset', 'kategoris', 'lokasis', 'kategoris_id', 'search'));
+    if ($kategoris_id) {
+        $asetQuery->where('kategoris_id', $kategoris_id);
     }
+
+    if ($search) {
+        $asetQuery->where('nama', 'LIKE', '%' . $search . '%');
+    }
+
+    $aset = $asetQuery->orderBy($sort, $order)->paginate($perPage);
+
+    return view('asets.index', compact('aset', 'kategoris', 'lokasis', 'kategoris_id', 'search', 'perPage', 'sort', 'order'));
+}
 
 
     public function search(Request $request)
     {
         $kategoris_id = $request->input('kategoris_id', '');
-        $start = $request->input('start', '');
-        $end = $request->input('end', '');
         $search = $request->input('search', '');
-
         $asetQuery = Aset::orderBy('created_at', 'DESC');
 
         if (!empty($kategoris_id)) {
@@ -55,7 +55,7 @@ class AsetController extends Controller
         $kategoris = Kategori::all();
         $lokasis = Lokasi::all();
 
-        return view('asets.index', compact('aset', 'kategoris', 'lokasis', 'kategoris_id', 'start', 'end', 'search', 'kategoriNama'));
+        return view('asets.index', compact('aset', 'kategoris', 'lokasis', 'kategoris_id', 'search', 'kategoriNama'));
     }
 
     /**

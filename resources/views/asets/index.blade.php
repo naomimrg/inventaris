@@ -7,11 +7,20 @@
     </div>
     <hr />
 
-    <div class="card-header">
-        <form class="row row-cols-lg-auto g-1">
-            <div class="col">
-                <select class="form-select" name="kategoris_id">
-                    <option value="">Semua Kategori</option>
+    <div class="card-header justify-content-between align-items-center">
+        <form id="filterForm" class="row row-cols-lg-auto g-1">
+            {{-- <div class="mb-3 d-flex align-items-center">
+                <label for="per_page" class="form-label me-2">Tampilkan:</label>
+                <select class="form-control" name="per_page" onchange="submitForm()">
+                    <option value="">Pilih</option>
+                    <option value="10" {{ $perPage == 10 ? 'selected' : '' }}>10</option>
+                    <option value="50" {{ $perPage == 50 ? 'selected' : '' }}>50</option>
+                    <option value="100" {{ $perPage == 100 ? 'selected' : '' }}>100</option>
+                </select>
+            </div> --}}
+            <div class="mb-3">
+                <select class="form-control" name="kategoris_id" onchange="submitForm()">
+                    <option value="">Tampilkan Berdasarkan Kategori</option>
                     @foreach ($kategoris as $category)
                         @if ($category->id == $kategoris_id)
                             <option value="{{ $category->id }}" selected>{{ $category->nama_kategori }}</option>
@@ -21,12 +30,12 @@
                     @endforeach
                 </select>
             </div>
-            <div class="col">
+            <div class="mb-3" style="margin-left: auto;">
                 <input class="form-control" type="text" name="search" value="{{ $search }}"
                     placeholder="Search here..." />
             </div>
-            <div class="col">
-                <button class="btn btn-success">Search</button>
+            <div class="">
+                <button class="btn btn-success" type="button" onclick="submitForm()">Search</button>
             </div>
         </form>
     </div>
@@ -40,12 +49,24 @@
         <thead class="table-primary">
             <tr>
                 <th class="text-center border">No</th>
-                <th class="text-center border">Nama Aset</th>
-                <th class="text-center border">Kode Aset</th>
-                <th class="text-center border">Kategori</th>
-                <th class="text-center border">Lokasi Fisik Aset</th>
-                <th class="text-center border">Harga</th>
-                <th class="text-center border">Kondisi Aset</th>
+                <th class="text-center border">
+                    <a href="{{ route('asets', ['sort' => 'nama', 'order' => 'asc']) }}">Nama Aset <i class="fas fa-sort"></i></a>
+                </th>
+                <th class="text-center border">
+                    <a href="{{ route('asets', ['sort' => 'kode_aset', 'order' => 'asc']) }}">Kode Aset <i class="fas fa-sort"></i></a>
+                </th>
+                <th class="text-center border">
+                    <a href="{{ route('asets', ['sort' => 'kategoris->nama_kategori', 'order' => 'asc']) }}">Kategori <i class="fas fa-sort"></i></a>
+                </th>
+                <th class="text-center border">
+                    <a href="{{ route('asets', ['sort' => 'nama_lokasi', 'order' => 'asc']) }}">Lokasi Fisik Aset <i class="fas fa-sort"></i></a>
+                </th>
+                <th class="text-center border">
+                    <a href="{{ route('asets', ['sort' => 'harga', 'order' => 'asc']) }}">Harga <i class="fas fa-sort"></i></a>
+                </th>
+                <th class="text-center border">
+                    <a href="{{ route('asets', ['sort' => 'kondisi', 'order' => 'asc']) }}">Kondisi Aset <i class="fas fa-sort"></i></a>
+                </th>
                 <th class="text-center border">Aksi</th>
             </tr>
         </thead>
@@ -77,7 +98,10 @@
                     </tr>
                 @endforeach
                 <tr>
-                    <td colspan="8" class="text-end"><strong>Total Data:</strong> {{ $aset->count() }}</td>
+                    <td colspan="8" class="text-end">
+                        <strong>Total Data:</strong>
+                        Menampilkan {{ $aset->count() }} dari {{ $aset->total() }} Data
+                    </td>
                 </tr>
             @else
                 <tr>
@@ -86,4 +110,9 @@
             @endif
         </tbody>
     </table>
+    <script>
+        function submitForm() {
+            document.getElementById("filterForm").submit();
+        }
+    </script>
 @endsection

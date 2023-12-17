@@ -1,5 +1,36 @@
 @extends('layouts.app')
 @section('contents')
+    <style>
+        .pagination {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding: 0 15px;
+            /* Untuk memberi ruang di sekitar tombol */
+        }
+
+        .pagination-link {
+            padding: 10px 15px;
+            font-size: 14px;
+            color: #3490dc;
+            text-decoration: none;
+            background-color: #fff;
+            border: 1px solid #d2d6dc;
+            border-radius: 4px;
+        }
+
+        .pagination-link:hover {
+            background-color: #f0f4f8;
+        }
+
+        .pagination-link:disabled {
+            pointer-events: none;
+            background-color: #d2d6dc;
+            color: #718096;
+        }
+    </style>
+
     <h1 class="mb-0">Data Aset</h1>
     <div class="d-flex align-items-center justify-content-between mb-3">
         <h1></h1>
@@ -9,15 +40,6 @@
 
     <div class="card-header justify-content-between align-items-center">
         <form id="filterForm" class="row row-cols-lg-auto g-1">
-            {{-- <div class="mb-3 d-flex align-items-center">
-                <label for="per_page" class="form-label me-2">Tampilkan:</label>
-                <select class="form-control" name="per_page" onchange="submitForm()">
-                    <option value="">Pilih</option>
-                    <option value="10" {{ $perPage == 10 ? 'selected' : '' }}>10</option>
-                    <option value="50" {{ $perPage == 50 ? 'selected' : '' }}>50</option>
-                    <option value="100" {{ $perPage == 100 ? 'selected' : '' }}>100</option>
-                </select>
-            </div> --}}
             <div class="mb-3">
                 <select class="form-control" name="kategoris_id" onchange="submitForm()">
                     <option value="">Tampilkan Berdasarkan Kategori</option>
@@ -50,22 +72,28 @@
             <tr>
                 <th class="text-center border">No</th>
                 <th class="text-center border">
-                    <a href="{{ route('asets', ['sort' => 'nama', 'order' => 'asc']) }}">Nama Aset <i class="fas fa-sort"></i></a>
+                    <a href="{{ route('asets', ['sort' => 'nama', 'order' => 'asc']) }}">Nama Aset <i
+                            class="fas fa-sort"></i></a>
                 </th>
                 <th class="text-center border">
-                    <a href="{{ route('asets', ['sort' => 'kode_aset', 'order' => 'asc']) }}">Kode Aset <i class="fas fa-sort"></i></a>
+                    <a href="{{ route('asets', ['sort' => 'kode_aset', 'order' => 'asc']) }}">Kode Aset <i
+                            class="fas fa-sort"></i></a>
                 </th>
                 <th class="text-center border">
-                    <a href="{{ route('asets', ['sort' => 'kategoris->nama_kategori', 'order' => 'asc']) }}">Kategori <i class="fas fa-sort"></i></a>
+                    <a href="{{ route('asets', ['sort' => 'kategoris_id', 'order' => 'asc']) }}">Kategori <i
+                            class="fas fa-sort"></i></a>
                 </th>
                 <th class="text-center border">
-                    <a href="{{ route('asets', ['sort' => 'nama_lokasi', 'order' => 'asc']) }}">Lokasi Fisik Aset <i class="fas fa-sort"></i></a>
+                    <a href="{{ route('asets', ['sort' => 'lokasis_id', 'order' => 'asc']) }}">Lokasi Fisik Aset <i
+                            class="fas fa-sort"></i></a>
                 </th>
                 <th class="text-center border">
-                    <a href="{{ route('asets', ['sort' => 'harga', 'order' => 'asc']) }}">Harga <i class="fas fa-sort"></i></a>
+                    <a href="{{ route('asets', ['sort' => 'harga', 'order' => 'asc']) }}">Harga <i
+                            class="fas fa-sort"></i></a>
                 </th>
                 <th class="text-center border">
-                    <a href="{{ route('asets', ['sort' => 'kondisi', 'order' => 'asc']) }}">Kondisi Aset <i class="fas fa-sort"></i></a>
+                    <a href="{{ route('asets', ['sort' => 'kondisi', 'order' => 'asc']) }}">Kondisi Aset <i
+                            class="fas fa-sort"></i></a>
                 </th>
                 <th class="text-center border">Aksi</th>
             </tr>
@@ -97,12 +125,6 @@
                         </td>
                     </tr>
                 @endforeach
-                <tr>
-                    <td colspan="8" class="text-end">
-                        <strong>Total Data:</strong>
-                        Menampilkan {{ $aset->count() }} dari {{ $aset->total() }} Data
-                    </td>
-                </tr>
             @else
                 <tr>
                     <td class="text-center border" colspan="8">Data Aset Tidak Ditemukan</td>
@@ -110,6 +132,27 @@
             @endif
         </tbody>
     </table>
+
+    @if ($aset->total() > 0)
+        <div class="pagination">
+            @if ($aset->onFirstPage())
+                <a href="#" class="pagination-link" aria-disabled="true">&lsaquo; Previous</a>
+            @else
+                <a href="{{ $aset->previousPageUrl() }}" class="pagination-link">&lsaquo; Previous</a>
+            @endif
+
+            <span class="pagination-info">
+                Page {{ $aset->currentPage() }} of {{ $aset->lastPage() }} -
+                Showing {{ $aset->firstItem() }} to {{ $aset->lastItem() }} of {{ $aset->total() }} entries
+            </span>
+
+            @if ($aset->hasMorePages())
+                <a href="{{ $aset->nextPageUrl() }}" class="pagination-link">Next &rsaquo;</a>
+            @else
+                <a href="#" class="pagination-link" aria-disabled="true">Next &rsaquo;</a>
+            @endif
+        </div>
+    @endif
     <script>
         function submitForm() {
             document.getElementById("filterForm").submit();

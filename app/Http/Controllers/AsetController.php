@@ -12,39 +12,39 @@ class AsetController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request, $sort = 'asets.id', $order = 'desc')
-{
-    $kategoris = Kategori::all();
-    $lokasis = Lokasi::all();
-    $kategoris_id = $request->input('kategoris_id');
-    $search = $request->input('search');
-    $perPage = $request->input('per_page');
+    public function index(Request $request)
+    {
+        $kategoris = Kategori::all();
+        $lokasis = Lokasi::all();
+        $kategoris_id = $request->input('kategoris_id');
+        $search = $request->input('search');
+        $perPage = $request->input('per_page', 10);
+        $sort = $request->input('sort', 'created_at');
+        $order = $request->input('order', 'desc');
     
-    $allowedSortColumns = [
-        'asets.id', 'nama', 'kode_aset', 'kategoris.nama_kategori', 'lokasis.nama_lokasi', 'harga', 'kondisi'
-    ];
-
-    $sort = in_array($sort, $allowedSortColumns) ? $sort : 'asets.id';
-    $order = in_array(strtolower($order), ['asc', 'desc']) ? strtolower($order) : 'desc';
+        $asetQuery = Aset::query();
     
-    $asetQuery = Aset::query();
-
-    if ($kategoris_id) {
-        $asetQuery->where('kategoris_id', $kategoris_id);
-    }
-
-    if ($search) {
-        $asetQuery->where('nama', 'LIKE', '%' . $search . '%');
-    }
-
-    $asetQuery->leftJoin('kategoris', 'asets.kategoris_id', '=', 'kategoris.id')
-              ->leftJoin('lokasis', 'asets.lokasis_id', '=', 'lokasis.id')
-              ->orderBy($sort, $order);
-
-    $aset = $asetQuery->paginate($perPage);
-
-    return view('asets.index', compact('aset', 'kategoris', 'lokasis', 'kategoris_id', 'search', 'perPage', 'sort', 'order'));
-}
+        if ($kategoris_id) {
+            $asetQuery->where('kategoris_id', $kategoris_id);
+        }
+    
+        if ($search) {
+            $asetQuery->where(function ($q) use ($search) {
+                $q->where('nama', 'LIKE', '%' . $search . '%')
+                    ->orWhere('kode_aset', 'LIKE', '%' . $search . '%')
+                    ->orWhere('harga', 'LIKE', '%' . $search . '%')
+                    ->orWhere('kondisi', 'LIKE', '%' . $search . '%')
+                    ->orWhereHas('kategoris', function ($subquery) use ($search) {
+                        $subquery->where('nama_kategori', 'LIKE', '%' . $search . '%');
+                    })
+                    ->orWhereHas('lokasis', function ($subquery) use ($search) {
+                        $subquery->where('nama_lokasi', 'LIKE', '%' . $search . '%');
+                    });
+            });
+        }
+        $aset = $asetQuery->orderBy($sort, $order)->paginate($perPage);
+        return view('asets.index', compact('aset', 'kategoris', 'lokasis', 'kategoris_id', 'search', 'perPage', 'sort', 'order'));
+    }    
 
     public function search(Request $request)
     {

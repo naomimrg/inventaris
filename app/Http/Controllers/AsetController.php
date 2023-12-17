@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aset;
+use App\Models\Kampus;
 use App\Models\Kategori;
 use App\Models\Lokasi;
 use Illuminate\Http\Request;
@@ -74,7 +75,8 @@ class AsetController extends Controller
     {
         $kategoris = Kategori::all();
         $lokasis = Lokasi::all();
-        return view('asets.create', compact('kategoris', 'lokasis'));
+        $kampuses = Kampus::all();
+        return view('asets.create', compact('kategoris', 'lokasis', 'kampuses'));
     }
 
     /**
@@ -114,6 +116,7 @@ class AsetController extends Controller
             'tanggal_pembelian' => $request->tanggal_pembelian,
             'kategoris_id' => $request->kategoris_id,
             'lokasis_id' => $request->lokasis_id,
+            'kampuses_id' => $request->kampuses_id,
             'harga' => $request->harga,
             'merk' => $request->merk,
             'status_kepemilikan' => $request->status_kepemilikan,

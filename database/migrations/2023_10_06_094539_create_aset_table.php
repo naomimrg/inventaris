@@ -24,6 +24,7 @@ return new class extends Migration
             $table->date('tanggal_pembelian');
             $table->foreignId('kategoris_id');
             $table->foreignId('lokasis_id');
+            $table->foreignId('kampuses_id');
             $table->integer('harga');
             $table->string('merk')->nullable();
             $table->string('luas')->nullable();

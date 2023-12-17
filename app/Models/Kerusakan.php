@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Aset;
+use App\Models\Kampus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,6 +29,11 @@ class Kerusakan extends Model
     public function lokasis()
     {
         return $this->belongsTo(Lokasi::class, 'lokasis_id');
+    }
+
+    public function kampuses()
+    {
+        return $this->belongsTo(Kampus::class, 'kampuses_id');
     }
 
     public function users()

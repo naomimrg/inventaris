@@ -23,7 +23,7 @@ class Aset extends Model
         'tanggal_pembelian',
         'kategori',
         'lokasi',
-        'kampus',
+        'kampuses',
         'harga',
         'merk',
         'luas',
@@ -32,7 +32,8 @@ class Aset extends Model
         'deskripsi',
         'user_id',
         'kategoris_id',
-        'lokasis_id'
+        'lokasis_id',
+        'kampuses_id',
     ];
 
     public function users()
@@ -48,5 +49,10 @@ class Aset extends Model
     public function lokasis()
     {
         return $this->belongsTo(Lokasi::class, 'lokasis_id');
+    }
+
+    public function kampuses()
+    {
+        return $this->belongsTo(Kampus::class, 'kampuses_id');
     }
 }

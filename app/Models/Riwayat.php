@@ -65,4 +65,9 @@ class riwayat extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function kampuses()
+    {
+        return $this->belongsTo(Kampus::class, 'kampuses_id');
+    }
 }

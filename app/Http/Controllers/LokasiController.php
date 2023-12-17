@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kampus;
 use App\Models\Lokasi;
 use Illuminate\Http\Request;
 
@@ -12,8 +13,9 @@ class LokasiController extends Controller
      */
     public function index()
     {
+        $kampuses = Kampus::all();
         $lokasis = Lokasi::orderBy('created_at', 'DESC')->get();
-        return view('lokasis.index', compact('lokasis'));
+        return view('lokasis.index', compact('lokasis', 'kampuses'));
     }
 
     /**
@@ -21,7 +23,8 @@ class LokasiController extends Controller
      */
     public function create()
     {
-        return view('lokasis.create');
+        $kampuses = Kampus::all();
+        return view('lokasis.create', compact('kampuses'));
     }
 
     /**
@@ -38,8 +41,9 @@ class LokasiController extends Controller
      */
     public function edit(string $id)
     {
+        $kampuses = Kampus::all();
         $lokasi = Lokasi::findOrFail($id);
-        return view('lokasis.edit', compact('lokasi'));
+        return view('lokasis.edit', compact('lokasi', 'kampuses'));
     }
 
     /**

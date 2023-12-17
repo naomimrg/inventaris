@@ -173,12 +173,12 @@
             </div>
         </div>
         <div class="mb-3">
-            <label for="kampus_id" class="form-label">Lokasi Kampus *</label>
+            <label for="kampuses_id" class="form-label">Lokasi Kampus *</label>
             <div class="input-group">
-                <select name="kampus_id" class="form-control">
+                <select name="kampuses_id" class="form-control">
                     <option value="">Pilih Lokasi Kampus</option>
-                    @foreach ($kampus as $rs)
-                        <option value="{{ $rs->id }}">{{ $rs->nama_kampus }}</option>
+                    @foreach ($kampuses as $rs)
+                        <option value="{{ $rs->id }}">{{ $rs->nama}}</option>
                     @endforeach
                 </select>
                 <div class="input-group-append">

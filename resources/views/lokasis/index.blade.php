@@ -17,6 +17,7 @@
             <tr>
                 <th class="text-center border">No</th>
                 <th class="text-center border">Nama Lokasi</th>
+                <th class="text-center border">Nama Kampus</th>
                 <th class="text-center border">Deskripsi</th>
                 <th class="text-center border">Aksi</th>
             </tr>
@@ -27,6 +28,7 @@
             <tr>
                 <td class="align-middle border text-center border">{{ $loop->iteration }}</td>
                 <td class="align-middle border">{{ $rs->nama_lokasi }}</td>
+                <td class="align-middle border">{{ $rs->kampuses->nama }}</td>
                 <td class="align-middle border">{{ $rs->deskripsi }}</td>
                 <td class="align-middle text-center border">
                     <div class="btn-group" role="group" aria-label="Basic example">

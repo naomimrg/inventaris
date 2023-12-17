@@ -12,6 +12,7 @@ class Lokasi extends Model
 
     protected $fillable = [
         'nama_lokasi',
+        'kampuses_id',
         'deskripsi',
     ];
 
@@ -23,5 +24,10 @@ class Lokasi extends Model
     public function users()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function kampuses()
+    {
+        return $this->belongsTo(Kampus::class, 'kampuses_id');
     }
 }

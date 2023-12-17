@@ -30,4 +30,9 @@ class Perbaikan extends Model
     {
         return $this->belongsTo(Aset::class, 'asets_id');
     }
+
+    public function kampuses()
+    {
+        return $this->belongsTo(Kampus::class, 'kampuses_id');
+    }
 }

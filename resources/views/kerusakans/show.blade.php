@@ -12,16 +12,28 @@
             <input type="text" name="nama" class="form-control" placeholder="" value="{{ $kerusakans->asets->nama }}" readonly>
         </div>
         <div class="col mb-3">
+            <label class="form-label">Kode Aset</label>
+            <input type="text" name="kode_aset" class="form-control" placeholder="" value="{{ $kerusakans->asets->kode_aset }}" readonly>
+        </div>
+        <div class="col mb-3">
             <label class="form-label">Nomor Register</label>
             <input type="text" name="nomor_register" class="form-control" placeholder="" value="{{ $kerusakans->asets->nomor_register }}" readonly>
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Kategori</label>
+            <input type="text" name="nama_kategori" class="form-control" placeholder="" value="{{ $kerusakans->asets->kategoris->nama_kategori }}" readonly>
         </div>
         <div class="col mb-3">
             <label class="form-label">Lokasi</label>
             <input type="text" name="lokasis_id" class="form-control" placeholder="" value="{{ $kerusakans->lokasis->nama_lokasi }}" readonly>
         </div>
         <div class="col mb-3">
-            <label class="form-label">Deskripsi Kerusakan</label>
-            <textarea class="form-control" name="deskripsi_kerusakan" placeholder="" readonly>{{ $kerusakans->deskripsi_kerusakan }}</textarea>
+            <label class="form-label">Estimasi Biaya Perbaikan</label>
+            <input type="number" name="estimasi_biaya" class="form-control" placeholder="" value="{{ $kerusakans->asets->estimasi_biaya }}" readonly>
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Rincian kerusakans</label>
+            <textarea class="form-control" name="deskripsi_kerusakans" placeholder="" readonly>{{ $kerusakans->deskripsi_kerusakans }}</textarea>
         </div>
         <div class="col mb-3">
             <label class="form-label">Dibuat Pada</label>

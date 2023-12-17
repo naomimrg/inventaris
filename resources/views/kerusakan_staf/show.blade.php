@@ -28,7 +28,11 @@
             <input type="text" name="lokasis_id" class="form-control" placeholder="" value="{{ $kerusakan->lokasis->nama_lokasi }}" readonly>
         </div>
         <div class="col mb-3">
-            <label class="form-label">Deskripsi Kerusakan</label>
+            <label class="form-label">Estimasi Biaya Perbaikan</label>
+            <input type="number" name="estimasi_biaya" class="form-control" placeholder="" value="{{ $kerusakan->asets->estimasi_biaya }}" readonly>
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Rincian Kerusakan</label>
             <textarea class="form-control" name="deskripsi_kerusakan" placeholder="" readonly>{{ $kerusakan->deskripsi_kerusakan }}</textarea>
         </div>
         <div class="col mb-3">

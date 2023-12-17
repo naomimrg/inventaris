@@ -36,7 +36,11 @@
             </select>
         </div>    
         <div class="col mb-3">
-            <label class="form-label">Deskripsi Kerusakan</label>
+            <label class="form-label">Estimasi Biaya Perbaikan</label>
+            <input type="number" name="estimasi_biaya" class="form-control" placeholder="" value="{{ $kerusakan->estimasi_biaya }}">
+        </div>
+        <div class="col mb-3">
+            <label class="form-label">Rincian Kerusakan</label>
             <textarea class="form-control" name="deskripsi_kerusakan" placeholder="">{{ $kerusakan->deskripsi_kerusakan }}</textarea>
         </div>
         <div class="row justify-content-end">

@@ -18,7 +18,8 @@
                 <th class="text-center border">Nama Pelapor</th>
                 <th class="text-center border">Nama Aset</th>
                 <th class="text-center border">Lokasi</th>
-                <th class="text-center border">Deskripsi Kerusakan</th>
+                <th class="text-center border">Estimasi Biaya Perbaikan</th>
+                <th class="text-center border">Rincian Kerusakan</th>
                 <th class="text-center border">Aksi</th>
             </tr>
         </thead>
@@ -30,6 +31,7 @@
                         <td class="align-middle border">{{ $rs->nama_pelapor }}</td>
                         <td class="align-middle border">{{ $rs->asets->nama }}</td>
                         <td class="align-middle border">{{ $rs->lokasis->nama_lokasi }}</td>
+                        <td class="align-middle border">{{ $rs->estimasi_biaya }}</td>
                         <td class="align-middle border">{{ $rs->deskripsi_kerusakan }}</td>
                         <td class="align-middle border text-center">
                             <div class="btn-group" role="group" aria-label="Basic example">

@@ -17,6 +17,7 @@ return new class extends Migration
         $table->foreignId('asets_id')->constrained('asets');
         $table->date('tanggal_laporan');
         $table->foreignId('lokasis_id')->constrained('lokasis');
+        $table->string('estimasi_biaya');
         $table->text('deskripsi_kerusakan');
         $table->timestamps();
     });

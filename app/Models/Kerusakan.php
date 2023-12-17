@@ -15,6 +15,7 @@ class Kerusakan extends Model
         'asets_id',
         'tanggal_laporan',
         'lokasis_id',
+        'estimasi_biaya',
         'deskripsi_kerusakan',
         'status',
     ];

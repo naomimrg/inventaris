@@ -38,7 +38,11 @@
             </div>
         </div>
         <div class="mb-3">
-            <label for="deskripsi_kerusakan" class="form-label">Deskripsi</label>
+            <label for="estimasi_biaya" class="form-label">Estimasi Biaya Perbaikan</label>
+            <input type="number" name="estimasi_biaya" class="form-control" id="estimasi_biaya" placeholder="">
+        </div>
+        <div class="mb-3">
+            <label for="deskripsi_kerusakan" class="form-label">Rincian Kerusakan</label>
             <textarea class="form-control" name="deskripsi_kerusakan" id="deskripsi_kerusakan" placeholder=""></textarea>
         </div>
         <div class="row justify-content-end">

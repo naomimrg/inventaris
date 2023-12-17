@@ -4,6 +4,10 @@
     <hr />
     <div>
         <div class="col mb-3">
+            <label class="form-label">Nama Pelapor Perbaikan</label>
+            <textarea class="form-control" name="nama_pelapor" placeholder="" readonly>{{ $perbaikans->nama_pelapor }}</textarea>
+        </div>
+        <div class="col mb-3">
             <label class="form-label">Nama Aset</label>
             <input type="text" name="nama" class="form-control" placeholder="" value="{{ $perbaikans->asets->nama }}" readonly>
         </div>
@@ -32,8 +36,8 @@
             <textarea class="form-control" name="status" placeholder="" readonly>{{ $perbaikans->status }}</textarea>
         </div>
         <div class="col mb-3">
-            <label class="form-label">Nama Pelapor Perbaikan</label>
-            <textarea class="form-control" name="nama_pelapor" placeholder="" readonly>{{ $perbaikans->nama_pelapor }}</textarea>
+            <label class="form-label">Total Biaya Perbaikan</label>
+            <textarea class="form-control" name="biaya" placeholder="" readonly>{{ $perbaikans->biaya }}</textarea>
         </div>
         <div class="col mb-3">
             <label class="form-label">Informasi Umum Keadaan Aset</label>

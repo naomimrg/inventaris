@@ -12,11 +12,12 @@ class Perbaikan extends Model
     use HasFactory;
 
     protected $fillable = [
+        'nama_pelapor',
         'asets_id',
         'tanggal_permintaan_perbaikan',
         'deskripsi',
         'status',
-        'nama_pelapor',
+        'biaya',
         'informasi',
     ];
 

@@ -6,6 +6,12 @@
         @csrf
         <div class="mb-3">
             <div class="col">
+                <label for="nama_pelapor" class="form-label">Nama Pelapor Perbaikan</label>
+                <input type="text" name="nama_pelapor" class="form-control" placeholder="">
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="col">
                 <label for="asets_id" class="form-label">Nama Aset</label>
                 <select name="asets_id" class="form-control">
                     <option value=""></option>
@@ -42,8 +48,8 @@
         </div>
         <div class="mb-3">
             <div class="col">
-                <label for="nama_pelapor" class="form-label">Nama Pelapor Perbaikan</label>
-                <input type="text" name="nama_pelapor" class="form-control" placeholder="">
+                <label for="biaya" class="form-label">Total Biaya Perbaikan</label>
+                <input type="number" name="biaya" class="form-control" placeholder="">
             </div>
         </div>
         <div class="mb-3">

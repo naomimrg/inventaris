@@ -7,7 +7,6 @@
             align-items: center;
             margin-top: 20px;
             padding: 0 15px;
-            /* Untuk memberi ruang di sekitar tombol */
         }
 
         .pagination-link {

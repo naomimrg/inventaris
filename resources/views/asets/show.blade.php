@@ -27,6 +27,10 @@
             <input type="text" name="lokasis_id" class="form-control" placeholder="" value="{{ $aset->lokasis->nama_lokasi }}" readonly>
         </div>
         <div class="col mb-3">
+            <label class="form-label">Lokasi Kampus Aset</label>
+            <input type="text" name="kampuses_id" class="form-control" placeholder="" value="{{ $aset->kampuses->nama }}" readonly>
+        </div>
+        <div class="col mb-3">
             <label class="form-label">Harga</label>
             <input type="number" name="harga" class="form-control" placeholder="" value="{{ $aset->harga }}" readonly>
         </div>

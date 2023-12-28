@@ -91,6 +91,10 @@
                             class="fas fa-sort"></i></a>
                 </th>
                 <th class="text-center border">
+                    <a href="{{ route('asets', ['sort' => 'kampuses_id', 'order' => 'asc']) }}">Lokasi Kampus <i
+                            class="fas fa-sort"></i></a>
+                </th>
+                <th class="text-center border">
                     <a href="{{ route('asets', ['sort' => 'kondisi', 'order' => 'asc']) }}">Kondisi Aset <i
                             class="fas fa-sort"></i></a>
                 </th>
@@ -107,6 +111,7 @@
                         <td class="align-middle border">{{ $rs->kategoris->nama_kategori }}</td>
                         <td class="align-middle border">{{ $rs->lokasis->nama_lokasi }}</td>
                         <td class="align-middle border">{{ $rs->harga }}</td>
+                        <td class="align-middle border">{{ $rs->kampuses->nama }}</td>
                         <td class="align-middle border">{{ $rs->kondisi }}</td>
                         <td class="align-middle border text-center">
                             <div class="btn-group" role="group" aria-label="Basic example">

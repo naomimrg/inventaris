@@ -79,6 +79,10 @@
                             class="fas fa-sort"></i></a>
                 </th>
                 <th class="text-center border">
+                    <a href="{{ route('asets', ['sort' => 'nomor_register', 'order' => 'asc']) }}">Nomor Register <i
+                            class="fas fa-sort"></i></a>
+                </th>
+                <th class="text-center border">
                     <a href="{{ route('asets', ['sort' => 'kategoris_id', 'order' => 'asc']) }}">Kategori <i
                             class="fas fa-sort"></i></a>
                 </th>
@@ -108,6 +112,7 @@
                         <td class="align-middle border text-center">{{ $loop->iteration }}</td>
                         <td class="align-middle border">{{ $rs->nama }}</td>
                         <td class="align-middle border">{{ $rs->kode_aset }}</td>
+                        <td class="align-middle border">{{ $rs->nomor_register }}</td>
                         <td class="align-middle border">{{ $rs->kategoris->nama_kategori }}</td>
                         <td class="align-middle border">{{ $rs->lokasis->nama_lokasi }}</td>
                         <td class="align-middle border">{{ $rs->harga }}</td>

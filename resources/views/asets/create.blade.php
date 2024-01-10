@@ -80,8 +80,8 @@
                         <option value="08 - Mikrofon (Mic)">08 - Mikrofon/Mic</option>
                         <option value="09 - Speaker">09 - Speaker</option>
                         <option value="10 - Prosesor Audio">10 - Prosesor Audio</option>
-                        <option value="11 - Kursi Mahasiswa Plastik">11 - Kursi Mahasiswa Plastik</option>
-                        <option value="12 - Kursi Mahasiswa Lipat">12 - Kursi Mahasiswa Lipat</option>
+                        <option value="11 - Kursi Plastik">11 - Kursi Plastik</option>
+                        <option value="12 - Kursi Lipat">12 - Kursi Lipat</option>
                         <option value="13 - Papan Tulis Putih Magnetik">13 - Papan Tulis Putih Magnetik</option>
                         <option value="14 - Papan Tulis Hitam Kayu">14 - Papan Tulis Hitam Kayu</option>
                         <option value="15 - Papan Tulis Interaktif">15 - Papan Tulis Interaktif</option>
@@ -93,6 +93,7 @@
                         <option value="21 - Meja Laboratorium">21 - Meja Laboratorium</option>
                         <option value="26 - Sofa Ruang Tamu ">26 - Sofa Ruang Tamu</option>
                         <option value="27 - Sofa Ruang Pimpinan ">27 - Sofa Ruang Pimpinan</option>
+                        <option value="28 - Kursi Kantor">28 - Kursi Kantor</option>
                         <option value="99 - Lainnya">99 - Lainnya</option>
                     </select>
                 </div>
@@ -127,6 +128,8 @@
                         <option value="026 - Meja Logam">026 - Meja Logam</option>
                         <option value="027 - Sofa Penerima Tamu ">027 - Sofa Penerima Tamu</option>
                         <option value="028 - Sofa Santai">028 - Sofa Santai</option>
+                        <option value="028 - Kursi Laboratorium 1 ">028 - Kursi Laboratorium 1</option>
+                        <option value="029 - Kursi Laboratorium 2 ">029 - Kursi Laboratorium 2</option>
                         <option value="099 - Lainnya">099 - Lainnya</option>
                     </select>
                 </div>

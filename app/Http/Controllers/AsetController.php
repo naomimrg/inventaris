@@ -128,18 +128,12 @@ class AsetController extends Controller
         return redirect()->route('asets');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         $aset = Aset::findOrFail($id);
         return view('asets.show', compact('aset'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         $aset = Aset::findOrFail($id);
@@ -148,9 +142,6 @@ class AsetController extends Controller
         return view('asets.edit', compact('aset', 'kategoris', 'lokasis'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         $aset = Aset::findOrFail($id);
@@ -158,9 +149,6 @@ class AsetController extends Controller
         return redirect()->route('asets')->with('success', 'Aset Updated Successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $aset = Aset::findOrFail($id);

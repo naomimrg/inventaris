@@ -85,7 +85,8 @@
                         <option value="13 - Papan Tulis Putih Magnetik">13 - Papan Tulis Putih Magnetik</option>
                         <option value="14 - Papan Tulis Hitam Kayu">14 - Papan Tulis Hitam Kayu</option>
                         <option value="15 - Papan Tulis Interaktif">15 - Papan Tulis Interaktif</option>
-                        <option value="16 - Kursi Pimpinan Fakultas Ekonomi dan Bisnis">16 - Kursi Pimpinan Fakultas Ekonomi dan Bisnis</option>
+                        <option value="16 - Kursi Pimpinan Fakultas Ekonomi dan Bisnis">16 - Kursi Pimpinan Fakultas Ekonomi
+                            dan Bisnis</option>
                         <option value="17 - Sistem Keamanan Fisik">17 - Sistem Keamanan Fisik</option>
                         <option value="18 - Rak Buku Dinding">18 - Rak Buku Dinding</option>
                         <option value="19 - Rak Buku Berdiri">19 - Rak Buku Berdiri</option>
@@ -111,16 +112,21 @@
                         <option value="009 - Speaker Aktif">009 - Speaker Aktif</option>
                         <option value="010 - Speaker Pasif">010 - Speaker Pasif</option>
                         <option value="011 - Prosesor Audio Digital">011 - Prosesor Audio Digital</option>
-                        <option value="012 - Kursi Mahasiswa Plastik Single Seat">012 - Kursi Mahasiswa Plastik Single Seat</option>
-                        <option value="013 - Kursi Mahasiswa Plastik Double Seat">013 - Kursi Mahasiswa Plastik Double Seat</option>
+                        <option value="012 - Kursi Mahasiswa Plastik Single Seat">012 - Kursi Mahasiswa Plastik Single Seat
+                        </option>
+                        <option value="013 - Kursi Mahasiswa Plastik Double Seat">013 - Kursi Mahasiswa Plastik Double Seat
+                        </option>
                         <option value="014 - Kursi Mahasiswa Lipat Plastik">014 - Kursi Mahasiswa Lipat Plastik</option>
                         <option value="015 - Kursi Mahasiswa Lipat Kayu">015 - Kursi Mahasiswa Lipat Kayu</option>
-                        <option value="016 - Papan Tulis Putih Magnetik dengan Bingkai Alumunium">016 - Papan Tulis Putih Magnetik dengan Bingkai Alumunium</option>
+                        <option value="016 - Papan Tulis Putih Magnetik dengan Bingkai Alumunium">016 - Papan Tulis Putih
+                            Magnetik dengan Bingkai Alumunium</option>
                         <option value="017 - Papan Tulis Hitam Kayu Standar">017 - Papan Tulis Hitam Kayu Standar</option>
-                        <option value="018 - Papan Tulis Interaktif dengan Proyektor Terintegrasi">018 - Papan Tulis Interaktif dengan Proyektor Terintegrasi</option>
+                        <option value="018 - Papan Tulis Interaktif dengan Proyektor Terintegrasi">018 - Papan Tulis
+                            Interaktif dengan Proyektor Terintegrasi</option>
                         <option value="019 - Komputer Laboratorium 1">019 - Komputer Laboratorium 1</option>
                         <option value="020 - Komputer Laboratorium 2">020 - Komputer Laboratorium 2</option>
-                        <option value="021 - Kursi Pimpinan Jurusan Akuntansi">021 - Kursi Pimpinan Jurusan Akuntansi</option>
+                        <option value="021 - Kursi Pimpinan Jurusan Akuntansi">021 - Kursi Pimpinan Jurusan Akuntansi
+                        </option>
                         <option value="022 - CCTV">022 - CCTV</option>
                         <option value="023 - Rak Buku Besi">023 - Rak Buku Besi</option>
                         <option value="024 - Rak Buku Kayu">024 - Rak Buku Kayu</option>
@@ -181,7 +187,7 @@
                 <select name="kampuses_id" class="form-control">
                     <option value="">Pilih Lokasi Kampus</option>
                     @foreach ($kampuses as $rs)
-                        <option value="{{ $rs->id }}">{{ $rs->nama}}</option>
+                        <option value="{{ $rs->id }}">{{ $rs->nama }}</option>
                     @endforeach
                 </select>
                 <div class="input-group-append">
@@ -238,4 +244,111 @@
             </div>
         </div>
     </form>
+
+    <script>
+        var golonganSelect = document.getElementById('golongan');
+        var bidangSelect = document.getElementById('bidang');
+        var kelompokSelect = document.getElementById('kelompok');
+        var subKelompokSelect = document.getElementById('sub_kelompok');
+        var subSubKelompokSelect = document.getElementById('sub_sub_kelompok');
+
+        var kategoriOptions = {
+            "7 - Furniture": ["08 - Furniture Kursi", "09 - Furniture Papan Tulis"],
+        };
+
+        // Definisi opsi untuk kelompok
+        var kelompokOptions = {
+            "08 - Furniture Kursi": ["16 - Kursi Pimpinan Fakultas Ekonomi dan Bisnis", "19 - Kursi Mahasiswa"],
+        };
+
+        // Definisi opsi untuk sub-kelompok
+        var subKelompokOptions = {
+            "19 - Kursi Mahasiswa": ["012 - Kursi Mahasiswa Plastik Single Seat", "013 - Kursi Mahasiswa Plastik Double Seat"],
+        };
+
+        // Definisi opsi untuk sub-sub-kelompok
+        var subSubKelompokOptions = {
+            "013 - Kursi Mahasiswa Plastik Double Seat": ["014 - Kursi Mahasiswa Lipat Plastik", "015 - Kursi Mahasiswa Lipat Kayu"],
+        };
+
+        function updateBidangOptions() {
+            var selectedGolongan = golonganSelect.value;
+
+            bidangSelect.innerHTML = '<option value="">Pilih Bidang</option>';
+
+            if (kategoriOptions[selectedGolongan]) {
+                kategoriOptions[selectedGolongan].forEach(function (option) {
+                    var newOption = document.createElement('option');
+                    newOption.value = option;
+                    newOption.text = option;
+                    bidangSelect.add(newOption);
+                });
+            }
+        }
+
+        function updateKelompokOptions() {
+            var selectedBidang = bidangSelect.value;
+            kelompokSelect.innerHTML = '<option value="">Pilih Kelompok</option>';
+
+            if (kelompokOptions[selectedBidang]) {
+                kelompokOptions[selectedBidang].forEach(function (option) {
+                    var newOption = document.createElement('option');
+                    newOption.value = option;
+                    newOption.text = option;
+                    kelompokSelect.add(newOption);
+                });
+            }
+        }
+
+        function updateSubKelompokOptions() {
+            var selectedKelompok = kelompokSelect.value;
+            subKelompokSelect.innerHTML = '<option value="">Pilih Sub-Kelompok</option>';
+
+            if (subKelompokOptions[selectedKelompok]) {
+                subKelompokOptions[selectedKelompok].forEach(function (option) {
+                    var newOption = document.createElement('option');
+                    newOption.value = option;
+                    newOption.text = option;
+                    subKelompokSelect.add(newOption);
+                });
+            }
+        }
+
+        function updateSubSubKelompokOptions() {
+            var selectedSubKelompok = subKelompokSelect.value;
+            subSubKelompokSelect.innerHTML = '<option value="">Pilih Sub-Sub Kelompok</option>';
+
+            if (subSubKelompokOptions[selectedSubKelompok]) {
+                subSubKelompokOptions[selectedSubKelompok].forEach(function (option) {
+                    var newOption = document.createElement('option');
+                    newOption.value = option;
+                    newOption.text = option;
+                    subSubKelompokSelect.add(newOption);
+                });
+            }
+        }
+
+        golonganSelect.addEventListener('change', function () {
+            updateBidangOptions();
+            kelompokSelect.innerHTML = '<option value="">Pilih Kelompok</option>';
+            subKelompokSelect.innerHTML = '<option value="">Pilih Sub-Kelompok</option>';
+            subSubKelompokSelect.innerHTML = '<option value="">Pilih Sub-Sub Kelompok</option>';
+        });
+
+        bidangSelect.addEventListener('change', function () {
+            updateKelompokOptions();
+            subKelompokSelect.innerHTML = '<option value="">Pilih Sub-Kelompok</option>';
+            subSubKelompokSelect.innerHTML = '<option value="">Pilih Sub-Sub Kelompok</option>';
+        });
+
+        kelompokSelect.addEventListener('change', function () {
+            updateSubKelompokOptions();
+            subSubKelompokSelect.innerHTML = '<option value="">Pilih Sub-Sub Kelompok</option>';
+        });
+
+        subKelompokSelect.addEventListener('change', function () {
+            updateSubSubKelompokOptions();
+        });
+    </script>
+
 @endsection

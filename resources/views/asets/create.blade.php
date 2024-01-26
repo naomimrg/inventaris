@@ -253,22 +253,36 @@
         var subSubKelompokSelect = document.getElementById('sub_sub_kelompok');
 
         var kategoriOptions = {
-            "7 - Furniture": ["08 - Furniture Kursi", "09 - Furniture Papan Tulis"],
+            "1 - Tanah": ["01 - Tanah Depan", "02 - Tanah Belakang"],
+            "2 - Bangunan": ["01 - Gedung Administrasi", "02 - Gedung Pendidikan"],
+            "3 - Peralatan": ["01 - Peralatan Laboratorium", "02 - Peralatan Komputer"],
+            "4 - Kendaraan": ["01 - Mobil"],
+            "5 - Inventaris": ["01 - Inventaris Kantor"],
+            "6 - Elektronik": ["01 - Komputer", "02 - Televisi"],
+            "7 - Furniture": ["01 - Furniture Kursi", "02 - Furniture Papan Tulis"],
         };
 
         // Definisi opsi untuk kelompok
         var kelompokOptions = {
-            "08 - Furniture Kursi": ["16 - Kursi Pimpinan Fakultas Ekonomi dan Bisnis", "19 - Kursi Mahasiswa"],
+            "01 - Furniture Kursi": ["11 - Kursi Pimpinan Fakultas Ekonomi dan Bisnis", "12 - Kursi Mahasiswa", "13 - Kursi Laboratorium"],
+            "02 - Furniture Papan Tulis": ["11 - Papan Tulis Dinding"],
+
         };
 
         // Definisi opsi untuk sub-kelompok
         var subKelompokOptions = {
-            "19 - Kursi Mahasiswa": ["012 - Kursi Mahasiswa Plastik Single Seat", "013 - Kursi Mahasiswa Plastik Double Seat"],
+            "12 - Kursi Mahasiswa": ["11 - Kursi Mahasiswa Plastik Single Seat", 
+            "12 - Kursi Mahasiswa Plastik Double Seat", 
+            "13 - Kursi Mahasiswa Kayu Single Seat",
+            "14 -  Kursi Mahasiswa Kayu Double Seat" ],
+
+            "12 - Papan Tulis Dinding": ["11 - Papan Tulis Hitam Kayu", 
+            "12 - Papan Tulis Putih", ],
         };
 
         // Definisi opsi untuk sub-sub-kelompok
         var subSubKelompokOptions = {
-            "013 - Kursi Mahasiswa Plastik Double Seat": ["014 - Kursi Mahasiswa Lipat Plastik", "015 - Kursi Mahasiswa Lipat Kayu"],
+            "13 - Kursi Mahasiswa Kayu Single Seat": ["014 - Kursi Mahasiswa Lipat Plastik", "015 - Kursi Mahasiswa Lipat Kayu"],
         };
 
         function updateBidangOptions() {

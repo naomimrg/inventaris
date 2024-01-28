@@ -17,125 +17,34 @@
             <div class="col">
                 <select name="golongan" class="form-control" id="golongan">
                     <option value="">Pilih Golongan</option>
-                    <option value="1 - Tanah">1 - Tanah</option>
-                    <option value="2 - Bangunan">2 - Bangunan</option>
-                    <option value="3 - Peralatan">3 - Peralatan</option>
-                    <option value="4 - Kendaraan">4 - Kendaraan</option>
-                    <option value="5 - Inventaris">5 - Inventaris</option>
-                    <option value="6 - Elektronik">6 - Elektronik</option>
-                    <option value="7 - Furniture">7 - Furniture</option>
-                    <option value="0 - Lainnya">0 - Lainnya</option>
+                    <option value="1 - Properti">1 - Properti</option>
+                        <option value="2 - Peralatan">2 - Peralatan</option>
+                        <option value="3 - Kendaraan">3 - Kendaraan</option>
+                        <option value="4 - Inventaris">4 - Inventaris</option>
+                        <option value="5 - Elektronik">5 - Elektronik</option>
+                        <option value="6 - Furniture">6 - Furniture</option>
+                        <option value="0 - Lainnya">0 - Lainnya</option>
                     
                 </select>
             </div>
             <div class="col">
                 <select name="bidang" class="form-control" id="bidang">
                     <option value="">Pilih Bidang</option>
-                    <option value="01 - Gedung Pendidikan">01 - Gedung Pendidikan</option>
-                    <option value="02 - Gedung Administrasi">02 - Gedung Administrasi</option>
-                    <option value="03 - Tanah Utama">03 - Tanah Utama</option>
-                    <option value="04 - Inventaris Kantor">04 - Inventaris Kantor</option>
-                    <option value="05 - Peralatan Komputer">05 - Peralatan Komputer</option>
-                    <option value="06 - Peralatan Laboratorium">06 - Peralatan Laboratorium</option>
-                    <option value="07 - Audio Visual">07 - Audio Visual</option>
-                    <option value="08 - Furniture Kursi">08 - Furniture Kursi</option>
-                    <option value="09 - Furniture Papan Tulis">09 - Furniture Papan Tulis</option>
-                    <option value="10 - Teknologi Informasi">10 - Teknologi Informasi</option>
-                    <option value="11 - Perabotan">11 - Perabotan</option>
-                    <option value="99 - Lainnya">99 - Lainnya</option>
-                    
                 </select>
             </div>
             <div class="col">
                 <select name="kelompok" class="form-control" id="kelompok">
                     <option value="">Pilih Kelompok</option>
-                    <option value="11 - Gedung Kuliah">11 - Gedung Kuliah</option>
-                    <option value="12 - Gedung Laboratorium">12 - Gedung Laboratorium</option>
-                    <option value="13 - Tanah Kampus Utama">13 - Tanah Kampus Utama</option>
-                    <option value="14 - Tanah Parkir">14 - Tanah Parkir</option>
-                    <option value="15 - Komputer Desktop">15 - Komputer Desktop</option>
-                    <option value="16 - Peralatan Server">16 - Peralatan Server</option>
-                    <option value="17 - Inventaris Kursi dan Meja">17 - Inventaris Kursi dan Meja</option>
-                    <option value="18 - Perangkat Audio">18 - Perangkat Audio</option>
-                    <option value="19 - Kursi Mahasiswa">19 - Kursi Mahasiswa</option>
-                    <option value="20 - Papan Tulis Dinding">20 - Papan Tulis Dinding</option>
-                    <option value="21 - Kursi Pimpinan">21 - Kursi Pimpinan</option>
-                    <option value="22 - Kursi Dosen">22 - Kursi Dosen</option>
-                    <option value="23 - Kursi Laboratorium">23 - Kursi Laboratorium</option>
-                    <option value="23 - Keamanan">23 - Keamanan</option>
-                    <option value="24 - Rak Buku">24 - Rak Buku</option>
-                    <option value="25 - Meja ">25 - Meja</option>
-                    <option value="26 - Sofa ">26 - Sofa</option>
-                    <option value="99 - Lainnya">99 - Lainnya</option>
-                    
                 </select>
             </div>
             <div class="col">
                 <select name="sub_kelompok" class="form-control" id="sub_kelompok">
                     <option value="">Pilih Sub-Kelompok</option>
-                    <option value="01 - Gedung Aula">01 - Gedung Aula</option>
-                    <option value="02 - Gedung Kelas">02 - Gedung Kelas</option>
-                    <option value="03 - Tanah Bangunan A">03 - Tanah Bangunan A</option>
-                    <option value="04 - Tanah Bangunan B">04 - Tanah Bangunan B</option>
-                    <option value="05 - Komputer Staf">05 - Komputer Staf</option>
-                    <option value="06 - Komputer Laboratorium">06 - Komputer Laboratorium</option>
-                    <option value="07 - Gedung Pusat Perpustakaan">07 - Gedung Pusat Perpustakaan</option>
-                    <option value="08 - Mikrofon (Mic)">08 - Mikrofon/Mic</option>
-                    <option value="09 - Speaker">09 - Speaker</option>
-                    <option value="10 - Prosesor Audio">10 - Prosesor Audio</option>
-                    <option value="11 - Kursi Plastik">11 - Kursi Plastik</option>
-                    <option value="12 - Kursi Lipat">12 - Kursi Lipat</option>
-                    <option value="13 - Papan Tulis Putih Magnetik">13 - Papan Tulis Putih Magnetik</option>
-                    <option value="14 - Papan Tulis Hitam Kayu">14 - Papan Tulis Hitam Kayu</option>
-                    <option value="15 - Papan Tulis Interaktif">15 - Papan Tulis Interaktif</option>
-                    <option value="16 - Kursi Pimpinan Fakultas Ekonomi dan Bisnis">16 - Kursi Pimpinan Fakultas Ekonomi dan Bisnis</option>
-                    <option value="17 - Sistem Keamanan Fisik">17 - Sistem Keamanan Fisik</option>
-                    <option value="18 - Rak Buku Dinding">18 - Rak Buku Dinding</option>
-                    <option value="19 - Rak Buku Berdiri">19 - Rak Buku Berdiri</option>
-                    <option value="20 - Meja Dosen ">20 - Meja Dosen </option>
-                    <option value="21 - Meja Laboratorium">21 - Meja Laboratorium</option>
-                    <option value="26 - Sofa Ruang Tamu ">26 - Sofa Ruang Tamu</option>
-                    <option value="27 - Sofa Ruang Pimpinan ">27 - Sofa Ruang Pimpinan</option>
-                    <option value="28 - Kursi Kantor">28 - Kursi Kantor</option>
-                    <option value="99 - Lainnya">99 - Lainnya</option>
-                    
                 </select>
             </div>
             <div class="col">
                 <select name="sub_sub_kelompok" class="form-control" id="sub_sub_kelompok">
                     <option value="">Pilih Sub-Sub Kelompok</option>
-                    <option value="001 - Ruang Aula Utama">001 - Ruang Aula Utama</option>
-                    <option value="002 - Ruang Aula Depan">002 - Ruang Aula Depan</option>
-                    <option value="003 - Tanah Depan Gedung A">003 - Tanah Depan Gedung A</option>
-                    <option value="004 - Tanah Belakang Gedung A">004 - Tanah Belakang Gedung A</option>
-                    <option value="005 - Komputer Staf Departemen X">005 - Komputer Staf Departemen X</option>
-                    <option value="006 - Komputer Staf Departemen Y">006 - Komputer Staf Departemen Y</option>
-                    <option value="007 - Mikrofon Kondensor">007 - Mikrofon Kondensor</option>
-                    <option value="008 - Mikrofon Dinamis">008 - Mikrofon Dinamis</option>
-                    <option value="009 - Speaker Aktif">009 - Speaker Aktif</option>
-                    <option value="010 - Speaker Pasif">010 - Speaker Pasif</option>
-                    <option value="011 - Prosesor Audio Digital">011 - Prosesor Audio Digital</option>
-                    <option value="012 - Kursi Mahasiswa Plastik Single Seat">012 - Kursi Mahasiswa Plastik Single Seat</option>
-                    <option value="013 - Kursi Mahasiswa Plastik Double Seat">013 - Kursi Mahasiswa Plastik Double Seat</option>
-                    <option value="014 - Kursi Mahasiswa Lipat Plastik">014 - Kursi Mahasiswa Lipat Plastik</option>
-                    <option value="015 - Kursi Mahasiswa Lipat Kayu">015 - Kursi Mahasiswa Lipat Kayu</option>
-                    <option value="016 - Papan Tulis Putih Magnetik dengan Bingkai Alumunium">016 - Papan Tulis Putih Magnetik dengan Bingkai Alumunium</option>
-                    <option value="017 - Papan Tulis Hitam Kayu Standar">017 - Papan Tulis Hitam Kayu Standar</option>
-                    <option value="018 - Papan Tulis Interaktif dengan Proyektor Terintegrasi">018 - Papan Tulis Interaktif dengan Proyektor Terintegrasi</option>
-                    <option value="019 - Komputer Laboratorium 1">019 - Komputer Laboratorium 1</option>
-                    <option value="020 - Komputer Laboratorium 2">020 - Komputer Laboratorium 2</option>
-                    <option value="021 - Kursi Pimpinan Jurusan Akuntansi">021 - Kursi Pimpinan Jurusan Akuntansi</option>
-                    <option value="022 - CCTV">022 - CCTV</option>
-                    <option value="023 - Rak Buku Besi">023 - Rak Buku Besi</option>
-                    <option value="024 - Rak Buku Kayu">024 - Rak Buku Kayu</option>
-                    <option value="025 - Meja Kayu">025 - Meja Kayu</option>
-                    <option value="026 - Meja Logam">026 - Meja Logam</option>
-                    <option value="027 - Sofa Penerima Tamu ">027 - Sofa Penerima Tamu</option>
-                    <option value="028 - Sofa Santai">028 - Sofa Santai</option>
-                    <option value="028 - Kursi Laboratorium 1 ">028 - Kursi Laboratorium 1</option>
-                    <option value="029 - Kursi Laboratorium 2 ">029 - Kursi Laboratorium 2</option>
-                    <option value="099 - Lainnya">099 - Lainnya</option>
-                    
                 </select>
             </div>
         </div>
@@ -220,36 +129,52 @@
         var subSubKelompokSelect = document.getElementById('sub_sub_kelompok');
 
         var kategoriOptions = {
-            "1 - Tanah": ["01 - Tanah Depan", "02 - Tanah Belakang"],
-            "2 - Bangunan": ["01 - Gedung Administrasi", "02 - Gedung Pendidikan"],
-            "3 - Peralatan": ["01 - Peralatan Laboratorium", "02 - Peralatan Komputer"],
-            "4 - Kendaraan": ["01 - Mobil"],
-            "5 - Inventaris": ["01 - Inventaris Kantor"],
-            "6 - Elektronik": ["01 - Komputer", "02 - Televisi"],
-            "7 - Furniture": ["01 - Furniture Kursi", "02 - Furniture Papan Tulis"],
+            "1 - Properti": ["01 - Tanah", "02 - Bangunan"],
+            "2 - Peralatan": ["01 - Peralatan Laboratorium"],
+            "3 - Kendaraan": ["01 - Mobil"],
+            "4 - Inventaris": ["01 - Inventaris Kantor"],
+            "5 - Elektronik": ["01 - Komputer", "02 - Televisi", "03 - Audio Visual", "04 - Mikrofon"],
+            "6 - Furniture": ["01 - Furniture Kursi", "02 - Furniture Papan Tulis"],
         };
 
-        // Definisi opsi untuk kelompok
+        // kelompok
         var kelompokOptions = {
-            "01 - Furniture Kursi": ["11 - Kursi Pimpinan Fakultas Ekonomi dan Bisnis", "12 - Kursi Mahasiswa", "13 - Kursi Laboratorium"],
+            "01 - Tanah": ["11 - Pendidikan"],
+            "02 - Bangunan": ["11 - Pendidikan"],
+            "01 - Komputer": ["11 - Komputer Desktop"],
+            "03 - Audio Visual": ["11 - Speaker"],
+            "04 - Mikrofon": ["11 - Mikrofon Kondensor", "12 - Mikorofon Dinamis", "13 - Mikrofon USB"],
+            "01 - Furniture Kursi": ["11 - Kursi Pimpinan Fakultas Ekonomi dan Bisnis", "12 - Kursi Mahasiswa", "13 - Kursi Laboratorium", "14 - Sofa"],
             "02 - Furniture Papan Tulis": ["11 - Papan Tulis Dinding"],
 
         };
 
-        // Definisi opsi untuk sub-kelompok
+        // sub-kelompok
         var subKelompokOptions = {
-            "12 - Kursi Mahasiswa": ["11 - Kursi Mahasiswa Plastik Single Seat", 
-            "12 - Kursi Mahasiswa Plastik Double Seat", 
-            "13 - Kursi Mahasiswa Kayu Single Seat",
-            "14 -  Kursi Mahasiswa Kayu Double Seat" ],
-
-            "12 - Papan Tulis Dinding": ["11 - Papan Tulis Hitam Kayu", 
-            "12 - Papan Tulis Putih", ],
+            "11 - Pendidikan":["11 - Universitas"],
+            "11 - Komputer Desktop": ["11 - Komputer Staf", "12 - Komputer Laboratorium"],
+            "11 - Speaker": ["11 - Aktif (Powered)", "12 - Pasif (Unpowered)"],
+            "11 - Mikrofon Kondensor":["11 - Mikrofon Kondensor Studio"],
+            "12 - Mikrofon Dinamis": ["11 - Mikrofon Dinamis Panggung"],
+            "13 - Mikrofon USB": ["11 - Mikrofon USB Perekam"],
+            "12 - Kursi Mahasiswa": ["11 - Kursi Mahasiswa Plastik Single Seat", "12 - Kursi Mahasiswa Plastik Double Seat", "13 - Kursi Mahasiswa Kayu Single Seat","14 -  Kursi Mahasiswa Kayu Double Seat" ],
+            "11 - Papan Tulis Dinding": ["11 - Papan Tulis Hitam Kayu", "12 - Papan Tulis Putih" ],
+            "14 - Sofa": ["11 - Sofa Ruang Tamu", "12 - Sofa Kantor"],
+            
         };
 
-        // Definisi opsi untuk sub-sub-kelompok
+        // sub-sub-kelompok
         var subSubKelompokOptions = {
+            "11 - Universitas": ["011 - Tanah Belakang Kampus", "012 -  Tanah Depan Kampus", "013 - Gedung Administrasi", "014 - Gedung Kuliah", "015 - Gedung Laboratorium"],
+            "11 - Komputer Staf": ["011 - Komputer Staf Departemen X", "012 - Komputer STaf Departemen Y"],
+            "12 - Komputer Laboratorium": ["011 - Komputer Laboratorium 1", "012 - Komputer Laboratorium 2"],
+            "11 - Aktif (Powered)": ["011 - Bluetooth Speakers", "012 - Studio Monitors", "013 - Portable Speakers"],
+            "12 - Pasif (Unpowered)": ["011 - Bookshelf Speakers", "012 - Floorstanding Speakers"],
             "13 - Kursi Mahasiswa Kayu Single Seat": ["014 - Kursi Mahasiswa Lipat Plastik", "015 - Kursi Mahasiswa Lipat Kayu"],
+            "11 - Papan Tulis Hitam Kayu": ["11 - Papan Tulis Hitam Kayu Standar"],
+            "12 - Papan Tulis Putih": ["11 - Papan Tulis Putih Magnetik dengan Bingkai Alumunium"],
+            "11 - Sofa Ruang Tamu": ["001 - Sofa 2 Seater", "002 - Sofa 3 Seater", "003 - Sofa L-Shape"],
+            "12 - Sofa Kantor": ["001 - Sofa Kantor Model A", "002 - Sofa Kantor Model B", "003 - Sofa Kantor Model C"],
         };
 
         function updateBidangOptions() {

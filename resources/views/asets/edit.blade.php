@@ -133,7 +133,7 @@
             "2 - Peralatan": ["01 - Peralatan Laboratorium"],
             "3 - Kendaraan": ["01 - Mobil"],
             "4 - Inventaris": ["01 - Inventaris Kantor"],
-            "5 - Elektronik": ["01 - Komputer", "02 - Televisi", "03 - Audio Visual", "04 - Mikrofon"],
+            "5 - Elektronik": ["01 - Komputer", "02 - Televisi", "03 - Audio Visual"],
             "6 - Furniture": ["01 - Furniture Kursi", "02 - Furniture Papan Tulis"],
         };
 
@@ -142,9 +142,8 @@
             "01 - Tanah": ["11 - Pendidikan"],
             "02 - Bangunan": ["11 - Pendidikan"],
             "01 - Komputer": ["11 - Komputer Desktop"],
-            "03 - Audio Visual": ["11 - Speaker"],
-            "04 - Mikrofon": ["11 - Mikrofon Kondensor", "12 - Mikorofon Dinamis", "13 - Mikrofon USB"],
-            "01 - Furniture Kursi": ["11 - Kursi Pimpinan Fakultas Ekonomi dan Bisnis", "12 - Kursi Mahasiswa", "13 - Kursi Laboratorium", "14 - Sofa"],
+            "03 - Audio Visual": ["11 - Speaker", "12 - Mikrofon"],
+            "01 - Furniture Kursi": ["11 - Kursi Pimpinan", "12 - Kursi Mahasiswa", "13 - Kursi Laboratorium", "14 - Sofa"],
             "02 - Furniture Papan Tulis": ["11 - Papan Tulis Dinding"],
 
         };
@@ -154,13 +153,11 @@
             "11 - Pendidikan":["11 - Universitas"],
             "11 - Komputer Desktop": ["11 - Komputer Staf", "12 - Komputer Laboratorium"],
             "11 - Speaker": ["11 - Aktif (Powered)", "12 - Pasif (Unpowered)"],
-            "11 - Mikrofon Kondensor":["11 - Mikrofon Kondensor Studio"],
-            "12 - Mikrofon Dinamis": ["11 - Mikrofon Dinamis Panggung"],
-            "13 - Mikrofon USB": ["11 - Mikrofon USB Perekam"],
+            "12 - Mikrofon":["11 - Mikrofon Kondensor", "12 - Mikorofon Dinamis", "13 - Mikrofon USB"],
             "12 - Kursi Mahasiswa": ["11 - Kursi Mahasiswa Plastik Single Seat", "12 - Kursi Mahasiswa Plastik Double Seat", "13 - Kursi Mahasiswa Kayu Single Seat","14 -  Kursi Mahasiswa Kayu Double Seat" ],
+            "11 - Kursi Pimpinan":["11 - Kursi Pimpinan Dosen", "12 - Kursi Pimpinan Staf Administrasi"],
+            "14 - Sofa": ["11 - Sofa Dua Dudukan", "12 - Sofa Tiga Dudukan"],
             "11 - Papan Tulis Dinding": ["11 - Papan Tulis Hitam Kayu", "12 - Papan Tulis Putih" ],
-            "14 - Sofa": ["11 - Sofa Ruang Tamu", "12 - Sofa Kantor"],
-            
         };
 
         // sub-sub-kelompok
@@ -170,11 +167,14 @@
             "12 - Komputer Laboratorium": ["011 - Komputer Laboratorium 1", "012 - Komputer Laboratorium 2"],
             "11 - Aktif (Powered)": ["011 - Bluetooth Speakers", "012 - Studio Monitors", "013 - Portable Speakers"],
             "12 - Pasif (Unpowered)": ["011 - Bookshelf Speakers", "012 - Floorstanding Speakers"],
+            "11 - Mikrofon Kondensor":["011 - Kondensor Studio"],
             "13 - Kursi Mahasiswa Kayu Single Seat": ["014 - Kursi Mahasiswa Lipat Plastik", "015 - Kursi Mahasiswa Lipat Kayu"],
-            "11 - Papan Tulis Hitam Kayu": ["11 - Papan Tulis Hitam Kayu Standar"],
-            "12 - Papan Tulis Putih": ["11 - Papan Tulis Putih Magnetik dengan Bingkai Alumunium"],
-            "11 - Sofa Ruang Tamu": ["001 - Sofa 2 Seater", "002 - Sofa 3 Seater", "003 - Sofa L-Shape"],
-            "12 - Sofa Kantor": ["001 - Sofa Kantor Model A", "002 - Sofa Kantor Model B", "003 - Sofa Kantor Model C"],
+            "11 - Papan Tulis Hitam Kayu": ["011 - Papan Tulis Hitam Kayu Standar"],
+            "11 - Kursi Pimpinan Dosen":["11 - Kursi Pimpinan Dosen Fakultas Ekonomi dan Bisnis"],
+            "12 - Kursi Pimpinan Staf Administrasi":["11 - Kursi Pimpinan Staf Administrasi Fakultas Ekonomi dan Bisnis"],
+            "11 - Sofa Dua Dudukan":["011 - Sofa Dua Dudukan Modern"],
+            "12 - Sofa Tiga Dudukan":["011 - Sofa Tiga Dudukan Modern", "012 - Sofa Tiga Dudukan Minimalis"],
+            "12 - Papan Tulis Putih": ["011 - Papan Tulis Putih Magnetik dengan Bingkai Alumunium"],
         };
 
         function updateBidangOptions() {
